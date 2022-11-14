@@ -141,6 +141,7 @@ namespace NeoFPS.Samples.SinglePlayer
 
         protected void Update()
         {
+            Debug.Log(m_Targets[0].duration);
             if (m_ButtonCooldown > 0f)
             {
                 m_ButtonCooldown -= Time.deltaTime;
@@ -151,13 +152,33 @@ namespace NeoFPS.Samples.SinglePlayer
 
 		public void AddHit ()
 		{
-			++hits;
+            hits = 25 + hits;
             m_AudioSource.PlayOneShot(m_AudioHit);
+            foreach(var a in m_Targets)
+            {
+                if (a.duration > 1)
+                {
+                    a.duration = a.duration - 1;
+                }
+                else if (a.duration > 0)
+                {
+                    a.duration = a.duration - 0.2f;
+                }
+                else if (a.duration == 0)
+                {
+                    a.duration = 0.1f;
+                }
+                
+            }
+            
         }
 
 		public void AddMiss ()
 		{
-			++misses;
+            foreach (var a in m_Targets)
+            {
+                if(a.duration > 0) a.duration = a.duration + 1;
+            }
 		}
 
 		public void OnButtonPush ()
