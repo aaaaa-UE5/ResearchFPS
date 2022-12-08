@@ -1,0 +1,4 @@
+# Starting compiling NeoFPS.dll
+C:\Program Files\Unity\Hub\Editor\2020.3.32f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-db55ba3dd42b48e46a06b562449cb8f5
+# Starting compiling Assembly-CSharp.dll
+C:\Program Files\Unity\Hub\Editor\2020.3.32f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-896d8ffc8e9cb774d81de92cc9231cd1

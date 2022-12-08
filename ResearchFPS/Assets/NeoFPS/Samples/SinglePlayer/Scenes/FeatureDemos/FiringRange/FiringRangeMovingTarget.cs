@@ -62,6 +62,7 @@ namespace NeoFPS.Samples.SinglePlayer
 			base.ResetTarget();
             if (m_ReturnCoroutine != null)
                 StopCoroutine(m_ReturnCoroutine);
+            m_MovementCoroutine = StartCoroutine(MoveCoroutine(0f));
             if (m_MovementCoroutine != null)
 			{
 				StopCoroutine (m_MovementCoroutine);
@@ -81,7 +82,7 @@ namespace NeoFPS.Samples.SinglePlayer
             base.StartResetSequence();
             if (m_MovementCoroutine != null)
             {
-                StopCoroutine(m_MovementCoroutine);
+                //StopCoroutine(m_MovementCoroutine);
                 m_MovementCoroutine = null;
             }
         }

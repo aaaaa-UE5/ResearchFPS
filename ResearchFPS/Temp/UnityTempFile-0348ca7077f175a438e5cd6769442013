@@ -1,0 +1,1595 @@
+/target:library
+/out:Temp/NeoFPS.dll
+/nowarn:0169
+/nowarn:0649
+/refout:Temp/NeoFPS.dll.ref
+/unsafe
+/deterministic
+/debug:portable
+/optimize+
+/nostdlib+
+/preferreduilang:en-US
+/langversion:8.0
+/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:C:/Users/user/Project/Unity/ResearchFPS/ResearchFPS/Library/PackageCache/com.unity.collab-proxy@1.15.13/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll
+/reference:C:/Users/user/Project/Unity/ResearchFPS/ResearchFPS/Library/PackageCache/com.unity.collab-proxy@1.15.13/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll
+/reference:C:/Users/user/Project/Unity/ResearchFPS/ResearchFPS/Library/PackageCache/com.unity.collab-proxy@1.15.13/Lib/Editor/PlasticSCM/log4netPlastic.dll
+/reference:C:/Users/user/Project/Unity/ResearchFPS/ResearchFPS/Library/PackageCache/com.unity.collab-proxy@1.15.13/Lib/Editor/PlasticSCM/unityplastic.dll
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.PackageManagerUIModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIServiceModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ComponentModel.Composition.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Core.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Data.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.IO.Compression.FileSystem.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Net.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Numerics.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Runtime.Serialization.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ServiceModel.Web.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Transactions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Web.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Windows.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Linq.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Concurrent.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.NonGeneric.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Specialized.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.TypeConverter.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Console.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Data.Common.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Contracts.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Debug.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Process.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.StackTrace.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tools.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TraceSource.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tracing.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Drawing.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Dynamic.Runtime.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Calendars.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.ZipFile.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Watcher.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.IsolatedStorage.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.MemoryMappedFiles.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Pipes.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Expressions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Parallel.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Queryable.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Http.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NameResolution.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NetworkInformation.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Ping.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Requests.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Security.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Sockets.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebHeaderCollection.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.Client.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ObjectModel.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Reader.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.ResourceManager.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Writer.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Handles.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Numerics.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Json.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Xml.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Claims.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Csp.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Encoding.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Primitives.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Principal.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.SecureString.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.RegularExpressions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Overlapped.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.Parallel.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Thread.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.ThreadPool.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Timer.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ValueTuple.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.ReaderWriter.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XDocument.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlDocument.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlSerializer.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2020.3.32f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
+/reference:Library/ScriptAssemblies/NeoFPS.Managers.dll
+/reference:Library/ScriptAssemblies/NeoSaveGames.Editor.dll
+/reference:Library/ScriptAssemblies/NeoSaveGames.dll
+/reference:Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/define:CSHARP_7_3_OR_NEWER
+/define:CSHARP_7_OR_LATER
+/define:DEBUG
+/define:ENABLE_AR
+/define:ENABLE_AUDIO
+/define:ENABLE_BURST_AOT
+/define:ENABLE_CACHING
+/define:ENABLE_CLOTH
+/define:ENABLE_CLOUD_LICENSE
+/define:ENABLE_CLOUD_SERVICES
+/define:ENABLE_CLOUD_SERVICES_ADS
+/define:ENABLE_CLOUD_SERVICES_ANALYTICS
+/define:ENABLE_CLOUD_SERVICES_BUILD
+/define:ENABLE_CLOUD_SERVICES_COLLAB
+/define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+/define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_PURCHASING
+/define:ENABLE_CLOUD_SERVICES_UNET
+/define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+/define:ENABLE_CLUSTERINPUT
+/define:ENABLE_CLUSTER_SYNC
+/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+/define:ENABLE_CUSTOM_RENDER_TEXTURE
+/define:ENABLE_DIRECTOR
+/define:ENABLE_DIRECTOR_AUDIO
+/define:ENABLE_DIRECTOR_TEXTURE
+/define:ENABLE_EDITOR_HUB_LICENSE
+/define:ENABLE_EVENT_QUEUE
+/define:ENABLE_LEGACY_INPUT_MANAGER
+/define:ENABLE_LOCALIZATION
+/define:ENABLE_LZMA
+/define:ENABLE_MANAGED_ANIMATION_JOBS
+/define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_MANAGED_JOBS
+/define:ENABLE_MANAGED_TRANSFORM_JOBS
+/define:ENABLE_MANAGED_UNITYTLS
+/define:ENABLE_MICROPHONE
+/define:ENABLE_MONO
+/define:ENABLE_MONO_BDWGC
+/define:ENABLE_MOVIES
+/define:ENABLE_MULTIPLE_DISPLAYS
+/define:ENABLE_NETWORK
+/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+/define:ENABLE_PHYSICS
+/define:ENABLE_PROFILER
+/define:ENABLE_RUNTIME_GI
+/define:ENABLE_SCRIPTING_GC_WBARRIERS
+/define:ENABLE_SPRITES
+/define:ENABLE_TERRAIN
+/define:ENABLE_TEXTURE_STREAMING
+/define:ENABLE_TILEMAP
+/define:ENABLE_TIMELINE
+/define:ENABLE_UNET
+/define:ENABLE_UNITYEVENTS
+/define:ENABLE_UNITYWEBREQUEST
+/define:ENABLE_UNITY_COLLECTIONS_CHECKS
+/define:ENABLE_VIDEO
+/define:ENABLE_VIRTUALTEXTURING
+/define:ENABLE_VR
+/define:ENABLE_WEBCAM
+/define:ENABLE_WEBSOCKET_CLIENT
+/define:ENABLE_WEBSOCKET_HOST
+/define:ENABLE_WWW
+/define:GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+/define:INCLUDE_DYNAMIC_GI
+/define:NEOFPS
+/define:NET_STANDARD_2_0
+/define:PLATFORM_ARCH_64
+/define:PLATFORM_STANDALONE
+/define:PLATFORM_STANDALONE_WIN
+/define:PLATFORM_SUPPORTS_MONO
+/define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+/define:RENDER_SOFTWARE_CURSOR
+/define:SCENE_TEMPLATE_MODULE
+/define:TRACE
+/define:UNITY_2017_1_OR_NEWER
+/define:UNITY_2017_2_OR_NEWER
+/define:UNITY_2017_3_OR_NEWER
+/define:UNITY_2017_4_OR_NEWER
+/define:UNITY_2018_1_OR_NEWER
+/define:UNITY_2018_2_OR_NEWER
+/define:UNITY_2018_3_OR_NEWER
+/define:UNITY_2018_4_OR_NEWER
+/define:UNITY_2019_1_OR_NEWER
+/define:UNITY_2019_2_OR_NEWER
+/define:UNITY_2019_3_OR_NEWER
+/define:UNITY_2019_4_OR_NEWER
+/define:UNITY_2020
+/define:UNITY_2020_1_OR_NEWER
+/define:UNITY_2020_2_OR_NEWER
+/define:UNITY_2020_3
+/define:UNITY_2020_3_32
+/define:UNITY_2020_3_OR_NEWER
+/define:UNITY_5_3_OR_NEWER
+/define:UNITY_5_4_OR_NEWER
+/define:UNITY_5_5_OR_NEWER
+/define:UNITY_5_6_OR_NEWER
+/define:UNITY_64
+/define:UNITY_ASSERTIONS
+/define:UNITY_EDITOR
+/define:UNITY_EDITOR_64
+/define:UNITY_EDITOR_WIN
+/define:UNITY_INCLUDE_TESTS
+/define:UNITY_POST_PROCESSING_STACK_V2
+/define:UNITY_STANDALONE
+/define:UNITY_STANDALONE_WIN
+/define:UNITY_TEAM_LICENSE
+/define:USE_SEARCH_ENGINE_API
+Assets\NeoFPS\Constants\Editor\FpsCharacterAudioPropertyDrawer.cs
+Assets\NeoFPS\Constants\Editor\FpsCharacterAudioSourcePropertyDrawer.cs
+Assets\NeoFPS\Constants\Editor\FpsCrosshairPropertyDrawer.cs
+Assets\NeoFPS\Constants\Editor\FpsInventoryKeyPropertyDrawer.cs
+Assets\NeoFPS\Constants\Editor\FpsSurfaceMaterialPropertyDrawer.cs
+Assets\NeoFPS\Constants\Editor\FpsSwappableCategoryPropertyDrawer.cs
+Assets\NeoFPS\Constants\FpsCharacterAudio.cs
+Assets\NeoFPS\Constants\FpsCharacterAudioSource.cs
+Assets\NeoFPS\Constants\FpsCrosshair.cs
+Assets\NeoFPS\Constants\FpsInventoryKey.cs
+Assets\NeoFPS\Constants\FpsSurfaceMaterial.cs
+Assets\NeoFPS\Constants\FpsSwappableCategory.cs
+Assets\NeoFPS\Core\AI\AiSeeker.cs
+Assets\NeoFPS\Core\AI\CameraSeeker.cs
+Assets\NeoFPS\Core\AI\TurretSeeker.cs
+Assets\NeoFPS\Core\Audio\AnimationEventAudioPlayer.cs
+Assets\NeoFPS\Core\Audio\AudioTimeScalePitchBend.cs
+Assets\NeoFPS\Core\Audio\BaseContactAudioHandler.cs
+Assets\NeoFPS\Core\Audio\ClipSetContactAudioHandler.cs
+Assets\NeoFPS\Core\Audio\Editor\AnimationEventAudioPlayerEditor.cs
+Assets\NeoFPS\Core\Audio\Editor\FpsCharacterAudioDataEditor.cs
+Assets\NeoFPS\Core\Audio\Editor\FpsCharacterAudioHandlerEditor.cs
+Assets\NeoFPS\Core\Audio\Editor\SurfaceAudioDataEditor.cs
+Assets\NeoFPS\Core\Audio\FpsCharacterAudioData.cs
+Assets\NeoFPS\Core\Audio\FpsCharacterAudioHandler.cs
+Assets\NeoFPS\Core\Audio\ICharacterAudioHandler.cs
+Assets\NeoFPS\Core\Audio\ISurfaceFootstepAudio.cs
+Assets\NeoFPS\Core\Audio\NeoFpsAudioManager.cs
+Assets\NeoFPS\Core\Audio\SurfaceAudioData.cs
+Assets\NeoFPS\Core\Audio\SurfaceContactAudioHandler.cs
+Assets\NeoFPS\Core\Audio\SurfaceFootstepAudioSystem.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\AdditiveJiggle.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\AdditiveKicker.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\BodyLean.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\BodyLeanBase.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\BodyTilt.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\BreathingEffect.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\CameraShake.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\CharacterEventKickTrigger.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\CharacterMovementSway.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\Editor\CharacterMovementSwayEditor.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\Editor\HeadBobEditor.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\Editor\HeadBobV2Editor.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\Editor\WeaponBobEditor.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\HeadBob.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\HeadBobV2.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\HeadDuck.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\IBreathHandler.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\IShakeZone.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\ImpactHandlerKickTrigger.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\OverShoulder.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\PeekVertical.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\PositionBob.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\PositionBobData.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\RotationBob.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\ShakeHandler.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\ShakeZones\BoxShakeZone.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\ShakeZones\BoxShakeZone2D.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\ShakeZones\CircleShakeZone.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\ShakeZones\SphereShakeZone.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\SimpleBreathHandler.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\TransformMatcher.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\WeaponAimAmplifier.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\WeaponBob.cs
+Assets\NeoFPS\Core\Camera\AdditiveEffects\WeaponMomentumSway.cs
+Assets\NeoFPS\Core\Camera\AdditiveTransformHandler.cs
+Assets\NeoFPS\Core\Camera\CutsceneCamera.cs
+Assets\NeoFPS\Core\Camera\Editor\AdditiveTransformHandlerEditor.cs
+Assets\NeoFPS\Core\Camera\Editor\CutsceneCameraEditor.cs
+Assets\NeoFPS\Core\Camera\FirstPersonCamera.cs
+Assets\NeoFPS\Core\Camera\FirstPersonCameraBase.cs
+Assets\NeoFPS\Core\Camera\FirstPersonCameraTransformConstraints.cs
+Assets\NeoFPS\Core\Camera\IAdditiveTransform.cs
+Assets\NeoFPS\Core\Camera\IAdditiveTransformHandler.cs
+Assets\NeoFPS\Core\Camera\PostProcessLayerFix.cs
+Assets\NeoFPS\Core\Camera\PostProcessLayerSettings.cs
+Assets\NeoFPS\Core\Character\AimController.cs
+Assets\NeoFPS\Core\Character\BaseCharacter.cs
+Assets\NeoFPS\Core\Character\BaseController.cs
+Assets\NeoFPS\Core\Character\CharacterEnums.cs
+Assets\NeoFPS\Core\Character\Editor\AimControllerEditor.cs
+Assets\NeoFPS\Core\Character\Editor\BaseCharacterEditor.cs
+Assets\NeoFPS\Core\Character\Editor\StaminaSystemEditor.cs
+Assets\NeoFPS\Core\Character\ICharacter.cs
+Assets\NeoFPS\Core\Character\IController.cs
+Assets\NeoFPS\Core\Character\IPlayerCharacterSubscriber.cs
+Assets\NeoFPS\Core\Character\IPlayerCharacterWatcher.cs
+Assets\NeoFPS\Core\Character\IStaminaSystem.cs
+Assets\NeoFPS\Core\Character\StaminaSystem.cs
+Assets\NeoFPS\Core\Constants\ConstantsSettings.cs
+Assets\NeoFPS\Core\Constants\Editor\ConstantsSettingsEditor.cs
+Assets\NeoFPS\Core\Damage\ArmouredDamageHandler.cs
+Assets\NeoFPS\Core\Damage\BasicDamageHandler.cs
+Assets\NeoFPS\Core\Damage\BasicHealthManager.cs
+Assets\NeoFPS\Core\Damage\DamageEvents.cs
+Assets\NeoFPS\Core\Damage\DamageLayers.cs
+Assets\NeoFPS\Core\Damage\DamageZone.cs
+Assets\NeoFPS\Core\Damage\DeathAnimation.cs
+Assets\NeoFPS\Core\Damage\DrowningMotionGraphWatcher.cs
+Assets\NeoFPS\Core\Damage\Editor\DamageFilterDrawer.cs
+Assets\NeoFPS\Core\Damage\Editor\DamageTeamFilterDrawer.cs
+Assets\NeoFPS\Core\Damage\Editor\DamageTypeDrawer.cs
+Assets\NeoFPS\Core\Damage\Editor\HealthPickupEditor.cs
+Assets\NeoFPS\Core\Damage\EventDamageHandler.cs
+Assets\NeoFPS\Core\Damage\HealZone.cs
+Assets\NeoFPS\Core\Damage\HealthPickup.cs
+Assets\NeoFPS\Core\Damage\IDamageHandler.cs
+Assets\NeoFPS\Core\Damage\IDamageSource.cs
+Assets\NeoFPS\Core\Damage\IHealthManager.cs
+Assets\NeoFPS\Core\Damage\IShieldManager.cs
+Assets\NeoFPS\Core\Damage\RechargingHealthManager.cs
+Assets\NeoFPS\Core\Damage\ShieldManager.cs
+Assets\NeoFPS\Core\Damage\ShieldPickup.cs
+Assets\NeoFPS\Core\Damage\ShieldedArmouredDamageHandler.cs
+Assets\NeoFPS\Core\Damage\ShieldedDamageHandler.cs
+Assets\NeoFPS\Core\Editor\BaseReorderableList.cs
+Assets\NeoFPS\Core\Editor\CustomSettings\SettingsIntermediateBase.cs
+Assets\NeoFPS\Core\Editor\CustomSettings\SettingsIntermediate_Input.cs
+Assets\NeoFPS\Core\Editor\CustomSettings\SettingsIntermediate_Layers.cs
+Assets\NeoFPS\Core\Editor\CustomSettings\SettingsIntermediate_Physics.cs
+Assets\NeoFPS\Core\Editor\CustomSettings\SettingsIntermediate_Player.cs
+Assets\NeoFPS\Core\Editor\EditorPicker.cs
+Assets\NeoFPS\Core\Editor\NeoFpsEditorGUI.cs
+Assets\NeoFPS\Core\Editor\NeoFpsEditorPrefs.cs
+Assets\NeoFPS\Core\Editor\NeoFpsEditorPrefsEditor.cs
+Assets\NeoFPS\Core\Editor\NeoFpsEditorUtility.cs
+Assets\NeoFPS\Core\Editor\ObjectHierarchyBrowser.cs
+Assets\NeoFPS\Core\Editor\PackageDependencyChecker.cs
+Assets\NeoFPS\Core\Editor\ProjectHierarchyBrowser.cs
+Assets\NeoFPS\Core\Editor\ScriptGeneration\ConstantsGenerator.cs
+Assets\NeoFPS\Core\Editor\ScriptGeneration\GeneratorConstantsList.cs
+Assets\NeoFPS\Core\Editor\ScriptGeneration\GeneratorConstantsState.cs
+Assets\NeoFPS\Core\Editor\ScriptGeneration\ScriptGenerationUtilities.cs
+Assets\NeoFPS\Core\Editor\SerializedArray.cs
+Assets\NeoFPS\Core\Editor\SerializedArrayUtility.cs
+Assets\NeoFPS\Core\Editor\StartupChecks.cs
+Assets\NeoFPS\Core\Editor\SubInspectorTitlebar.cs
+Assets\NeoFPS\Core\FirstPersonBody\Editor\FirstPersonCharacterAnimationProfileEditor.cs
+Assets\NeoFPS\Core\FirstPersonBody\Editor\FirstPersonCharacterArmsEditor.cs
+Assets\NeoFPS\Core\FirstPersonBody\Editor\HandBoneOffsetsEditor.cs
+Assets\NeoFPS\Core\FirstPersonBody\Editor\WieldableItemBodyAnimOverridesEditor.cs
+Assets\NeoFPS\Core\FirstPersonBody\Editor\WieldableItemKinematicsEditor.cs
+Assets\NeoFPS\Core\FirstPersonBody\FirstPersonBody.cs
+Assets\NeoFPS\Core\FirstPersonBody\FirstPersonBodyRootMotion.cs
+Assets\NeoFPS\Core\FirstPersonBody\FirstPersonBodyRotationTracker.cs
+Assets\NeoFPS\Core\FirstPersonBody\FirstPersonCharacterAnimationProfile.cs
+Assets\NeoFPS\Core\FirstPersonBody\FirstPersonCharacterArms.cs
+Assets\NeoFPS\Core\FirstPersonBody\FirstPersonCharacterInventoryWatcher.cs
+Assets\NeoFPS\Core\FirstPersonBody\HandBoneOffsets.cs
+Assets\NeoFPS\Core\FirstPersonBody\ProceduralSpineAimMatcher.cs
+Assets\NeoFPS\Core\FirstPersonBody\ProceduralSpineLean.cs
+Assets\NeoFPS\Core\FirstPersonBody\WieldableItemBodyAnimOverrides.cs
+Assets\NeoFPS\Core\FirstPersonBody\WieldableItemKinematics.cs
+Assets\NeoFPS\Core\Gameplay\Editor\OrderedSpawnPointGroupEditor.cs
+Assets\NeoFPS\Core\Gameplay\Editor\SpawnPointEditor.cs
+Assets\NeoFPS\Core\Gameplay\FpsGameMode.cs
+Assets\NeoFPS\Core\Gameplay\OrderedSpawnPointGroup.cs
+Assets\NeoFPS\Core\Gameplay\SpawnManager.cs
+Assets\NeoFPS\Core\Gameplay\SpawnPoint.cs
+Assets\NeoFPS\Core\HUD\CharacterComponentHudBase.cs
+Assets\NeoFPS\Core\HUD\Editor\HudAdvancedCrosshairEditor.cs
+Assets\NeoFPS\Core\HUD\Editor\HudCrosshairEditor.cs
+Assets\NeoFPS\Core\HUD\HudAdvancedCrosshair.cs
+Assets\NeoFPS\Core\HUD\HudAdvancedCrosshairStyleBase.cs
+Assets\NeoFPS\Core\HUD\HudAdvancedCrosshairStyleStandard.cs
+Assets\NeoFPS\Core\HUD\HudAmmoCounter.cs
+Assets\NeoFPS\Core\HUD\HudCrosshair.cs
+Assets\NeoFPS\Core\HUD\HudDamageMarkers.cs
+Assets\NeoFPS\Core\HUD\HudDeathPopup.cs
+Assets\NeoFPS\Core\HUD\HudEnemyHealthBar.cs
+Assets\NeoFPS\Core\HUD\HudEnemyHealthBarBase.cs
+Assets\NeoFPS\Core\HUD\HudFirearmMode.cs
+Assets\NeoFPS\Core\HUD\HudFirearmOverheatBar.cs
+Assets\NeoFPS\Core\HUD\HudHealthCounter.cs
+Assets\NeoFPS\Core\HUD\HudHider.cs
+Assets\NeoFPS\Core\HUD\HudHitDamageCounterBase.cs
+Assets\NeoFPS\Core\HUD\HudHitDamageCounterStandard.cs
+Assets\NeoFPS\Core\HUD\HudHitDamageCounters.cs
+Assets\NeoFPS\Core\HUD\HudInteractionTooltip.cs
+Assets\NeoFPS\Core\HUD\HudMotionGraphParameterMeter.cs
+Assets\NeoFPS\Core\HUD\HudMotionGraphParameterReadout.cs
+Assets\NeoFPS\Core\HUD\HudOxygenMeter.cs
+Assets\NeoFPS\Core\HUD\HudProgressBar.cs
+Assets\NeoFPS\Core\HUD\HudScope.cs
+Assets\NeoFPS\Core\HUD\HudShieldMeter.cs
+Assets\NeoFPS\Core\HUD\HudShieldMeterStep.cs
+Assets\NeoFPS\Core\HUD\HudSlowMoCharge.cs
+Assets\NeoFPS\Core\HUD\HudStaminaBar.cs
+Assets\NeoFPS\Core\HUD\HudTargetLock.cs
+Assets\NeoFPS\Core\HUD\HudTargetLockMarkers.cs
+Assets\NeoFPS\Core\HUD\HudToggle.cs
+Assets\NeoFPS\Core\HUD\HudWorldSpacePositionTracker.cs
+Assets\NeoFPS\Core\HUD\HudWorldSpaceTarget.cs
+Assets\NeoFPS\Core\HUD\ICrosshairDriver.cs
+Assets\NeoFPS\Core\HUD\IHudTargetLock.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventory.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryItemBase.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryItemCounter.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryItemMeter.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryItemStacked.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryItemStandard.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryItemTracker.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryStackedPC.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryStackedSlot.cs
+Assets\NeoFPS\Core\HUD\Inventory\HudInventoryStandardPC.cs
+Assets\NeoFPS\Core\HUD\PlayerCharacterHudBase.cs
+Assets\NeoFPS\Core\HUD\WieldableHudBase.cs
+Assets\NeoFPS\Core\HUD\WorldSpaceHudMarkerBase.cs
+Assets\NeoFPS\Core\HUD\WorldSpaceHudMarkerItemBase.cs
+Assets\NeoFPS\Core\Hub\Editor\HubPage.cs
+Assets\NeoFPS\Core\Hub\Editor\HubTocEntry.cs
+Assets\NeoFPS\Core\Hub\Editor\NeoFpsHubEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\DemoScenes\DemoSceneInfoPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\DemoScenes\DemoScenesList.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\DemoScenes\DemoScenesListEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\DemoScenes\DemoScenesPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\EmbeddedEditorPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\FrontPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_Audio.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_GeneratedConstants.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_Input.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_Inventory.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_Pooling.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_SaveSystem.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_SceneManager.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Managers\ManagerPage_SurfaceManager.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\NeoFpsSettings\SettingsPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\QuickStarts\QuickstartReadme.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\QuickStarts\QuickstartReadmeEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Readme\HubSectionReadme.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Readme\ReadmeAssetEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Readme\ReadmeBehaviourEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Readme\ReadmeEditorUtility.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Readme\ReadmePage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\StandaloneTools\StandaloneToolsReadme.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\UnitySettingsPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\UpgradeNotes\UpdateReadme.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\UpgradeNotes\UpdateReadmeEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\UpgradeNotes\UpgradeNotesPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\UpgradeNotes\UpgradeNotesReadme.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\UpgradeNotes\UpgradeNotesReadmeEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\NeoFpsWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\NeoFpsWizardEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\NeoFpsWizardPage.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\NeoFpsWizardStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\NeoFpsWizardStepEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\WizardGUI.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\WizardTemplateDescriptions.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Components\WizardUtility.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\InteractiveObjects\InteractiveObjectAudioVisualStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\InteractiveObjects\InteractiveObjectRootStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\InteractiveObjects\InteractiveObjectWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\InteractiveObjects\InteractiveObjectWizardSteps.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\MeleeWeapons\MeleeWeaponAudioStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\MeleeWeapons\MeleeWeaponExistingAnimatorStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\MeleeWeapons\MeleeWeaponNewAnimatorStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\MeleeWeapons\MeleeWeaponRootStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\MeleeWeapons\MeleeWeaponViewModelStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\MeleeWeapons\MeleeWeaponWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\MeleeWeapons\MeleeWeaponWizardSteps.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmAimingStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmAmmoEffectStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmAnimationsStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmMuzzleEffectStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmRecoilStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmReloadStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmRootStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmShellEjectStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmShooterStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmTriggerStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ModularFirearms\ModularFirearmWizardSteps.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\AudioVisualFirearmSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\AudioVisualSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\FirearmDropSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\HealthPackSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\InventoryMultiPickupSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\InventoryPickupSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\KeyRingPickupSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\PickupWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\PickupWizardRootStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\PickupWizardSteps.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\ShieldBoosterSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Pickups\WieldableDropSetup.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterControllerStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterHealthStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterInputStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterInventoryStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterRootStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterStaminaStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\PlayerCharacters\PlayerCharacterWizardSteps.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\Shared\WieldableRootStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ThrownWeapons\ThrownWeaponAudioStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ThrownWeapons\ThrownWeaponExistingAnimatorStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ThrownWeapons\ThrownWeaponNewAnimatorStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ThrownWeapons\ThrownWeaponRootStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ThrownWeapons\ThrownWeaponViewModelStep.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ThrownWeapons\ThrownWeaponWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ItemCreationWizards\Wizards\ThrownWeapons\ThrownWeaponWizardSteps.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ScriptCreationWizard\NeoFpsScriptCreationWizard.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ScriptCreationWizard\NeoFpsScriptCreationWizardEditor.cs
+Assets\NeoFPS\Core\Hub\Editor\Pages\Wizards\ScriptCreationWizard\NeoFpsScriptCreationWizardPage.cs
+Assets\NeoFPS\Core\Hub\Runtime\DemoScenes\DemoSceneReadme.cs
+Assets\NeoFPS\Core\Hub\Runtime\Readme\IReadme.cs
+Assets\NeoFPS\Core\Hub\Runtime\Readme\ReadmeAsset.cs
+Assets\NeoFPS\Core\Hub\Runtime\Readme\ReadmeBehaviour.cs
+Assets\NeoFPS\Core\Hub\Runtime\Readme\ReadmeHeader.cs
+Assets\NeoFPS\Core\Hub\Runtime\Readme\ReadmeSection.cs
+Assets\NeoFPS\Core\Input\Editor\FpsInputAxisPropertyDrawer.cs
+Assets\NeoFPS\Core\Input\Editor\FpsInputButtonPropertyDrawer.cs
+Assets\NeoFPS\Core\Input\Editor\FpsInputContextPropertyDrawer.cs
+Assets\NeoFPS\Core\Input\Editor\NeoFpsInputManagerBaseEditor.cs
+Assets\NeoFPS\Core\Input\Editor\NeoFpsInputManagerEditor.cs
+Assets\NeoFPS\Core\Input\FpsInput.cs
+Assets\NeoFPS\Core\Input\FpsInputAxis.cs
+Assets\NeoFPS\Core\Input\FpsInputBase.cs
+Assets\NeoFPS\Core\Input\FpsInputButton.cs
+Assets\NeoFPS\Core\Input\FpsInputContext.cs
+Assets\NeoFPS\Core\Input\GamepadButton.cs
+Assets\NeoFPS\Core\Input\GamepadProfile.cs
+Assets\NeoFPS\Core\Input\GamepadUnityInputs.cs
+Assets\NeoFPS\Core\Input\InputButtonInfo.cs
+Assets\NeoFPS\Core\Input\InputCategory.cs
+Assets\NeoFPS\Core\Input\InputHandlers\CharacterInputBase.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputAbilityFirearm.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputCharacterMotion.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputCharacterSlowMo.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputFirearm.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputGame.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputInventory.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputLockpick.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputMeleeWeapon.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputMenu.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputThrownWeapon.cs
+Assets\NeoFPS\Core\Input\InputHandlers\InputVehicle.cs
+Assets\NeoFPS\Core\Input\InputHandlers\UiInputToggle.cs
+Assets\NeoFPS\Core\Input\KeyBindingContext.cs
+Assets\NeoFPS\Core\Input\KeyboardLayout.cs
+Assets\NeoFPS\Core\Input\MouseAndGamepadAimController.cs
+Assets\NeoFPS\Core\Input\NeoFpsInputManager.cs
+Assets\NeoFPS\Core\Input\NeoFpsInputManagerBase.cs
+Assets\NeoFPS\Core\Interaction\CharacterInteractionHandler.cs
+Assets\NeoFPS\Core\Interaction\Doors\AnimatedDoorHandle.cs
+Assets\NeoFPS\Core\Interaction\Doors\DoorBase.cs
+Assets\NeoFPS\Core\Interaction\Doors\DoorInteractiveObject.cs
+Assets\NeoFPS\Core\Interaction\Doors\DoorState.cs
+Assets\NeoFPS\Core\Interaction\Doors\DoorTrigger.cs
+Assets\NeoFPS\Core\Interaction\Doors\ElevatorController.cs
+Assets\NeoFPS\Core\Interaction\Doors\ElevatorMovingPlatform.cs
+Assets\NeoFPS\Core\Interaction\Doors\IKeyRing.cs
+Assets\NeoFPS\Core\Interaction\Doors\IPickAngleLockpickPopup.cs
+Assets\NeoFPS\Core\Interaction\Doors\KeyRing.cs
+Assets\NeoFPS\Core\Interaction\Doors\KeypadInteractiveObject.cs
+Assets\NeoFPS\Core\Interaction\Doors\KeypadPopup.cs
+Assets\NeoFPS\Core\Interaction\Doors\KinematicHingeDoor.cs
+Assets\NeoFPS\Core\Interaction\Doors\LockedDoorInteractiveObject.cs
+Assets\NeoFPS\Core\Interaction\Doors\LockedDoorTrigger.cs
+Assets\NeoFPS\Core\Interaction\Doors\LockedInteractiveObject.cs
+Assets\NeoFPS\Core\Interaction\Doors\LockedTriggerZone.cs
+Assets\NeoFPS\Core\Interaction\Doors\LockpickPopup.cs
+Assets\NeoFPS\Core\Interaction\Doors\LockpickPopup3D.cs
+Assets\NeoFPS\Core\Interaction\Doors\LockpickPopupUI.cs
+Assets\NeoFPS\Core\Interaction\Doors\PhysicsHingeDoor.cs
+Assets\NeoFPS\Core\Interaction\Doors\PickableLockedDoorInteractiveObject.cs
+Assets\NeoFPS\Core\Interaction\Doors\SlidingDoor.cs
+Assets\NeoFPS\Core\Interaction\IInteractiveObject.cs
+Assets\NeoFPS\Core\Interaction\InteractiveObject.cs
+Assets\NeoFPS\Core\Interaction\InteractiveObjectCornerMarkers.cs
+Assets\NeoFPS\Core\Interaction\InteractiveObjectMaterialMarker.cs
+Assets\NeoFPS\Core\Inventory\Examples\BaseWieldableItem.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\BaseWieldableItemEditor.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryDatabaseEditor.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryDbTableEditor.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryEditor.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryEditorQuickSwitch.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryEditorStacked.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryEditorSwappable.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryKeyAttributeDrawer.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryKeyDbTableEditor.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryKeyPopup.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\FpsInventoryLoadoutEditor.cs
+Assets\NeoFPS\Core\Inventory\Examples\Editor\NeoFpsInventoryDatabaseEditor.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryAmmo.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryBase.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryDatabase.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryDatabaseEntry.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryDbTable.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryDbTableBase.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryItem.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryItemBase.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryKeyAttribute.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryKeyDbTable.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryLoadout.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryMultiDrop.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryQuickSwitch.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryStacked.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventorySwappable.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventorySwapper.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryWieldable.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryWieldableDrop.cs
+Assets\NeoFPS\Core\Inventory\Examples\FpsInventoryWieldableSwappable.cs
+Assets\NeoFPS\Core\Inventory\Examples\InventoryInteractionHandler.cs
+Assets\NeoFPS\Core\Inventory\Examples\NeoFpsInventoryDatabase.cs
+Assets\NeoFPS\Core\Inventory\IInventory.cs
+Assets\NeoFPS\Core\Inventory\IInventoryItem.cs
+Assets\NeoFPS\Core\Inventory\IQuickSlots.cs
+Assets\NeoFPS\Core\Inventory\IQuickslotItem.cs
+Assets\NeoFPS\Core\Inventory\IWieldable.cs
+Assets\NeoFPS\Core\Inventory\InventoryCallbacks.cs
+Assets\NeoFPS\Core\Inventory\InventoryEnums.cs
+Assets\NeoFPS\Core\Inventory\LockSelectionOnDeath.cs
+Assets\NeoFPS\Core\Inventory\Pickups\IPickup.cs
+Assets\NeoFPS\Core\Inventory\Pickups\InteractiveMultiPickup.cs
+Assets\NeoFPS\Core\Inventory\Pickups\InteractivePickup.cs
+Assets\NeoFPS\Core\Inventory\Pickups\InteractivePickupTrigger.cs
+Assets\NeoFPS\Core\Inventory\Pickups\InventoryItemPickup.cs
+Assets\NeoFPS\Core\Inventory\Pickups\KeyRingPickup.cs
+Assets\NeoFPS\Core\Inventory\Pickups\Pickup.cs
+Assets\NeoFPS\Core\Inventory\Pickups\PickupTriggerZone.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\AddForceBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\AlignWithVelocityBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\AnimatorGroundSlopeBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\AnimatorInputVectorBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\AnimatorSpeedBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\AnimatorVelocityBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\BlockSwitchParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\BlockTriggerParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\BodyTiltBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\CameraJiggleSpringBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\CameraKickSpringBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\CameraPulseFoVBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\CameraShakeBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\CameraShakeOneShotBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ClampFloatParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ClampIntParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ConstrainCameraPitchBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ConstrainCameraYawBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ConstrainCharacterHeadingBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\DebugBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\DisableColliderBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\DrainStaminaBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\AddForceBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\AlignWithVelocityBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\AnimatorGroundSlopeBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\AnimatorInputVectorBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\AnimatorSpeedBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\AnimatorVelocityBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\BlockSwitchParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\BlockTriggerParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\BodyTiltBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\CameraJiggleSpringBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\CameraKickSpringBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\CameraPulseFoVBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\CameraShakeBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\CameraShakeOneShotBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ClampFloatParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ClampIntParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ConstrainCameraPitchBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ConstrainCameraYawBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ConstrainCharacterHeadingBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\DebugBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\DisableColliderBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\DrainStaminaBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\FootIkBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\FootstepAudioBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ImpactDamageBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\InvokeEventBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\LadderAudioBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\LockInventorySelectionBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\LoopingAudioBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifyCharacterVelocityBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifyFloatParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifyIntParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifyStaminaBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifySwitchParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifyTransformParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifyTriggerParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\ModifyVectorParameterBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\PassiveSlideBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\PlayAudioClipBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\PlayCharacterAudioBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\RecordVelocityBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetAnimatorBoolBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetAnimatorFloatBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetAnimatorIntBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetAnimatorTriggerBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetRootMotionStrengthBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetTargetHeightBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetTimeScaleBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SetWieldableStanceBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SlidingAudioBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SpineAimBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SteeringRateBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SurfaceAudioBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\SurfaceFootstepAudioBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\TimeOpsBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\TrackStepsBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\Editor\UnlockInventorySelectionBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\FootIkBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\FootstepAudioBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ImpactDamageBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\InvokeEventBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\LadderAudioBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\LockInventorySelectionBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\LoopingAudioBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifyCharacterVelocityBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifyFloatParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifyIntParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifyStaminaBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifySwitchParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifyTransformParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifyTriggerParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\ModifyVectorParameterBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\MotionGraphBehaviourTargetAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\PassiveSlideBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\PlayAudioClipBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\PlayCharacterAudioBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\RecordVelocityBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetAnimatorBoolBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetAnimatorFloatBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetAnimatorIntBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetAnimatorTriggerBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetRootMotionStrengthBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetTargetHeightBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetTimeScaleBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SetWieldableStanceBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SlidingAudioBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SpineAimBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SteeringRateBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SurfaceAudioBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\SurfaceFootstepAudioBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\TimeOpsBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\TrackStepsBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Behaviours\UnlockInventorySelectionBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\AirTimeCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CapsuleCastCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CapsuleLookaheadCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CharacterHeightCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\ClimbableCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CollisionFlagsCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CompareFloatsCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CompareIntsCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CompareSwitchesCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CompareTimeCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\CompletedCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\ConditionGroupCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\DebugCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\DirectionCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\AirTimeConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CapsuleCastConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CapsuleLookaheadConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CharacterHeightConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\ClimbableConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CollisionFlagsConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CompareFloatsConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CompareIntsConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CompareSwitchesConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CompareTimeConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\CompletedConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\ConditionGroupConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\DebugConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\DirectionConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\ElapsedTimeConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\EnhancedCapsuleCastConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\EnhancedCapsuleLookaheadConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\EnhancedRayCastConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\EnhancedRayLookaheadConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\EnhancedSphereCastConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\EnhancedSphereLookaheadConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\FloatConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\GroundContactConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\GroundNormalConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\GroundSurfaceNormalConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\HeightRestrictionConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\InputVectorConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\IntConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\InventoryItemConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\PitchConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\RayCastConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\RayLookaheadConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\ScriptedComponentConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\SphereCastConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\SphereLookaheadConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\SwitchConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\TargetVelocityConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\TransformConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\TriggerConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\VectorConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\VelocityConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\WaterConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\Editor\WieldableSelectedConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\ElapsedTimeCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\EnhancedCapsuleCastCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\EnhancedCapsuleLookaheadCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\EnhancedRayCastCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\EnhancedRayLookaheadCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\EnhancedSphereCastCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\EnhancedSphereLookaheadCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\FloatCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\GroundContactCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\GroundNormalCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\GroundSurfaceNormalCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\HeightRestrictionCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\IScriptedComponentCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\InputVectorCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\IntCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\InventoryItemCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\LookaheadType.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\PitchCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\RayCastCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\RayLookaheadCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\ScriptedComponentCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\SphereCastCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\SphereLookaheadCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\SwitchCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\TargetVelocityCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\TransformCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\TriggerCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\VectorCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\VelocityCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\WaterCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Conditions\WieldableSelectedCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\BoolData.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\BoolDataReference.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\Editor\BoolDataDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\Editor\BoolDataWizard.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\Editor\DataWizard.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\Editor\FloatDataDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\Editor\FloatDataWizard.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\Editor\IntDataDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\Editor\IntDataWizard.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\FloatData.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\FloatDataReference.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\IntData.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\IntDataReference.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\MotionGraphDataOverrideAsset\Editor\MotionGraphDataOverrideAssetEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Data\MotionGraphDataOverrideAsset\MotionGraphDataOverrideAsset.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\Debugger\DebugParameters.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\Debugger\MotionControllerDebugBuffer.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\Debugger\MotionControllerDebugSnapshot.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\Debugger\MotionControllerDebugger.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\Debugger\MotionControllerDebuggerEnums.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\IMotionGraphEditorInspector.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\Inspectors\MotionControllerInspector.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\Inspectors\MotionGraphContainerEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphBehaviourEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphBehaviourEditorAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphBehaviourPopup.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphConditionDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphConditionDrawerAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphConditionGroupDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphConnectableEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphConnectionEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphCustomPropertyDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphDataKeyDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphEditorClipboard.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphEditorFactory.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphEditorGUI.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphEditorInspectorView.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphEditorStyles.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphEditorViewport.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphParameterDrawerAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphParameterKeyDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphPropertyDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphPropertyDrawerAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\Editor\MotionGraphSubGraphEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\BasicWaterZone.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\ContactLadder.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\Editor\InteractiveLadderEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\Editor\LadderEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\Editor\TriggerZoneLadderEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\ILadder.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\IWaterZone.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\InteractiveLadder.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\JumpPad.cs
+Assets\NeoFPS\Core\MotionGraphs\EnvironmentElements\WaterZoneHelpers.cs
+Assets\NeoFPS\Core\MotionGraphs\IMotionController.cs
+Assets\NeoFPS\Core\MotionGraphs\IMotionGraphDataOverride.cs
+Assets\NeoFPS\Core\MotionGraphs\IMotionGraphElement.cs
+Assets\NeoFPS\Core\MotionGraphs\IMotionGraphMap.cs
+Assets\NeoFPS\Core\MotionGraphs\IRootMotionHandler.cs
+Assets\NeoFPS\Core\MotionGraphs\IStepTracker.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionController.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraph.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphBehaviour.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphCloner.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphCondition.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphConditionGroup.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphConnectable.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphConnection.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphContainer.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphData.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphDataBase.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphDataKeyAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphDataReference.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphDataType.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphElementAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphParameterKeyAttribute.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphParameterType.cs
+Assets\NeoFPS\Core\MotionGraphs\MotionGraphState.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\EventParameterDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\FloatParameterDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\IntParameterDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\ParameterWizard.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\SwitchParameterDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\TransformParameterDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\TriggerParameterDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\VectorParameterDrawer.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\Editor\VectorParameterPopupContent.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\EventParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\FloatParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\IntParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\SwitchParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\TransformParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\TriggerParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\Parameters\VectorParameter.cs
+Assets\NeoFPS\Core\MotionGraphs\SlopeSpeedCurve.cs
+Assets\NeoFPS\Core\MotionGraphs\States\AdaptiveJetpackState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\AnimCurveDashState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\AnimCurveWallDashState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\BoostPadState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\ConstantMoveState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\ContactLadderState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\ControlledJetpackState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\DashState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\DirectionalDashState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\DodgeState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\AdaptiveJetpackStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\AnimCurveDashStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\AnimCurveWallDashStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\BoostPadStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\ConstantMoveStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\ContactLadderStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\ControlledJetpackStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\DashStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\DirectionalDashStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\DodgeStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\FallingStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\FlyStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\GrappleSwingStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\ImpulseStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\InteractiveLadderStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\JetpackStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\JumpDirectionStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\JumpDirectionV2StateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\JumpStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\MaintainVelocityStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\MantleStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\MatchTransformStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\MoveToPointStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\MovementStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\NullStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\PushOffStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\RepulseStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\RootMotionStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\SkiStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\SteepSlideStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\SwimSmoothSurfaceStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\SwimSmoothUnderwaterStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\SwimStrokeSurfaceStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\SwimStrokeUnderwaterStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\SwimSubmergeStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\VerticalWallRunStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\WadingMovementStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\Editor\WallRunStateEditor.cs
+Assets\NeoFPS\Core\MotionGraphs\States\FallingState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\FlyState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\GrappleSwingState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\ImpulseState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\InteractiveLadderState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\JetpackState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\JumpDirectionState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\JumpDirectionV2State.cs
+Assets\NeoFPS\Core\MotionGraphs\States\JumpState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\MaintainVelocityState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\MantleState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\MatchTransformState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\MoveToPointState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\MovementState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\NullState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\PushOffState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\RepulseState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\RootMotionState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\SkiState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\SteepSlideState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\SwimSmoothSurfaceState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\SwimSmoothUnderwaterState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\SwimStrokeSurfaceState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\SwimStrokeUnderwaterState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\SwimSubmergeState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\VerticalWallRunState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\WadingMovementState.cs
+Assets\NeoFPS\Core\MotionGraphs\States\WallRunState.cs
+Assets\NeoFPS\Core\MovingPlatforms\BaseMovingPlatform.cs
+Assets\NeoFPS\Core\MovingPlatforms\ConstantRotatingPlatform.cs
+Assets\NeoFPS\Core\MovingPlatforms\DrivenMovingPlatform.cs
+Assets\NeoFPS\Core\MovingPlatforms\Editor\WaypointMovingPlatformEditor.cs
+Assets\NeoFPS\Core\MovingPlatforms\SimpleMovingPlatform.cs
+Assets\NeoFPS\Core\MovingPlatforms\SimpleRotatingPlatform.cs
+Assets\NeoFPS\Core\MovingPlatforms\WaypointMovingPlatform.cs
+Assets\NeoFPS\Core\NeoCharacterController\Editor\NeoCharacterControllerEditor.cs
+Assets\NeoFPS\Core\NeoCharacterController\IAimController.cs
+Assets\NeoFPS\Core\NeoCharacterController\IMovingPlatform.cs
+Assets\NeoFPS\Core\NeoCharacterController\INeoCharacterController.cs
+Assets\NeoFPS\Core\NeoCharacterController\INeoCharacterControllerHitHandler.cs
+Assets\NeoFPS\Core\NeoCharacterController\INeoCharacterVariableGravity.cs
+Assets\NeoFPS\Core\NeoCharacterController\NeoCharacterCollisionFlags.cs
+Assets\NeoFPS\Core\NeoCharacterController\NeoCharacterController.cs
+Assets\NeoFPS\Core\NeoCharacterController\NeoCharacterControllerDelegates.cs
+Assets\NeoFPS\Core\NeoCharacterController\NeoCharacterControllerHit.cs
+Assets\NeoFPS\Core\NeoCharacterController\NeoCharacterVelocityInheritance.cs
+Assets\NeoFPS\Core\Physics\CharacterImpactHandler.cs
+Assets\NeoFPS\Core\Physics\IImpactHandler.cs
+Assets\NeoFPS\Core\Physics\PhysicsExtensions.cs
+Assets\NeoFPS\Core\Physics\PhysicsFilter.cs
+Assets\NeoFPS\Core\Settings\Contexts\FpsAudioSettings.cs
+Assets\NeoFPS\Core\Settings\Contexts\FpsGamepadSettings.cs
+Assets\NeoFPS\Core\Settings\Contexts\FpsGameplaySettings.cs
+Assets\NeoFPS\Core\Settings\Contexts\FpsGraphicsSettings.cs
+Assets\NeoFPS\Core\Settings\Contexts\FpsInputSettings.cs
+Assets\NeoFPS\Core\Settings\Contexts\FpsKeyBindings.cs
+Assets\NeoFPS\Core\Settings\Editor\FpsGraphicsSettingsEditor.cs
+Assets\NeoFPS\Core\Settings\Editor\FpsKeyBindingsEditor.cs
+Assets\NeoFPS\Core\Settings\Editor\SettingsContextEditor.cs
+Assets\NeoFPS\Core\Settings\FpsSettings.cs
+Assets\NeoFPS\Core\Settings\SettingsContext.cs
+Assets\NeoFPS\Core\Settings\SettingsContextBase.cs
+Assets\NeoFPS\Core\SinglePlayer\Character\FpsPrototypePlayerController.cs
+Assets\NeoFPS\Core\SinglePlayer\Character\FpsSoloCharacter.cs
+Assets\NeoFPS\Core\SinglePlayer\Character\FpsSoloPlayerController.cs
+Assets\NeoFPS\Core\SinglePlayer\Character\SoloPlayerCharacterEventWatcher.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\CharacterSelectorData.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\Editor\CharacterSelectorDataPropertyDrawer.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\Editor\LoadoutBuilderDataPropertyDrawer.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\Editor\LoadoutSelectorDataPropertyDrawer.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\Editor\SpawnZoneSelectorDataPropertyDrawer.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\FpsSoloGameBase.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\FpsSoloGameCustomisable.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\FpsSoloGameMinimal.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\ICharacterSelector.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\ILoadoutBuilder.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\ILoadoutSelector.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\ISpawnZoneSelector.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\LoadoutBuilderData.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\LoadoutSelectorData.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopup.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopupBase.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopupTab.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopupTabs\CharacterSelectorTab.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopupTabs\InstantSwitchTabBase.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopupTabs\LoadoutBuilderTab.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopupTabs\LoadoutSelectionTab.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\PreSpawnPopupTabs\SpawnZoneSelectionTab.cs
+Assets\NeoFPS\Core\SinglePlayer\Game\SpawnZoneSelectorData.cs
+Assets\NeoFPS\Core\SinglePlayer\Utilities\SoloCharacterTriggerZone.cs
+Assets\NeoFPS\Core\SinglePlayer\Utilities\SoloCharacterTriggerZonePersistant.cs
+Assets\NeoFPS\Core\SinglePlayer\Utilities\SubSceneCollection.cs
+Assets\NeoFPS\Core\SinglePlayer\Utilities\SubSceneLoadTrigger.cs
+Assets\NeoFPS\Core\SinglePlayer\Utilities\SubSceneManager.cs
+Assets\NeoFPS\Core\SinglePlayer\Utilities\SubSceneUnloadTrigger.cs
+Assets\NeoFPS\Core\Surfaces\BaseHitFxBehaviour.cs
+Assets\NeoFPS\Core\Surfaces\BaseSurface.cs
+Assets\NeoFPS\Core\Surfaces\Editor\SurfaceHitFxDataEditor.cs
+Assets\NeoFPS\Core\Surfaces\ParticleSystemHitFxBehaviour.cs
+Assets\NeoFPS\Core\Surfaces\PooledObjectHitFxBehaviour.cs
+Assets\NeoFPS\Core\Surfaces\SimpleSurface.cs
+Assets\NeoFPS\Core\Surfaces\SurfaceFxOverrides.cs
+Assets\NeoFPS\Core\Surfaces\SurfaceHitFxData.cs
+Assets\NeoFPS\Core\Surfaces\SurfaceManager.cs
+Assets\NeoFPS\Core\Utilities\AbilityBasedSlowMoSystem.cs
+Assets\NeoFPS\Core\Utilities\AnimStateObjectActivator.cs
+Assets\NeoFPS\Core\Utilities\AnimStateObjectSwapper.cs
+Assets\NeoFPS\Core\Utilities\AnimStateObjectSwapperTarget.cs
+Assets\NeoFPS\Core\Utilities\AnimatorParameterKeyAttribute.cs
+Assets\NeoFPS\Core\Utilities\AnimatorUnityEventHelper.cs
+Assets\NeoFPS\Core\Utilities\BillboardOrientation.cs
+Assets\NeoFPS\Core\Utilities\BulletTrailCleaner.cs
+Assets\NeoFPS\Core\Utilities\CharacterTriggerZone.cs
+Assets\NeoFPS\Core\Utilities\CharacterTriggerZonePersistant.cs
+Assets\NeoFPS\Core\Utilities\CheckpointTrigger.cs
+Assets\NeoFPS\Core\Utilities\ComponentOnObjectAttribute.cs
+Assets\NeoFPS\Core\Utilities\DebugGeo.cs
+Assets\NeoFPS\Core\Utilities\DemoButtonPresser.cs
+Assets\NeoFPS\Core\Utilities\EasingFunctions.cs
+Assets\NeoFPS\Core\Utilities\Editor\AnimatorParameterKeyDrawer.cs
+Assets\NeoFPS\Core\Utilities\Editor\ComponentOnObjectAttributeDrawer.cs
+Assets\NeoFPS\Core\Utilities\Editor\FlagsEnumAttributeDrawer.cs
+Assets\NeoFPS\Core\Utilities\Editor\MapCaptureCameraEditor.cs
+Assets\NeoFPS\Core\Utilities\Editor\NeoObjectInHierarchyFieldAttributeDrawer.cs
+Assets\NeoFPS\Core\Utilities\Editor\NeoPrefabFieldAttributeDrawer.cs
+Assets\NeoFPS\Core\Utilities\Editor\RequiredObjectPropertyAttributeDrawer.cs
+Assets\NeoFPS\Core\Utilities\ExtendedGizmos.cs
+Assets\NeoFPS\Core\Utilities\FlagsEnumAttribute.cs
+Assets\NeoFPS\Core\Utilities\GeneratorConstantsEntry.cs
+Assets\NeoFPS\Core\Utilities\IDisplayName.cs
+Assets\NeoFPS\Core\Utilities\ISlowMoSystem.cs
+Assets\NeoFPS\Core\Utilities\MapCaptureCamera.cs
+Assets\NeoFPS\Core\Utilities\MathExtensions.cs
+Assets\NeoFPS\Core\Utilities\NeoFpsSceneSwitcher.cs
+Assets\NeoFPS\Core\Utilities\NeoFpsTimeScale.cs
+Assets\NeoFPS\Core\Utilities\NeoObjectInHierarchyFieldAttribute.cs
+Assets\NeoFPS\Core\Utilities\NeoPrefabFieldAttribute.cs
+Assets\NeoFPS\Core\Utilities\ObjectBrowserFilters.cs
+Assets\NeoFPS\Core\Utilities\ObjectLifecycleManager.cs
+Assets\NeoFPS\Core\Utilities\ObjectLifecycleMgrDictionary.cs
+Assets\NeoFPS\Core\Utilities\ObjectMover.cs
+Assets\NeoFPS\Core\Utilities\ParticleSystemPlayOnEnable.cs
+Assets\NeoFPS\Core\Utilities\PlatformDependentObject.cs
+Assets\NeoFPS\Core\Utilities\PooledObjectSwapper.cs
+Assets\NeoFPS\Core\Utilities\PooledPhysicsObjectSwapper.cs
+Assets\NeoFPS\Core\Utilities\Pooling\Editor\BasePoolInfoEditor.cs
+Assets\NeoFPS\Core\Utilities\Pooling\Editor\PoolManagerEditor.cs
+Assets\NeoFPS\Core\Utilities\Pooling\Editor\PooledObjectCollectionEditor.cs
+Assets\NeoFPS\Core\Utilities\Pooling\Editor\ScenePoolHandlerEditor.cs
+Assets\NeoFPS\Core\Utilities\Pooling\PoolInfo.cs
+Assets\NeoFPS\Core\Utilities\Pooling\PoolManager.cs
+Assets\NeoFPS\Core\Utilities\Pooling\PooledObject.cs
+Assets\NeoFPS\Core\Utilities\Pooling\PooledObjectCollection.cs
+Assets\NeoFPS\Core\Utilities\Pooling\ScenePoolHandler.cs
+Assets\NeoFPS\Core\Utilities\Pooling\TemporaryPooledObject.cs
+Assets\NeoFPS\Core\Utilities\ReplaceObject.cs
+Assets\NeoFPS\Core\Utilities\RequiredObjectPropertyAttribute.cs
+Assets\NeoFPS\Core\Utilities\SlowMoSystem.cs
+Assets\NeoFPS\Core\Utilities\SlowMoZone.cs
+Assets\NeoFPS\Core\Utilities\TeleportZone1Way.cs
+Assets\NeoFPS\Core\Utilities\Teleporter.cs
+Assets\NeoFPS\Core\Utilities\TimedDisabler.cs
+Assets\NeoFPS\Core\Utilities\TimedSlowMoZone.cs
+Assets\NeoFPS\Core\Utilities\ToggleOrHold\ToggleOrHold.cs
+Assets\NeoFPS\Core\Utilities\ToggleOrHold\ToggleOrHoldEvent.cs
+Assets\NeoFPS\Core\Utilities\ToggleOrHold\ToggleOrHoldUnityEvent.cs
+Assets\NeoFPS\Core\Utilities\TriggerZoneColliderCounter.cs
+Assets\NeoFPS\Core\Utilities\Waitable.cs
+Assets\NeoFPS\Core\Weapons\Explosions\ExplosiveObject.cs
+Assets\NeoFPS\Core\Weapons\Explosions\PooledExplosion.cs
+Assets\NeoFPS\Core\Weapons\Explosions\PooledExplosionSpawner.cs
+Assets\NeoFPS\Core\Weapons\Explosions\TimedExplosive.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\AnimatedMeleeSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\BaseMeleeWeapon.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\Editor\MeleeWeaponEditor.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\IMeleeHitExtension.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\IMeleeWeapon.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\MeleeWeapon.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\MeleeWieldableStanceManager.cs
+Assets\NeoFPS\Core\Weapons\MeleeWeapons\ProceduralMeleeSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\00_IAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\01_BaseAimerBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\AnimOnlyAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\CameraConstraintsAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\AnimOnlyAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\BaseAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\CameraConstraintsAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\HeadMoveAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\InstantScopedAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\OffsetBaseAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\ScopedAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\Editor\WeaponMoveAimerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\HeadMoveAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\InstantScopedAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\OffsetBaseAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\ScopedAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Aimers\WeaponMoveAimer.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ammo\00_IAmmo.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ammo\01_BaseAmmoBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ammo\CustomAmmo.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ammo\InfiniteAmmo.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ammo\RechargingAmmo.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ammo\SharedAmmoType.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ammo\SharedPoolAmmo.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\00_IAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\01_BaseAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\AdvancedBulletAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\BulletAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\Editor\AdvancedBulletAmmoEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\Editor\ProjectileRicochetAmmoEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\Editor\SurfaceBulletPhysicsInfoEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\ParticleAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\ParticleImpactEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\PenetratingHitscanAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\PenetratingProjectileAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\PooledExplosionAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\RicochetHitscanAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\RicochetProjectileAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\SurfaceBulletPhysicsAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\SurfaceBulletPhysicsInfo.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\AmmoEffects\TargetTrackingAmmoEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Editor\ModularFirearmEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Editor\ModularFirearmModeSwitcherEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\00_IBulletCasing.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\00_IEjector.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\01_BaseEjectorBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\Editor\MultiObjectSwapEjectorEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\Editor\ObjectSwapEjectorEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\Editor\ParticleSystemShellEjectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\Editor\ParticleToRigibodyShellEjectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\Editor\StandardShellEjectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\MultiObjectSwapEjector.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\ObjectSwapEjector.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\ParticleSystemShellEject.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\ParticleToRigibodyShellEject.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\PhysicsBulletCasing.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Ejectors\StandardShellEject.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\FirearmAnimEventsHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\FirearmModuleActivationMode.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\IModularFirearm.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\IModularFirearmModeSwitcher.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\ModularAssaultRifle.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\ModularFirearm.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\ModularFirearmAmmoPickup.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\ModularFirearmDrop.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\ModularFirearmModeSwitcher.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\00_IMuzzleEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\01_BaseMuzzleEffectBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\AdvancedParticleMuzzleEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\AudioOnlyMuzzleEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\BasicGameObjectMuzzleEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\Editor\AdvancedParticleMuzzleEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\Editor\AudioOnlyMuzzleEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\Editor\BaseMuzzleEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\Editor\BasicGameObjectMuzzleEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\Editor\RandomObjectMuzzleEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\Editor\SimpleParticleMuzzleEffectEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\RandomObjectMuzzleEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\MuzzleEffect\SimpleParticleMuzzleEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\00_IRecoilHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\01_BaseRecoilHandlerBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\AccuracyOnlyRecoilHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\BetterSpringRecoilHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\CharacterRecoilEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\Editor\BaseRecoilHandlerBehaviourEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\Editor\BetterSpringRecoilHandlerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\FirearmRecoilEffect.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Recoil\SpringRecoilHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\00_IReloader.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\01_BaseReloaderBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\ChamberedReloader.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\CustomRevolverReloader.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\Editor\BaseReloaderEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\Editor\ChamberedReloaderEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\Editor\CustomRevolverReloaderEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\Editor\IncrementalReloaderEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\Editor\ReloaderCountdownEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\Editor\SimpleReloaderEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\IncrementalReloader.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\PassthroughReloader.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\ReloaderCountdown.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Reloaders\SimpleReloader.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\00_IShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\00_IShooterCameraAim.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\01_BaseShooterBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\02_IPooledHitscanTrail.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\02_IProjectile.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\BallisticProjectile.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\BallisticProjectileWithParticles.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\BallisticProjectileWithSimpleDrag.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\BallisticShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\BaseBallisticProjectile.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\Editor\PatternBallisticShooterEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\Editor\PatternHitscanShooterEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\Editor\PatternShooterEditorBase.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\Editor\ShooterPatternEditorWindow.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\DrunkMissileMotor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\Editor\GuidedBallisticProjectileEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\GuidedBallisticProjectile.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\IGuidedProjectileMotor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\IGuidedProjectileTargetTracker.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\ITargetLock.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\ITargetTracker.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\ITargetingSystem.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\LaserTargetingSystem.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\NearestObjectWithTagTracker.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\PlayerTracker.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\RaycastTargetingSystem.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\SimpleSteeringMotor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\GuidedProjectiles\TargetingSystemTracker.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\HitscanShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\LineAndParticleHitscanTrail.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\LineRendererHitscanTrail.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\NoisyLineHitscanTrail.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\ParticleSystemHitscanTrail.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\PatternBallisticShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\PatternHitscanShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\SimpleBallisticShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\SpreadBallisticShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\SpreadHitscanShooter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Shooters\StickyBallisticProjectile.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\00_ITrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\01_BaseTriggerBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\AutomaticTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\BurstFireTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\ChargedTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\ContinuousTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\Editor\AutomaticTriggerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\Editor\BurstFireTriggerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\Editor\ChargedTriggerEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\MultiTargetLockTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\QueuedTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\SemiAutoTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Triggers\TargetLockTrigger.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\AnimatedFirearmObstacleHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\AnimatedFirearmSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\AttachedAmmoCounter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\BaseFirearmModuleBehaviour.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\Editor\BaseFirearmModuleBehaviourEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\Editor\FirearmOverheatEditor.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\FirearmAimFatigue.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\FirearmEnums.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\FirearmObstacleHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\FirearmOverheat.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\FirearmTransformMatchSetter.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\FirearmWieldableStanceManager.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\HolographicSight.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\IFirearmModule.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\IFirearmModuleValidity.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\IOpticsBrightnessControl.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\IWieldableFlashlight.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\LaserPointerAimerSwitch.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\ProceduralFirearmObstacleHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\ProceduralFirearmSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\RecoilPushback.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\RenderTextureScope.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\WieldableFlashlight.cs
+Assets\NeoFPS\Core\Weapons\ModularFirearm\Utilities\WieldableLaserPointer.cs
+Assets\NeoFPS\Core\Weapons\Shared\AnimatedSprintAnimationHandler.cs
+Assets\NeoFPS\Core\Weapons\Shared\AnimatedWeaponInspect.cs
+Assets\NeoFPS\Core\Weapons\Shared\BaseSprintAnimationHandler.cs
+Assets\NeoFPS\Core\Weapons\Shared\BaseWieldableStanceManager.cs
+Assets\NeoFPS\Core\Weapons\Shared\Editor\AnimatedWeaponInspectEditor.cs
+Assets\NeoFPS\Core\Weapons\Shared\Editor\BaseWieldableStanceManagerEditor.cs
+Assets\NeoFPS\Core\Weapons\Shared\Editor\WieldableTransformUtilities.cs
+Assets\NeoFPS\Core\Weapons\Shared\IPoseHandler.cs
+Assets\NeoFPS\Core\Weapons\Shared\IWieldableAnimationHandler.cs
+Assets\NeoFPS\Core\Weapons\Shared\PoseHandler.cs
+Assets\NeoFPS\Core\Weapons\Shared\PosePriorities.cs
+Assets\NeoFPS\Core\Weapons\Shared\PoseTransitions.cs
+Assets\NeoFPS\Core\Weapons\Shared\ProceduralSprintAnimationHandler.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\AnimatedThrownSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\BaseThrownWeapon.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\Editor\ThrownWeaponEditor.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\IThrownWeapon.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\ProceduralThrownSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\Projectiles\ContactGrenadeThrownProjectile.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\Projectiles\GrenadeThrownProjectile.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\Projectiles\RigidbodyThrownProjectile.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\ThrownWeapon.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\ThrownWeaponProjectile.cs
+Assets\NeoFPS\Core\Weapons\ThrownWeapons\ThrownWieldableStanceManager.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\AnimatedToolSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\BaseWieldableToolModule.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Editor\HealToolActionEditor.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Editor\WieldableToolEditor.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\IWieldableTool.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\IWieldableToolModule.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\InputWieldableTool.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\AddInventoryItemToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\AnimatorBoolToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\AnimatorTriggerToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\BlinkToolModule.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\ChargeToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\ConsumeInventoryItemToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\FlashlightToolModule.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\GrappleToolModule.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\HealToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\PlayAudioToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\ShieldBoosterToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\Modules\UnityEventToolAction.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\ProceduralToolSprintHandler.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\WieldableTool.cs
+Assets\NeoFPS\Core\Weapons\WieldableTools\WieldableToolStanceManager.cs
+Assets\NeoFPS\Samples\Shared\Effects\Scripts\MaterialGlowEffect.cs
+Assets\NeoFPS\Samples\Shared\Effects\Scripts\ShockwaveEffect.cs
+Assets\NeoFPS\Samples\Shared\Scripts\DemoInfoLaptop.cs
+Assets\NeoFPS\Samples\Shared\Scripts\InfoPopupTrigger.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MenuAudio\MenuAudioPlayer.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\00_BaseMenu.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Focusable.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\InGameMenu.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\InGameMenuBackground.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\InGameMenuRootNavControls.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\MainMenu.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\MainMenuRootNavControls.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\MenuNavControls.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\MenuPanel.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\Editor\OptionsMenuInputBindingsEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\OptionsMenuAudio.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\OptionsMenuGameplay.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\OptionsMenuGraphics.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\OptionsMenuInput.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\OptionsMenuInputBindings.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\OptionsMenuPanel.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\Options\OptionsNavControls.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\SinglePlayer\Editor\SpMenuLevelSelectEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\SinglePlayer\SaveBrowserEntry.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\SinglePlayer\SinglePlayerNavControls.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\SinglePlayer\SpLoadFromSave.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\SinglePlayer\SpManualSave.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Menus\SinglePlayer\SpMenuLevelSelect.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputButtonEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputButtonGroupEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputGroupEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputLevelSelectEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputManualSaveEntryEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputMultiChoiceBaseEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputMultiChoiceEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputSaveBrowserEntryEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputSliderEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputToggleEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputWidgetEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\Editor\MultiInputWidgetListEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputButton.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputButtonGroup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputFocusableWidget.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputGroup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputKeyBinding.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputLabel.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputLevelSelect.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputManualSaveEntry.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputMultiChoice.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputMultiChoiceBase.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputSaveBrowserEntry.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputSlider.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputToggle.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputWidget.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputWidgetLayout.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputWidgetList.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\MultiInputWidgets\MultiInputWidgetScrollViewLayout.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\00_BasePopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\ConfirmationPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\CountdownPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\IPrefabPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\InfoPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\PasswordPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\PrefabPopupContainer.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\QuickOptionsPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\SpinnerPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Popups\TextFieldPopup.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Spinners\SimpleSpinner.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\Spinners\UiSpinner.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\UiStyle\Editor\UiStyledButtonEditor.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\UiStyle\UiStyle.cs
+Assets\NeoFPS\Samples\Shared\UserInterface\UiStyle\UiStyledButton.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\DemoFacility\Scripts\DemoFacilityGameMode.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\DemoFacility\Scripts\DemoFacilityTarget.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\DemoFacility\Scripts\DemoFacilityTargetDamageTracker.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\FiringRange\FiringRangeMovingTarget.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\FiringRange\FiringRangeReadout.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\FiringRange\FiringRangeSequencer.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\FiringRange\FiringRangeTarget.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\FirstPersonBody\FirstPersonBodyIntro.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\InteractableDoors\DoorsDemoElevatorReadout.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\JetpacksAndGuidedMissiles\JetpacksMissilesIntro.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\JetpacksAndGuidedMissiles\JetpacksMissilesOutOfBounds.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\JetpacksAndGuidedMissiles\JetpacksMissilesOutOfBoundsHUD.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\MinimalCharacter\MinimalDemoCharacter.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\MultiSceneSaves\Scripts\BallSpawner.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\MultiSceneSaves\Scripts\ChanceBall.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\MultiSceneSaves\Scripts\Editor\SubSceneCollectionEditor.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\MultiSceneSaves\Scripts\TargetDamageTracker.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\MultiSceneSaves\Scripts\TargetHitCounter.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\NeoCharacterController\GravityLoop.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\Parkour\OutOfBoundsRespawn.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\Persistence\ApplyRandomDamage.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\FeatureDemos\Swimming\WaterZoneMover.cs
+Assets\NeoFPS\Samples\SinglePlayer\Scenes\LoadingScreen\LoadingScreen.cs
