@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using NeoSaveGames.Serialization;
 using NeoSaveGames;
+using System.Collections.Generic;
+using NeoFPS.Samples.SinglePlayer;
 
 namespace NeoFPS.Samples.SinglePlayer
 {
@@ -11,7 +13,7 @@ namespace NeoFPS.Samples.SinglePlayer
 	public class FiringRangeSequencer : MonoBehaviour, INeoSerializableComponent
 	{
 		[SerializeField, Range (1.5f, 10f), Tooltip("The pause in between each wave.")]
-		private float m_TimeBetweenWaves = 3f;
+        protected float m_TimeBetweenWaves = 3f;
 
         [SerializeField, Tooltip("The targets for each wave.")]
         protected TargetGroup[] m_Targets = new TargetGroup[0];
@@ -23,30 +25,32 @@ namespace NeoFPS.Samples.SinglePlayer
         private IntEvent m_OnMissesChanged = new IntEvent();
 
 		[SerializeField, Tooltip("The audio source for playing one shot firing range audio clips.")]
-		private AudioSource m_AudioSource = null;
+        protected AudioSource m_AudioSource = null;
 
         [SerializeField, Tooltip("The audio clip to play when the sequence starts.")]
-		private AudioClip m_AudioStart = null;
+        protected AudioClip m_AudioStart = null;
 
         [SerializeField, Tooltip("The audio clip to play when the sequence is cancelled.")]
-		private AudioClip m_AudioCancel = null;
+        protected AudioClip m_AudioCancel = null;
 
         [SerializeField, Tooltip("The audio clip to play when a target is hit.")]
 		private AudioClip m_AudioHit = null;
 
-        private Coroutine m_SequenceCoroutine = null;
-        private int m_Wave = 0;
-        private int m_Spawned = 0;
-        private int m_TargetCount = 0;
-        private float m_Timer = 0f;
-        private float m_ButtonCooldown = 0f;
-        private SequenceState m_State = SequenceState.Stopped;
-        /// <summary>
-        /// //////////////////////////////////////////////////////////////////////////////////
-        /// </summary>
+        protected Coroutine m_SequenceCoroutine = null;
+        protected int m_Wave = 0;
+        protected int m_Spawned = 0;
+        protected int m_TargetCount = 0;
+        protected float m_Timer = 0f;
+        protected float m_ButtonCooldown = 0f;
+        protected SequenceState m_State = SequenceState.Stopped;
+        protected float scorerate = 1;
+
+        [SerializeField]
+        public SequencerServer m_squenceSaver = null;
 
 
-        private enum SequenceState
+
+        protected enum SequenceState
         {
             Stopped,
             WaveStart,
@@ -99,10 +103,10 @@ namespace NeoFPS.Samples.SinglePlayer
 #endif
 
         protected int m_Hits = 0;
-        protected int hits
+        public int hits
 		{
 			get { return m_Hits; }
-			private set
+			protected set
 			{
 				m_Hits = value;
 				m_OnHitsChanged.Invoke(m_Hits);
@@ -113,7 +117,7 @@ namespace NeoFPS.Samples.SinglePlayer
 		public int misses
 		{
 			get { return m_Misses; }
-			private set
+            protected set
 			{
 				m_Misses = value;
 				m_OnMissesChanged.Invoke(m_Misses);
@@ -127,8 +131,9 @@ namespace NeoFPS.Samples.SinglePlayer
             return m_Targets[0].duration;
         }
 
-        public void set_duration(float aaa)
+        public virtual void set_duration(float aaa)
         {
+      
             foreach (var a in m_Targets)
             {
                 a.duration = aaa;
@@ -161,8 +166,7 @@ namespace NeoFPS.Samples.SinglePlayer
 
         protected void Update()
         {
-
-            Debug.Log(m_Targets[0].duration);
+            //Debug.Log(this.gameObject.name + m_Targets[0].duration);
             if (m_ButtonCooldown > 0f)
             {
                 m_ButtonCooldown -= Time.deltaTime;
@@ -219,7 +223,10 @@ namespace NeoFPS.Samples.SinglePlayer
 
 		public void AddHit ()
 		{
-            hits = 25 + hits;
+            scorerate =  1/ m_Targets[0].duration;
+            int i = (int)Math.Ceiling(25*scorerate);
+
+            hits = i + hits;
             m_AudioSource.PlayOneShot(m_AudioHit);
             increaseDuration();
         }
@@ -227,6 +234,7 @@ namespace NeoFPS.Samples.SinglePlayer
         public void AddMiss()
         {
             reduceDuration();
+            scorerate =  1 / m_Targets[0].duration;
         }
 
 		public virtual void OnButtonPush ()
@@ -256,8 +264,8 @@ namespace NeoFPS.Samples.SinglePlayer
                 m_ButtonCooldown = 3f;
             }
         }
-        
-        private IEnumerator WaveStart(float timer)
+
+        protected IEnumerator WaveStart(float timer)
         {
             m_State = SequenceState.WaveStart;
             m_Timer = timer;
@@ -287,7 +295,7 @@ namespace NeoFPS.Samples.SinglePlayer
             m_SequenceCoroutine = StartCoroutine(WavePhase(0f));
         }
 
-        private IEnumerator WavePhase(float timer)
+        protected IEnumerator WavePhase(float timer)
         {
             m_State = SequenceState.WavePhase;
             var group = m_Targets[m_Wave];
@@ -311,8 +319,14 @@ namespace NeoFPS.Samples.SinglePlayer
                     int i = UnityEngine.Random.Range(0, group.targets.Length);
                     if (group.targets[i] != null && group.targets[i].hidden)
                     {
-                        // Trigger
-                        group.targets[i].Popup(group.duration);
+                        if (group.perStep == 2)
+                        {
+                            group.targets[i].Popup(group.duration*2);
+                        }
+                        else
+                        {
+                            group.targets[i].Popup(group.duration);
+                        }
                         ++m_Spawned;
                     }
                     else
@@ -328,6 +342,8 @@ namespace NeoFPS.Samples.SinglePlayer
                     while (index >= group.targets.Length)
                         index -= group.targets.Length;
                     if (group.targets[index] != null)
+                        if (group.perStep == 2)
+                            group.duration = group.duration * 2;
                         group.targets[index].Popup(group.duration);
                     ++m_Spawned;
                 }
@@ -344,7 +360,7 @@ namespace NeoFPS.Samples.SinglePlayer
             }
         }
 
-		private IEnumerator ResetTargets ()
+        protected IEnumerator ResetTargets ()
 		{
             for (int i = 0; i < m_Targets[m_Wave].targets.Length; ++i)
 			{
@@ -356,7 +372,7 @@ namespace NeoFPS.Samples.SinglePlayer
             return WaitForReset(true);
 		}
 
-        private IEnumerator WaitForReset(bool completed)
+        protected IEnumerator WaitForReset(bool completed)
         {
             if (completed)
                 m_State = SequenceState.Reset;
@@ -382,9 +398,12 @@ namespace NeoFPS.Samples.SinglePlayer
                 }
             }
 
-            // Reset the sequence if completed or start next wave
+            // Reset the sequence if completed or start next wave　終わりなら終わり、まだウェーブあるなら次のウェーブにいく部分
             if (completed)
             {
+                ///12/22追加分　durationをサーバーに送る
+                float sentduration = get_duration();
+                m_squenceSaver.getduration(sentduration);
                 m_Wave = 0;
                 m_State = SequenceState.Stopped;
                 m_SequenceCoroutine = null;
