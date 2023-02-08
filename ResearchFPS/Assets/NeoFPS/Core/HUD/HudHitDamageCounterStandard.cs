@@ -20,6 +20,7 @@ namespace NeoAI
         public override void Initialise(Vector3 worldPos, float damage, bool critical)
         {
             m_ValueText.text = ((int)damage).ToString();
+            m_ValueText.text = "Hit";
             if (critical)
                 m_ValueText.color = m_CriticalColour;
             else

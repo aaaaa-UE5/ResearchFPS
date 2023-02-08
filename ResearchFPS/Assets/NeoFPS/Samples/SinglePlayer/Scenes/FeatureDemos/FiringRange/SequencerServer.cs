@@ -8,8 +8,16 @@ using NeoSaveGames;
 
 namespace NeoFPS.Samples.SinglePlayer
 {
-    public class SequencerServer: MonoBehaviour
+    
+    public class SequencerServer: SingletonMonoBehaviour<SequencerServer>
     {
+        public string objectname = null;
+        public int T_one_rate;
+        public int T_two_rate;
+        public int T_three_rate;
+        public int T_four_rate;
+        public int T_five_rate;
+
         [SerializeField]
         private FiringRangeSequencer m_firingRangeSequencer = null;
 

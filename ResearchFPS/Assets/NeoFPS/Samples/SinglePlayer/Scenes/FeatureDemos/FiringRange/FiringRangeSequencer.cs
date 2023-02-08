@@ -45,6 +45,18 @@ namespace NeoFPS.Samples.SinglePlayer
         protected SequenceState m_State = SequenceState.Stopped;
         protected float scorerate = 1;
 
+        public int T_hit_one = 0;
+        public int T_hit_two = 0;
+        public int T_hit_three = 0;
+        public int T_hit_four= 0;
+        public int T_hit_five = 0;
+
+        public int T_one = 0;
+        public int T_two = 0;
+        public int T_three = 0;
+        public int T_four = 0;
+        public int T_five = 0;
+
         [SerializeField]
         public SequencerServer m_squenceSaver = null;
 
@@ -223,6 +235,12 @@ namespace NeoFPS.Samples.SinglePlayer
 
 		public void AddHit ()
 		{
+            var aaa = NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.objectname;
+            if (aaa == "001") T_hit_one += 1;
+            if (aaa == "002") T_hit_two += 1;
+            if (aaa == "003") T_hit_three += 1;
+            if (aaa == "004") T_hit_four += 1;
+            if (aaa == "005") T_hit_five += 1;
             scorerate =  1/ m_Targets[0].duration;
             int i = (int)Math.Ceiling(25*scorerate);
 
@@ -257,6 +275,7 @@ namespace NeoFPS.Samples.SinglePlayer
                     m_Wave = 0;
                     hits = 0;
                     misses = 0;
+                    set_duration(2.0f);
                     m_SequenceCoroutine = StartCoroutine(WaveStart(m_TimeBetweenWaves));
                     m_AudioSource.PlayOneShot(m_AudioStart, 0.25f);
                 }
@@ -295,7 +314,7 @@ namespace NeoFPS.Samples.SinglePlayer
             m_SequenceCoroutine = StartCoroutine(WavePhase(0f));
         }
 
-        protected IEnumerator WavePhase(float timer)
+        protected virtual IEnumerator WavePhase(float timer)
         {
             m_State = SequenceState.WavePhase;
             var group = m_Targets[m_Wave];
@@ -319,13 +338,24 @@ namespace NeoFPS.Samples.SinglePlayer
                     int i = UnityEngine.Random.Range(0, group.targets.Length);
                     if (group.targets[i] != null && group.targets[i].hidden)
                     {
+                        //登場するターゲット分duration時間を増やす
                         if (group.perStep == 2)
                         {
                             group.targets[i].Popup(group.duration*2);
+                            if (i == 0) T_one += 1;
+                            if (i == 1) T_two += 1;
+                            if (i == 2) T_three += 1;
+                            if (i == 3) T_four += 1;
+                            if (i == 4) T_five += 1;
                         }
                         else
                         {
                             group.targets[i].Popup(group.duration);
+                            if (i == 0) T_one += 1;
+                            if (i == 1) T_two += 1;
+                            if (i == 2) T_three += 1;
+                            if (i == 3) T_four += 1;
+                            if (i == 4) T_five += 1;
                         }
                         ++m_Spawned;
                     }
@@ -401,12 +431,26 @@ namespace NeoFPS.Samples.SinglePlayer
             // Reset the sequence if completed or start next wave　終わりなら終わり、まだウェーブあるなら次のウェーブにいく部分
             if (completed)
             {
-                ///12/22追加分　durationをサーバーに送る
+                ///テスト内容が終わった後、durationをサーバーに送る
                 float sentduration = get_duration();
-                m_squenceSaver.getduration(sentduration);
+                
+
+                try
+                {
+                    m_squenceSaver.getduration(sentduration);
+                }
+                catch
+                {
+                }
                 m_Wave = 0;
                 m_State = SequenceState.Stopped;
                 m_SequenceCoroutine = null;
+                //それぞれの的の命中率
+                if (T_one != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate = T_hit_one - T_one;
+                if (T_two != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate = T_hit_two - T_two;
+                if (T_three != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate = T_hit_three - T_three;
+                if (T_four != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate = T_hit_four - T_four;
+                if (T_five != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate = T_hit_five - T_five;
             }
             else
             {
