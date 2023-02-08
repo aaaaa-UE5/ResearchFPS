@@ -16,7 +16,7 @@ namespace NeoFPS
         private float m_MaxAccuracySize = 64f;
 
         [SerializeField, Tooltip("The size the UI element will reach at 0% accuracy.")]
-        private float m_MinAccuracySize = 256f;
+        private float m_MinAccuracySize = 64f;
 
         [Header("Hit Marker")]
 
@@ -73,6 +73,7 @@ namespace NeoFPS
                             m_HitMarkerRect.gameObject.SetActive(false);
                         else
                         {
+                            
                             switch (m_Animation)
                             {
                                 case HitMarkerAnimation.Lerp:
@@ -94,6 +95,7 @@ namespace NeoFPS
                                     SetHitMarkerSizeNormalized(EasingFunctions.EaseInBounce(m_HitMarkerLerp));
                                     break;
                             }
+                            
                         }
                     }
                 }

@@ -27,9 +27,25 @@ namespace NeoFPS.Samples.SinglePlayer
         private Coroutine m_ReturnCoroutine = null;
         private float m_MoveLerp = 0f;
 
+
+        /// <summary>
+        /// ///////////////////////////////////////////////////////////////////////////
+        IEnumerator StopMove(float duration)
+        {
+            Vector3 myTransform = this.transform.position;
+
+            yield return null;
+        }
+         
+        /// </summary>
+        private void Update()
+        {
+            
+        }
+
         public override bool hidden
         {
-            get { return base.hidden && m_MovementCoroutine == null && m_ReturnCoroutine == null; }
+            get { return base.hidden ; }
         }
 
         public override void Initialise (FiringRangeSequencer sequencer)
@@ -37,15 +53,26 @@ namespace NeoFPS.Samples.SinglePlayer
 			m_PositionTransform = transform.parent;
 			m_StartPosition = m_PositionTransform.localPosition;
 			m_EndPosition = m_StartPosition + m_MoveOffset;
+            m_MovementCoroutine = StartCoroutine(MoveCoroutine(0f));
+            float mm_MoveDuration = m_MoveDuration;
 
-			base.Initialise (sequencer);
+            base.Initialise (sequencer);
 		}
 		
 		public override void Popup (float duration)
 		{
 			base.Popup (duration);
-			if (m_MovementCoroutine != null)
-				StopCoroutine (m_MovementCoroutine);
+            int moveORstop = Random.Range(1, 3);
+
+            if (m_MovementCoroutine != null)
+                if (moveORstop != 1)
+                {
+                    //Debug.Log("StopMove");
+                    //StopCoroutine(m_MovementCoroutine);
+                    StartCoroutine(StopMove(duration));
+                }
+
+
             if (m_ReturnCoroutine != null)
                 StopCoroutine(m_ReturnCoroutine);
             //m_MovementCoroutine = StartCoroutine (MoveCoroutine (0f));
@@ -56,18 +83,20 @@ namespace NeoFPS.Samples.SinglePlayer
 			base.ResetTarget();
             if (m_ReturnCoroutine != null)
                 StopCoroutine(m_ReturnCoroutine);
+            m_MovementCoroutine = StartCoroutine(MoveCoroutine(0f));
             if (m_MovementCoroutine != null)
 			{
 				StopCoroutine (m_MovementCoroutine);
                 m_MovementCoroutine = null;
                 m_ReturnCoroutine = StartCoroutine (ReturnCoroutine(0f));
 			}
-		}
+            //m_MovementCoroutine = StartCoroutine(MoveCoroutine(0f));
+        }
 
         protected override void StartRaisedSequence()
         {
             base.StartRaisedSequence();
-            m_MovementCoroutine = StartCoroutine(MoveCoroutine(0f));
+            //m_MovementCoroutine = StartCoroutine(MoveCoroutine(0f));
         }
 
         protected override void StartResetSequence()
@@ -75,14 +104,16 @@ namespace NeoFPS.Samples.SinglePlayer
             base.StartResetSequence();
             if (m_MovementCoroutine != null)
             {
-                StopCoroutine(m_MovementCoroutine);
-                m_MovementCoroutine = null;
+                //ここいじるとおかしくなる
+                //StopCoroutine(m_MovementCoroutine);
+                //m_MovementCoroutine = StartCoroutine(MoveCoroutine(0f));
             }
         }
 
         IEnumerator MoveCoroutine (float start)
 		{
             m_MoveProgress = start;
+            //止める処理
 			float inverseDuration = 1f / m_MoveDuration;
 
             yield return null;
@@ -91,7 +122,7 @@ namespace NeoFPS.Samples.SinglePlayer
 				yield return null;
                 m_MoveProgress += Time.deltaTime * inverseDuration;
 				m_PositionTransform.localPosition = Vector3.Lerp (m_StartPosition, m_EndPosition, Mathf.PingPong (m_MoveProgress, 1f));
-			}
+            }
         }
 
 		IEnumerator ReturnCoroutine (float lerp)

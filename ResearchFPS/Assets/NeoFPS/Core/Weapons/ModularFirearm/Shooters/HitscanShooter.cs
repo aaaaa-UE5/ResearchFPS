@@ -135,7 +135,11 @@ namespace NeoFPS.ModularFirearms
             Vector3 hitPoint;
             bool didHit = PhysicsExtensions.RaycastNonAllocSingle(ray, out m_Hit, m_MaxDistance, m_Layers, ignoreRoot, queryTriggers);
             if (didHit)
+            {
+                //何かがレイに当たったときの処理
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.objectname = m_Hit.collider.gameObject.name;
                 hitPoint = m_Hit.point;
+            }
             else
                 hitPoint = startPosition + (rayDirection * m_MaxDistance);
 
