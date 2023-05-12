@@ -17,6 +17,17 @@ namespace NeoFPS.ModularFirearms
         [SerializeField, Tooltip("The delay time between firing and ejecting a shell if the delay type is set to elapsed time.")]
         private float m_Delay = 0f;
 
+        [Header("Audio")]
+
+        [SerializeField, Tooltip("The audio clips to play for an empty shell hitting the ground.")]
+        private AudioClip[] m_ImpactClips = new AudioClip[0];
+
+        [SerializeField, Tooltip("The time between a shell ejecting, and an impact audio clip being played.")]
+        private float m_AudioDelay = 0.5f;
+
+        [SerializeField, Range(0f, 1f), Tooltip("The volume to play the empty shell impact audio.")]
+        private float m_ImpactVolume = 1f;
+
         public override bool ejectOnFire { get { return m_DelayType != FirearmDelayType.ExternalTrigger; } }
 
 #if UNITY_EDITOR
@@ -82,6 +93,15 @@ namespace NeoFPS.ModularFirearms
                     yield return null;
                     DoEject();
                     break;
+            }
+
+            if (m_ImpactClips.Length > 0)
+            {
+                yield return new WaitForSeconds(m_AudioDelay);
+
+                var clip = m_ImpactClips[Random.Range(0, m_ImpactClips.Length)];
+                if (clip != null)
+                    firearm.PlaySound(clip, m_ImpactVolume);
             }
         }
     }

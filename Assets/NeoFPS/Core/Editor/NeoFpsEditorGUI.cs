@@ -10,6 +10,7 @@ using NeoFPS;
 using NeoFPS.CharacterMotion;
 using NeoFPS.CharacterMotion.Parameters;
 using NeoFPS.CharacterMotion.MotionData;
+using UnityEngine.SceneManagement;
 
 #if UNITY_2021_2_OR_NEWER
 using UnityEditor.SceneManagement;
@@ -378,7 +379,8 @@ namespace NeoFPSEditor
         {
             // Get default formatted if required
             if (formatter == null)
-                formatter = t => {
+                formatter = t =>
+                {
                     if (t != null)
                         return t.name;
                     else
@@ -769,7 +771,11 @@ namespace NeoFPSEditor
                     if (isReferenceStaged && !isInspectingStaged)
                     {
                         // Get the component in the prefab stage that matches the one the user is inspecting
+#if UNITY_2021_2_OR_NEWER
+                        var corresponding = PrefabUtility.GetCorrespondingObjectFromSourceAtPath(inspecting, stage.assetPath);
+#else
                         var corresponding = PrefabUtility.GetCorrespondingObjectFromSourceAtPath(inspecting, stage.prefabAssetPath);
+#endif
                         if (corresponding != null)
                         {
                             // Get the root of the staged prefab
@@ -787,7 +793,7 @@ namespace NeoFPSEditor
                                 referenceGameObject = dropped as GameObject;
                                 if (referenceGameObject == null)
                                     referenceGameObject = (dropped as Component).gameObject;
-                                
+
                                 Debug.Log("Correcting for prefab-stage. Be aware that the prefab open for editing is not the same object as the prefab in the project browser.");
                                 prop.objectReferenceValue = dropped;
                             }
@@ -1058,7 +1064,7 @@ namespace NeoFPSEditor
 
             return false;
         }
-        
+
         public static GameObject PrefabField(SerializedProperty prop, GameObjectFilter filter)
         {
             return PrefabField(new GUIContent(prop.displayName, prop.tooltip), prop, filter);
@@ -1329,7 +1335,7 @@ namespace NeoFPSEditor
             });
         }
 
-        static ReorderableList GetObjectBrowserList (SerializedProperty prop, ReorderableList.ElementCallbackDelegate drawElementCallback)
+        static ReorderableList GetObjectBrowserList(SerializedProperty prop, ReorderableList.ElementCallbackDelegate drawElementCallback)
         {
             var result = new ReorderableList(prop.serializedObject, prop);
             result.drawHeaderCallback = (rect) => { EditorGUI.LabelField(rect, new GUIContent(prop.displayName, prop.tooltip)); };
@@ -2027,7 +2033,7 @@ namespace NeoFPSEditor
 
             return valid;
         }
-        
+
         static bool CheckMotionGraphKey(SerializedProperty prop, MotionGraphContainer motionGraph, bool allowEmpty)
         {
             // Controller
@@ -2331,7 +2337,7 @@ namespace NeoFPSEditor
         {
             return RequiredGameObjectInHierarchyField(prop, root, ObjectHierarchyBrowser.FilterByComponent<T>, allowRoot);
         }
-        
+
         public static bool RequiredGameObjectInHierarchyField(SerializedProperty prop, Transform root, GameObjectFilter filter, bool allowRoot = true)
         {
             if (root == null)
@@ -2464,7 +2470,7 @@ namespace NeoFPSEditor
 
             return valid;
         }
-        
+
         public static bool RequiredPrefabField(SerializedProperty prop)
         {
             return RequiredPrefabField(prop, null);
@@ -2474,7 +2480,7 @@ namespace NeoFPSEditor
         {
             return RequiredPrefabField(prop, (o) => { return o != null && PrefabUtility.IsPartOfModelPrefab(o); });
         }
-        
+
         public static bool RequiredPrefabComponentField<T>(SerializedProperty prop) where T : class
         {
             bool valid = prop.objectReferenceValue as T != null;
@@ -2485,7 +2491,7 @@ namespace NeoFPSEditor
 
             return valid;
         }
-        
+
         public static bool RequiredPrefabComponentField<T>(SerializedProperty prop, ComponentFilter<T> filter) where T : class
         {
             // Check filter
@@ -2511,9 +2517,9 @@ namespace NeoFPSEditor
 
             return valid;
         }
-        
+
         #endregion
-        
+
         #region REQUIRED ANIMATOR KEYS
 
         public static bool RequiredAnimatorBoolKeyField(SerializedProperty prop, UnityEditor.Animations.AnimatorController controller)
@@ -2940,6 +2946,50 @@ namespace NeoFPSEditor
 
             message = null;
             return true;
+        }
+
+        #endregion
+
+        #region SCENE STRING
+
+        public static void SceneStringField(Rect rect, SerializedProperty prop, GUIContent label)
+        {
+            SceneAsset scene = null;
+            if (!string.IsNullOrEmpty(prop.stringValue))
+            {
+                var guids = AssetDatabase.FindAssets("t:Scene " + prop.stringValue);
+                if (guids.Length > 0)
+                    scene = AssetDatabase.LoadAssetAtPath<SceneAsset>(AssetDatabase.GUIDToAssetPath(guids[0]));
+            }
+
+            var result = EditorGUI.ObjectField(rect, label, scene, typeof(SceneAsset), false);
+            if (result != scene)
+            {
+                if (result == null)
+                    prop.stringValue = string.Empty;
+                else
+                    prop.stringValue = scene.name;
+            }
+        }
+
+        public static void SceneStringField(Rect rect, SerializedProperty prop)
+        {
+            SceneAsset scene = null;
+            if (!string.IsNullOrEmpty(prop.stringValue))
+            {
+                var guids = AssetDatabase.FindAssets("t:Scene " + prop.stringValue);
+                if (guids.Length > 0)
+                    scene = AssetDatabase.LoadAssetAtPath<SceneAsset>(AssetDatabase.GUIDToAssetPath(guids[0]));
+            }
+
+            var result = EditorGUI.ObjectField(rect, scene, typeof(SceneAsset), false);
+            if (result != scene)
+            {
+                if (result == null)
+                    prop.stringValue = string.Empty;
+                else
+                    prop.stringValue = result.name;
+            }
         }
 
         #endregion

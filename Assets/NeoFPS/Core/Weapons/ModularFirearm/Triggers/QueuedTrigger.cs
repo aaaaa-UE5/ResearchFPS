@@ -94,7 +94,7 @@ namespace NeoFPS.ModularFirearms
             m_Triggered = true;
 
             // Should this use events instead?
-            if (m_TriggerHoldHash != -1)
+            if (m_TriggerHoldHash != -1 && !blocked)
                 firearm.animationHandler.SetBool(m_TriggerHoldHash, true);
 
             // Set queue ticker
@@ -134,6 +134,10 @@ namespace NeoFPS.ModularFirearms
         protected override void OnSetBlocked(bool to)
         {
             base.OnSetBlocked(to);
+
+            if (m_Triggered && m_TriggerHoldHash != -1)
+                firearm.animationHandler.SetBool(m_TriggerHoldHash, !to);
+
             if (to && !m_Shooting)
             {
                 m_Triggered = false;

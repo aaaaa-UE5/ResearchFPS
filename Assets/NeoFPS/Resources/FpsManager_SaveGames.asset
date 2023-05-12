@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7986dab6fd45641b7900ee7017d969, type: 3}
   m_Name: FpsManager_SaveGames
   m_EditorClassIdentifier: 
+  m_Collections: []
   m_Prefabs:
   - {fileID: 114787459747833970, guid: ac8f5b8423c68c34f977bcaf493b441f, type: 3}
   - {fileID: 114179345394012056, guid: 6cc8f6c6d77ce154f8922f69a74b1351, type: 3}

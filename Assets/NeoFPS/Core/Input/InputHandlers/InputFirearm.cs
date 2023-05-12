@@ -21,6 +21,7 @@ namespace NeoFPS
 		private bool m_IsAlive = false;
 		private int m_AimingKeyHash = -1;
 		private ICharacter m_Character = null;
+        private AnimatedWeaponInspect m_Inspect = null;
         private SwitchParameter m_AimProperty = null;
 		private bool m_EnabledFiring = false;
 
@@ -32,6 +33,7 @@ namespace NeoFPS
 		protected override void OnAwake()
 		{
 			m_Firearm = GetComponent<IModularFirearm>();
+            m_Inspect = GetComponentInChildren<AnimatedWeaponInspect>(true);
             m_FirearmBehaviour = m_Firearm as MonoBehaviour;
             m_AimingKeyHash = Animator.StringToHash(m_AimingKey);
 		}
@@ -113,7 +115,11 @@ namespace NeoFPS
             base.OnLoseFocus();
 			m_Firearm.trigger.Release();
 			m_Firearm.aimToggleHold.Hold(false);
-		}
+
+            // Inspect
+            if (m_Inspect != null)
+                m_Inspect.inspecting = false;
+        }
 
         void OnRebindKeys(FpsInputButton button, bool primary, KeyCode to)
         {
@@ -176,6 +182,10 @@ namespace NeoFPS
                 if (optics != null)
                     optics.DecrementBrightness();
             }
+
+            // Inspect
+            if (m_Inspect != null)
+				m_Inspect.inspecting = GetButton(FpsInputButton.Inspect);
 
 			m_EnabledFiring = false;
 

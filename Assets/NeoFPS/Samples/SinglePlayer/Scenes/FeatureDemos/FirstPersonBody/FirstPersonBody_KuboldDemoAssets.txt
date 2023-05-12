@@ -19,3 +19,9 @@ The package contains 4 items:
 - The CharacterAnimator is an example animator controller that uses a combination of animation clips from the movement and rifle animset pro assets, as well as some NeoFPS animations.
 - The FullBodyCharacter is a character prefab with the arms built into the character instead of the weapons. It has a follow cam built in that shows an external view of the character in the top right of the screen so that you can see how it looks.
 - The NoArmsCharacter is a character with torso and legs that you can see when you look down. This requires weapons with animated arms built in.
+
+CHANGES
+- v2
+  - Added animator override controller to override stub animations with kubolds
+- v3
+  - Fixed interrupt sources on crouch slide, walk and sprint to prevent the transition from sprint to walk from locking out of crouch slide

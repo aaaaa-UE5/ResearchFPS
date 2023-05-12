@@ -416,6 +416,8 @@ namespace NeoFPS.CharacterMotion
         private bool m_InitialisedGraph = false;
         private bool m_Initialised = false;
 
+        private static List<SkinnedMeshRenderer> s_SkinnedMeshes = new List<SkinnedMeshRenderer>();
+
         protected virtual void Awake()
         {
             localTransform = transform;
@@ -438,6 +440,13 @@ namespace NeoFPS.CharacterMotion
                 rootMotionPositionMultiplier = 1f;
                 rootMotionRotationMultiplier = 1f;
                 rootMotionDamping = 0.25f;
+
+                // Set animator and skinned meshes to always update to prevent culling issues when looking up
+                m_BodyAnimator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+                m_BodyAnimator.GetComponentsInChildren(true, s_SkinnedMeshes);
+                for (int i = 0; i < s_SkinnedMeshes.Count; ++i)
+                    s_SkinnedMeshes[i].updateWhenOffscreen = true;
+                s_SkinnedMeshes.Clear();
             }
 
             InitialiseGraph();

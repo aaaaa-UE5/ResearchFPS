@@ -135,7 +135,11 @@ namespace NeoFPS.ModularFirearms
             Vector3 hitPoint;
             bool didHit = PhysicsExtensions.RaycastNonAllocSingle(ray, out m_Hit, m_MaxDistance, m_Layers, ignoreRoot, queryTriggers);
             if (didHit)
+            {
+                //何かがレイに当たったときの処理
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.objectname = m_Hit.collider.gameObject.name;
                 hitPoint = m_Hit.point;
+            }
             else
                 hitPoint = startPosition + (rayDirection * m_MaxDistance);
 
@@ -147,7 +151,6 @@ namespace NeoFPS.ModularFirearms
                 ray = new Ray(muzzlePosition, newRayDirection);
                 if (PhysicsExtensions.RaycastNonAllocSingle(ray, out m_Hit, m_MaxDistance, m_Layers, ignoreRoot, queryTriggers))
                 {
-                    Debug.Log(m_Hit.transform.gameObject.name);
                     hitPoint = m_Hit.point;
                     effect.Hit(m_Hit, newRayDirection, m_Hit.distance, float.PositiveInfinity, firearm as IDamageSource);
                 }
@@ -155,11 +158,7 @@ namespace NeoFPS.ModularFirearms
             else
             {
                 if (didHit)
-                {
-                    Debug.Log(m_Hit.transform.gameObject.name);
                     effect.Hit(m_Hit, ray.direction, m_Hit.distance, float.PositiveInfinity, firearm as IDamageSource);
-                }
-
             }
 
             // Draw the tracer line out to max distance

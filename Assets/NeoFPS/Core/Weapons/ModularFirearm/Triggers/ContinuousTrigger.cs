@@ -51,8 +51,10 @@ namespace NeoFPS.ModularFirearms
                 firearm.animationHandler.SetBool(m_TriggerHoldHash, false);
         }
 
-        protected void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
+
             StopShootingInternal();
             m_Triggered = false;
 

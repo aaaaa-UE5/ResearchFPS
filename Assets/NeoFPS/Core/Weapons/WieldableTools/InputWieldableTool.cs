@@ -11,7 +11,8 @@ namespace NeoFPS
 	public class InputWieldableTool : FpsInput
 	{
 		private IWieldableTool m_Consumable = null;
-		private bool m_IsPlayer = false;
+        private AnimatedWeaponInspect m_Inspect = null;
+        private bool m_IsPlayer = false;
 		private bool m_IsAlive = false;
 
 		public override FpsInputContext inputContext
@@ -22,7 +23,8 @@ namespace NeoFPS
 		protected override void OnAwake()
 		{
 			m_Consumable = GetComponent<IWieldableTool>();
-		}
+            m_Inspect = GetComponentInChildren<AnimatedWeaponInspect>(true);
+        }
 
 		protected override void OnEnable()
 		{
@@ -70,7 +72,11 @@ namespace NeoFPS
 		protected override void OnLoseFocus()
 		{
 			m_Consumable.PrimaryRelease();
-		}
+
+            // Inspect
+            if (m_Inspect != null)
+                m_Inspect.inspecting = false;
+        }
 
 		protected override void UpdateInput()
 		{
@@ -97,6 +103,15 @@ namespace NeoFPS
 				if (flashlight != null)
 					flashlight.Toggle();
 			}
-		}
+
+            // Inspect
+            if (m_Inspect != null)
+            {
+                if (GetButtonDown(FpsInputButton.Inspect))
+                    m_Inspect.inspecting = true;
+                if (GetButtonDown(FpsInputButton.Inspect))
+                    m_Inspect.inspecting = false;
+            }
+        }
 	}
 }

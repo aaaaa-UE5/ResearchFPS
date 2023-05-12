@@ -8,7 +8,7 @@ using UnityEngine.Events;
 namespace NeoFPS.WieldableTools
 {
     [ExecuteAlways]
-    public class WieldableTool : BaseWieldableItem, IWieldableTool
+    public class WieldableTool : BaseWieldableItem, IWieldableTool, ICrosshairDriver
     {
         [SerializeField, Tooltip("Does tapping the primary fire button have the effect of holding it until interrupted (useful for timed sequences)")]
         private bool m_PrimaryAutoHold = false;
@@ -213,7 +213,7 @@ namespace NeoFPS.WieldableTools
             // Set new state if currently valid
             if (primaryState == InputState.None && secondaryState == InputState.None)
             {
-                if (!CheckModulesBlocked(m_PrimaryModules))
+                if (!isBlocked && !CheckModulesBlocked(m_PrimaryModules))
                     primaryState = InputState.Down;
             }
         }
@@ -240,7 +240,7 @@ namespace NeoFPS.WieldableTools
             // Set new state if currently valid
             if (primaryState == InputState.None && secondaryState == InputState.None)
             {
-                if (!CheckModulesBlocked(m_SecondaryModules))
+                if (!isBlocked && !CheckModulesBlocked(m_SecondaryModules))
                     secondaryState = InputState.Down;
             }
         }
@@ -284,6 +284,14 @@ namespace NeoFPS.WieldableTools
             }
 
             m_Interrupted = true;
+        }
+
+        protected override void OnIsBlockedChanged(bool blocked)
+        {
+            base.OnIsBlockedChanged(blocked);
+
+            if (blocked)
+                Interrupt();
         }
 
         protected void FixedUpdate()

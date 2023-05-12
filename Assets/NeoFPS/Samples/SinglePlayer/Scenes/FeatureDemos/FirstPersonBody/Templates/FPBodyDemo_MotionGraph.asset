@@ -5845,6 +5845,7 @@ MonoBehaviour:
   expanded: 1
   m_ForwardParamName: forward
   m_StrafeParamName: strafe
+  m_DampingTime: 0.2
 --- !u!114 &3998752454015092600
 MonoBehaviour:
   m_ObjectHideFlags: 1

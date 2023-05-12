@@ -47,6 +47,8 @@ namespace NeoFPS
 
         private bool m_Initialised = false;
 
+        protected bool loadedFromSaveData { get; private set; }
+
         protected virtual void Awake()
         {
             localTransform = transform;
@@ -74,12 +76,11 @@ namespace NeoFPS
             m_Initialised = true;
         }
 
-        protected void FixedUpdate ()
+        protected void FixedUpdate()
         {
             if (!m_Initialised)
                 Initialise();
 
-            // Update previous transform properties
             previousPosition = fixedPosition;
             previousRotation = fixedRotation;
 
@@ -143,6 +144,7 @@ namespace NeoFPS
             }
 
             m_Initialised = true;
+            loadedFromSaveData = true;
         }
     }
 }

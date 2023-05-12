@@ -11,6 +11,7 @@ namespace NeoFPS
 	{
 		private IMeleeWeapon m_MeleeWeapon = null;
         private ICharacter m_Character = null;
+        private AnimatedWeaponInspect m_Inspect = null;
         private bool m_IsPlayer = false;
 		private bool m_IsAlive = false;
 
@@ -22,7 +23,8 @@ namespace NeoFPS
         protected override void OnAwake()
         {
             m_MeleeWeapon = GetComponent<IMeleeWeapon>();
-		}
+            m_Inspect = GetComponentInChildren<AnimatedWeaponInspect>(true);
+        }
 
         protected override void OnEnable()
         {
@@ -77,7 +79,11 @@ namespace NeoFPS
 		{
 			m_MeleeWeapon.PrimaryRelease();
 			m_MeleeWeapon.SecondaryRelease();
-		}
+
+            // Inspect
+            if (m_Inspect != null)
+                m_Inspect.inspecting = false;
+        }
 
         protected override void UpdateInput()
         {
@@ -90,6 +96,10 @@ namespace NeoFPS
 				m_MeleeWeapon.SecondaryPress();
 			if (GetButtonUp(FpsInputButton.SecondaryFire))
 				m_MeleeWeapon.SecondaryRelease();
+
+			// Inspect
+			if (m_Inspect != null)
+				m_Inspect.inspecting = GetButton(FpsInputButton.Inspect);
 		}
 	}
 }

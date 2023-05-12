@@ -14113,7 +14113,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114118876922371910}
   m_HandleRect: {fileID: 224167171626400546}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -19821,51 +19821,57 @@ MonoBehaviour:
   - displayName: Parkour
     loadName: FeatureDemo_Parkour
     description: This level demonstrates the range of parkour movement styles achievable
-      with the NeoFPS motion graph system
+      with the NeoFPS motion graph system.
     screenshot: {fileID: 21300000, guid: 4f77a788baef9f24881554920a7e6640, type: 3}
   - displayName: Jetpacks & Guided Missiles
     loadName: FeatureDemo_JetpacksGuidedMissiles
     description: This scenes uses the jetpack states to recreate a Tribes style movement
-      setup, and adds some guided missiles on top
+      setup, and adds some guided missiles on top.
     screenshot: {fileID: 21300000, guid: a8f48d4a75b9f6c41a85fcf9bf314808, type: 3}
   - displayName: Firing Range
     loadName: FeatureDemo_FiringRange
-    description: This level demonstrates modular firearms
+    description: This level demonstrates modular firearms.
     screenshot: {fileID: 21300000, guid: af2c07ec05aa29141a68586f9716e40e, type: 3}
   - displayName: NeoCharacterController
     loadName: FeatureDemo_NeoCharacterController
     description: This level demonstrates some of the capabilities of the NeoCharacterController
       which the NeoFPS character is built upon.
     screenshot: {fileID: 21300000, guid: b3fadb23f71a80a449e39d8f930c60ef, type: 3}
+  - displayName: Multi-Scene Saves
+    loadName: FeatureDemo_MultiSceneSaves_Main
+    description: This level has been split into multiple sub-scenes that are streamed
+      in and out as you move around. It uses the save game system to persist their
+      contents.
+    screenshot: {fileID: 21300000, guid: 685a66d8f061b244d99d60c5f43d8ceb, type: 3}
   - displayName: Doors
     loadName: FeatureDemo_InteractableDoors
     description: This level demonstrates different door implementations in NeoFPS,
-      including physics based and animated doors
+      including physics based and animated doors.
     screenshot: {fileID: 21300000, guid: eab9e4dd8d963b249a8bbba34b79b4cf, type: 3}
   - displayName: Inventories
     loadName: FeatureDemo_InventoryStandard
     description: This level demonstrates the different types of inventory available
-      in NeoFPS
+      in NeoFPS.
     screenshot: {fileID: 21300000, guid: c165c4188c355004eb6ab765cb76c81a, type: 3}
   - displayName: Moving Platforms
     loadName: FeatureDemo_MovingPlatforms
     description: This level showcases how the FPS character interacts with kinematic
-      objects in a scene
+      objects in a scene.
     screenshot: {fileID: 21300000, guid: 00ac8a412ee86cc44bb60f53f87f87e3, type: 3}
   - displayName: Swimming
     loadName: FeatureDemo_Swimming
     description: This level contains a number of water zones and a character with
-      a motion graph that demonstrates the new NeoFPS states
+      a motion graph that demonstrates the new NeoFPS states.
     screenshot: {fileID: 21300000, guid: 64e6048f0f4834142b067b26369a0d02, type: 3}
   - displayName: Ladders
     loadName: FeatureDemo_Ladders
     description: This level highlights the different ladder types implemented in
-      NeoFPS
+      NeoFPS.
     screenshot: {fileID: 21300000, guid: 2c31fa1b4ff09574189be7e6fb53d90a, type: 3}
   - displayName: Persistence
     loadName: FeatureDemo_Persistence01
     description: NeoFPS now features a full save game system which can also be used
-      to persist data like character health and inventory across multiple scenes
+      to persist data like character health and inventory across multiple scenes.
     screenshot: {fileID: 21300000, guid: e1d090e6b8399864e8e4ddf467eca1d9, type: 3}
   - displayName: First Person Body
     loadName: FeatureDemo_FirstPersonBody

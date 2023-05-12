@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: NeoFpsEditorPrefs
   m_EditorClassIdentifier: 
   m_FirstRun: 0
-  m_ShowHubOnStart: 1
+  m_ShowHubOnStart: 0
   m_CurrentLayerSettingsVersion: 2
   m_CurrentPhysicsSettingsVersion: 6
   m_CurrentInputSettingsVersion: 2
   m_CurrentPlayerSettingsVersion: 1
-  m_CurrentBuildSettingsVersion: 5
-  m_CurrentNeoFPSVersion: 1119
+  m_CurrentBuildSettingsVersion: 6
+  m_CurrentNeoFPSVersion: 1120
   m_CurrentPackageDependenciesVersion: 1

@@ -413,18 +413,20 @@ GameObject:
   - component: {fileID: 114995767799708294}
   - component: {fileID: 114571997771832510}
   - component: {fileID: 114489457803077044}
+  - component: {fileID: 114753867188246222}
   - component: {fileID: 114449550101991696}
   - component: {fileID: 642644444461888715}
   - component: {fileID: 114625414054067056}
   - component: {fileID: 114971878285612538}
+  - component: {fileID: 114540888611795762}
   - component: {fileID: 114215865042357804}
+  - component: {fileID: 2292107750758482168}
   - component: {fileID: 114918541887471148}
   - component: {fileID: 114230360999357680}
   - component: {fileID: 82985466571859670}
   - component: {fileID: 114918840439978162}
   - component: {fileID: 114096902194249426}
-  - component: {fileID: -7505556052374194293}
-  - component: {fileID: 3949216568520046394}
+  - component: {fileID: 7862033070207495258}
   m_Layer: 0
   m_Name: Firearm_AssaultRifle_Quickswitch
   m_TagString: Untagged
@@ -468,7 +470,7 @@ MonoBehaviour:
   m_MoveAccuracyDamping: 0.5
   m_AirAccuracy: 0
   m_RaiseDelayType: 1
-  m_RaiseDuration: 0.5
+  m_RaiseDuration: 0.4
   m_RaiseAnimTrigger: Draw
   m_LowerAnimTrigger: 
   m_DeselectDuration: 0
@@ -491,7 +493,7 @@ MonoBehaviour:
   m_ActivationMode: 0
   m_AimUpAudio: {fileID: 8300000, guid: e900513d446e494419d05fb5bef3f55f, type: 3}
   m_AimDownAudio: {fileID: 8300000, guid: 06f431d6438fef74cb42133b81509829, type: 3}
-  m_HipAccuracyCap: 1
+  m_HipAccuracyCap: 0.85
   m_AimedAccuracyCap: 1
   m_CanAimWhileReloading: 0
   m_OnAimUp:
@@ -505,7 +507,7 @@ MonoBehaviour:
   m_AimRotation: {x: 0, y: 0, z: 0}
   m_FovMultiplier: 0.75
   m_InputMultiplier: 0.75
-  m_AimTime: 0.15
+  m_AimTime: 0.25
   m_PositionSpringMultiplier: 0.25
   m_RotationSpringMultiplier: 0.5
   m_AimAnimBool: 
@@ -580,6 +582,22 @@ MonoBehaviour:
   m_ActivationMode: 0
   m_ShotSpacing: 5
   m_TriggerHoldAnimKey: TriggerHold
+--- !u!114 &114753867188246222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152804995060304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3816b05e892dbb4ea235ebe3055ad3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActive: 0
+  m_ActivationMode: 0
+  m_Cooldown: 5
+  m_RepeatDelay: 50
 --- !u!114 &114449550101991696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +636,8 @@ MonoBehaviour:
     components:
     - {fileID: 114489457803077044}
   - descriptiveName: Semi-Auto
-    components: []
+    components:
+    - {fileID: 114753867188246222}
   - descriptiveName: Burst
     components:
     - {fileID: 114449550101991696}
@@ -682,6 +701,22 @@ MonoBehaviour:
   m_AngularVelocityA: {x: -5, y: -2, z: -2}
   m_AngularVelocityB: {x: 8, y: 2, z: 2}
   m_ShellScale: 1
+--- !u!114 &114540888611795762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152804995060304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1683233fbb68ec94782025dff0e9115e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActive: 1
+  m_ActivationMode: 0
+  m_Effect: {fileID: 114215865042357804}
+  m_AmmoType: {fileID: 11400000, guid: 6bb76e133096f6a4e8a2c63fb876b6eb, type: 2}
 --- !u!114 &114215865042357804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,6 +733,382 @@ MonoBehaviour:
   m_Damage: 25
   m_BulletSize: 1.1
   m_ImpactForce: 20
+--- !u!114 &2292107750758482168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152804995060304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27253696e20afa48b73e073c0bc9f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActive: 1
+  m_ActivationMode: 0
+  m_OnRecoil:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HipAccuracyKick: 0.1
+  m_HipAccuracyRecover: 0.85
+  m_SightedAccuracyKick: 0.05
+  m_SightedAccuracyRecover: 0.75
+  m_HipFireRecoil:
+    expanded: 1
+    recoilAngle: 0.8
+    wander: 0.25
+    horizontalMultiplier: 1
+    verticalDivergence: 0.1
+    horizontalDivergence: 0.5
+    pushBack: 0.015
+    maxPushBack: 0.1
+    jiggle: 0.3
+    duration: 0.35
+    recoilSpringCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 50
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.05
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.7
+        value: -0.05
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.9
+        value: 0.02
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    weaponJiggleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 50
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.05
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.35
+        value: -0.35
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.55
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
+        value: -0.05
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    weaponPushCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.05
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.35
+        value: -0.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.7
+        value: 0.05
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_AimedRecoil:
+    expanded: 1
+    recoilAngle: 0.5
+    wander: 0.2
+    horizontalMultiplier: 1
+    verticalDivergence: 0.5
+    horizontalDivergence: 0.2
+    pushBack: 0.03
+    maxPushBack: 0.1
+    jiggle: 0.1
+    duration: 0.35
+    recoilSpringCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -1.6964313
+        outSlope: -1.6964313
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.875
+      - serializedVersion: 3
+        time: 0.06
+        value: -0.1
+        inSlope: 1.2575747
+        outSlope: 1.2575747
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 0.1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.7
+        value: -0.05
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.9
+        value: 0.02
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    weaponJiggleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 50
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.05
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.35
+        value: -0.35
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.55
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
+        value: -0.05
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    weaponPushCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.05
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.35
+        value: -0.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.7
+        value: 0.05
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &114918541887471148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +1300,7 @@ MonoBehaviour:
   expandNeoComponents: 0
   expandOtherComponents: 1
   prefabGuid: 5586913d6e0ce934da6bed04cc353246
---- !u!114 &-7505556052374194293
+--- !u!114 &7862033070207495258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -898,381 +1309,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1152804995060304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0b08c766ab040428918f2b696173b9, type: 3}
+  m_Script: {fileID: 11500000, guid: c886d12a7ff1c59418ea5d21cee85a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StartActive: 1
-  m_ActivationMode: 0
-  m_PrintableName: 
-  m_FixedSize: 999
-  m_Effect: {fileID: 114215865042357804}
---- !u!114 &3949216568520046394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152804995060304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d27253696e20afa48b73e073c0bc9f7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartActive: 1
-  m_ActivationMode: 0
-  m_OnRecoil:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HipAccuracyKick: 0
-  m_HipAccuracyRecover: 1
-  m_SightedAccuracyKick: 0
-  m_SightedAccuracyRecover: 1
-  m_HipFireRecoil:
-    expanded: 1
-    recoilAngle: 0.5
-    wander: 0.264
-    horizontalMultiplier: 1
-    verticalDivergence: 0
-    horizontalDivergence: -1
-    pushBack: 0.01
-    maxPushBack: 0.5
-    jiggle: 0.496
-    duration: 0.7
-    recoilSpringCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.09980489
-        value: 0.9951266
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.49090672
-        value: 0.39677793
-        inSlope: 0.2498499
-        outSlope: 0.2498499
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.3982484
-      - serializedVersion: 3
-        time: 0.9
-        value: 0.02
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    weaponJiggleCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 50
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.05
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.35
-        value: -0.35
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.55
-        value: 0.25
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.75
-        value: -0.05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    weaponPushCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 50
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.05
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.25
-        value: -0.05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.65
-        value: 0.02
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_AimedRecoil:
-    expanded: 0
-    recoilAngle: 0.5
-    wander: 0.2
-    horizontalMultiplier: 1
-    verticalDivergence: 0.05
-    horizontalDivergence: 0.2
-    pushBack: 0.005
-    maxPushBack: 0.03
-    jiggle: 0.2
-    duration: 0.5
-    recoilSpringCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 50
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.05
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.7
-        value: -0.05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.9
-        value: 0.02
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    weaponJiggleCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 50
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.05
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.35
-        value: -0.35
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.55
-        value: 0.25
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.75
-        value: -0.05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    weaponPushCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 50
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.05
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.25
-        value: -0.05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.65
-        value: 0.02
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
+  m_DamageType: 1
+  m_RandomiseDamage: 1
+  m_MinDamage: 15
+  m_MaxDamage: 25
+  m_FalloffMode: 1
+  m_FalloffSettingLower: 100
+  m_FalloffSettingUpper: 200
+  m_BulletSize: 1
+  m_ImpactForce: 15
 --- !u!1 &1153722077842952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,7 +4166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TargetTransform: {fileID: 4327947864035986}
-  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_PivotOffset: {x: 0.165, y: -0.04, z: 0.15}
   m_UpdateWhen: 1
 --- !u!114 &114973902198387564
 MonoBehaviour:

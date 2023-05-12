@@ -125,7 +125,7 @@ namespace NeoFPS
 
 		public override void PrimaryPress ()
 		{
-			if (!blocking && m_CooldownCoroutine == null)
+			if (!isBlocked && !blocking && m_CooldownCoroutine == null)
 			{
 				animator.SetTrigger (m_AnimHashAttack);
 				m_DoRaycastCoroutine = StartCoroutine (DoRaycast (m_Delay));
@@ -145,7 +145,8 @@ namespace NeoFPS
 
         public override void SecondaryPress()
         {
-            blocking = true;
+            if (!isBlocked)
+                blocking = true;
         }
 
         public override void SecondaryRelease()

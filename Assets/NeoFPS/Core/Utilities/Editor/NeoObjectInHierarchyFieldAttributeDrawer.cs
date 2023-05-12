@@ -217,7 +217,11 @@ namespace NeoFPSEditor
                         if (isReferenceStaged && !isInspectingStaged)
                         {
                             // Get the component in the prefab stage that matches the one the user is inspecting
+#if UNITY_2021_2_OR_NEWER
+                            var corresponding = PrefabUtility.GetCorrespondingObjectFromSourceAtPath(inspecting, stage.assetPath);
+#else
                             var corresponding = PrefabUtility.GetCorrespondingObjectFromSourceAtPath(inspecting, stage.prefabAssetPath);
+#endif
                             if (corresponding != null)
                             {
                                 // Get the root of the staged prefab

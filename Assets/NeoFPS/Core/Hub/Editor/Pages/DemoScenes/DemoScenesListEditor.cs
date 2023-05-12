@@ -17,7 +17,7 @@ namespace NeoFPSEditor.Hub.Pages
             m_List = new ReorderableList(serializedObject, serializedObject.FindProperty("scenes"));
             m_List.drawHeaderCallback = DrawListHeader;
             m_List.drawElementCallback = DrawListElement;
-            m_List.elementHeight = 112;
+            m_List.elementHeight = 140;
         }
 
         void DrawListHeader(Rect rect)

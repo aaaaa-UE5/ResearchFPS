@@ -21,17 +21,13 @@ namespace NeoFPS.Samples.SinglePlayer
 		[SerializeField, Tooltip("The rotation of the target around the specified axis when it is fully hidden.")]
 		private float m_HiddenRotation = 180f;
 
-        [SerializeField, Tooltip("The rotation of the target around the specified axis when it is fully hidden.")]
-        private float m_HiddenTransform = 1f;
-
         private Collider m_Collder = null;
 		private Transform m_RotationTransform = null;
         private FiringRangeSequencer m_Sequencer = null;
         private Coroutine m_SequenceCoroutine = null;
         private float m_Lerp = 0f;
         private float m_Timer = 0f;
-        bool test = false;
-        private bool m_Hit {get { return test; } set{ test = value; } }
+        private bool m_Hit = false;
         private TargetState m_State = TargetState.Idle;
 
         enum TargetState
@@ -71,7 +67,6 @@ namespace NeoFPS.Samples.SinglePlayer
             if (m_PopupDuration < 0.1f)
                 m_PopupDuration = 0.1f;
             m_HiddenRotation = Mathf.Clamp(m_HiddenRotation, -180f, 180f);
-            m_HiddenTransform = Mathf.Clamp(0, -m_HiddenTransform, 0);
         }
 #endif
 
@@ -222,7 +217,6 @@ namespace NeoFPS.Samples.SinglePlayer
         {
             if (damage >= m_DamageThreshold && !hidden && !hit)
             {
-                //Debug.Log("225");
                 m_Hit = true;
                 m_Sequencer.AddHit();
                 ResetTarget();
@@ -247,7 +241,6 @@ namespace NeoFPS.Samples.SinglePlayer
         {
             if (m_SequenceCoroutine != null)
             {
-                
                 writer.WriteValue(k_StateKey, (int)m_State);
                 writer.WriteValue(k_LerpKey, m_Lerp);
                 writer.WriteValue(k_TimerKey, m_Timer);
@@ -263,7 +256,7 @@ namespace NeoFPS.Samples.SinglePlayer
                 m_State = (TargetState)state;
                 reader.TryReadValue(k_LerpKey, out m_Lerp, m_Lerp);
                 reader.TryReadValue(k_TimerKey, out m_Timer, m_Timer);
-                reader.TryReadValue(k_HitKey, out test, m_Hit);
+                reader.TryReadValue(k_HitKey, out m_Hit, m_Hit);
 
                 switch(m_State)
                 {

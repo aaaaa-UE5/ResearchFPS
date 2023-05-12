@@ -34,9 +34,7 @@ namespace NeoFPS
 			if (m_Object == null)
 			{
 				Transform t = animator.transform.Find (m_ObjectPath);
-				if (t == null)
-					Debug.LogError ("Object not found by animator behaviour on object. Path: " + m_ObjectPath, animator.gameObject);
-				else
+				if (t != null)
 					m_Object = t.gameObject;
 			}
 

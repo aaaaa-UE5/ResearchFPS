@@ -232,6 +232,10 @@ namespace NeoFPSEditor.Hub
                 if (GUILayout.Button("Remove"))
                     SerializedArrayUtility.RemoveAt(sectionArray, i);
 
+                // Duplicate
+                if (GUILayout.Button("Duplicate"))
+                    SerializedArrayUtility.Duplicate(sectionArray, i);
+
                 // Move up (if possible)
                 if (i <= 0)
                     GUI.enabled = false;

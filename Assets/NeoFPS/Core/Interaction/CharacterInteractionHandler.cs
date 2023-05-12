@@ -120,8 +120,7 @@ namespace NeoFPS
 				if (highlighted.holdDuration > 0f)
 				{
 					m_DelayedInteractCoroutine = StartCoroutine (DelayedInteract (holdDuration));
-					if (onInteractionStarted != null)
-						onInteractionStarted (m_Character, highlighted, holdDuration);
+					OnInteractStarted(highlighted);
 				}
 				else
 					OnInteractSucceeded (highlighted);
@@ -169,6 +168,12 @@ namespace NeoFPS
 			}
 			else
 				return null;
+		}
+
+		protected virtual void OnInteractStarted(IInteractiveObject interactable)
+		{
+			if (onInteractionStarted != null)
+				onInteractionStarted(m_Character, highlighted, highlighted.holdDuration);
 		}
 
 		protected virtual void OnInteractSucceeded (IInteractiveObject interactable)

@@ -106,7 +106,7 @@ namespace NeoFPS
 
         public void PlayAudio(FpsCharacterAudio id, FpsCharacterAudioSource source)
         {
-            if (m_AudioData == null || m_Timers[id] > Mathf.Epsilon)
+            if (m_AudioData == null || m_Timers == null || m_Timers[id] > Mathf.Epsilon)
                 return;
                 
 			// Get audio data for id

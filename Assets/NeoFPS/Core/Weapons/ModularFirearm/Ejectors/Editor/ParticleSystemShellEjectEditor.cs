@@ -20,6 +20,10 @@ namespace NeoFPSEditor.ModularFirearms
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Delay"));
                 --EditorGUI.indentLevel;
             }
+
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_ImpactClips"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_AudioDelay"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_ImpactVolume"));
         }
     }
 }

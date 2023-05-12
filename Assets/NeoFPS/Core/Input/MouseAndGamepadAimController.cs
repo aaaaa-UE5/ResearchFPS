@@ -23,7 +23,7 @@ namespace NeoFPS
         [SerializeField, Delayed, Tooltip("The smoothing time used in damping the mouse input at minimum smoothing strength.")]
         private float m_MinSmoothingTime = 0.01f;
         [SerializeField, Delayed, Tooltip("The smoothing time used in damping the mouse input at maximum smoothing strength.")]
-        private float m_MaxSmoothingTime = 0.05f;
+        private float m_MaxSmoothingTime = 0.075f;
 
         [Header("Mouse Acceleration")]
 
@@ -149,7 +149,7 @@ namespace NeoFPS
 
         Vector2 GetSmoothedMouseInput(Vector2 input, float strength)
         {
-            m_PreviousAimDelta = Vector2.SmoothDamp(m_PreviousAimDelta, input, ref m_AimDeltaAcceleration, Mathf.Lerp(0.01f, 0.075f, strength));
+            m_PreviousAimDelta = Vector2.SmoothDamp(m_PreviousAimDelta, input, ref m_AimDeltaAcceleration, Mathf.Lerp(m_MinSmoothingTime, m_MaxSmoothingTime, strength));
             return m_PreviousAimDelta;
         }
 

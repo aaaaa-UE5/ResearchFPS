@@ -69,7 +69,7 @@ namespace NeoFPS.ModularFirearms
             m_Triggered = true;
 
             // Should this use events instead?
-            if (m_TriggerHoldHash != -1)
+            if (m_TriggerHoldHash != -1 && !blocked)
                 firearm.animationHandler.SetBool(m_TriggerHoldHash, true);
 
 			// Start the burst
@@ -113,7 +113,10 @@ namespace NeoFPS.ModularFirearms
 				m_Shots = 0;
 				m_Repeat = 0;
 			}
-		}
+
+            if (m_Triggered && m_TriggerHoldHash != -1)
+                firearm.animationHandler.SetBool(m_TriggerHoldHash, !to);
+        }
 
 		protected override void FixedTriggerUpdate ()
 		{

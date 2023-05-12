@@ -51,7 +51,7 @@ namespace NeoFPS.SinglePlayer
                 if (playerComponent != null)
                 {
                     var nsgo = playerComponent.GetComponent<NeoSerializedGameObject>();
-                    if (nsgo.wasRuntimeInstantiated)
+                    if (nsgo != null && nsgo.wasRuntimeInstantiated)
                         m_PersistentObjects[0] = nsgo;
                     else
                         m_PersistentObjects[0] = null;
@@ -99,9 +99,12 @@ namespace NeoFPS.SinglePlayer
             else
             {
                 var spawn = SpawnManager.GetNextSpawnPoint(false);
-                var t = player.currentCharacter.transform;
-                t.position = spawn.spawnTransform.position;
-                t.rotation = spawn.spawnTransform.rotation;
+                if (spawn != null)
+                {
+                    var t = player.currentCharacter.transform;
+                    t.position = spawn.spawnTransform.position;
+                    t.rotation = spawn.spawnTransform.rotation;
+                }
             }
         }
 
@@ -152,7 +155,7 @@ namespace NeoFPS.SinglePlayer
             if (m_PlayerCharacter != null)
             {
                 var nsgo = m_PlayerCharacter.GetComponent<NeoSerializedGameObject>();
-                if (nsgo.wasRuntimeInstantiated)
+                if (nsgo != null && nsgo.wasRuntimeInstantiated)
                     m_PersistentObjects[1] = nsgo;
                 else
                     m_PersistentObjects[1] = null;

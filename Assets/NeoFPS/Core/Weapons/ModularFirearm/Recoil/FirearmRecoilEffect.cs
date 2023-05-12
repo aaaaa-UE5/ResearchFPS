@@ -29,7 +29,7 @@ namespace NeoFPS.ModularFirearms
             get
             {
                 if (m_Lerp < 1f)
-                    return Quaternion.Euler(currentRecoilAngle.x, (float)(currentRecoilAngle.y * 0), currentJiggle);
+                    return Quaternion.Euler(currentRecoilAngle.x, currentRecoilAngle.y, currentJiggle);
                 else
                     return Quaternion.identity;
             }

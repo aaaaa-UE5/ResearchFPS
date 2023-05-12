@@ -158,7 +158,7 @@ namespace NeoFPS.ModularFirearms
             {
                 Vector2 bodyRecoil = recoil;
                 bodyRecoil.x *= 1f - p.horizontalDivergence;
-                bodyRecoil.y *= 2f - p.verticalDivergence;
+                bodyRecoil.y *= 1f - p.verticalDivergence;
                 m_BodyRecoilEffect.AddRecoil(bodyRecoil, p.duration, p.recoilSpringCurve);
             }
 

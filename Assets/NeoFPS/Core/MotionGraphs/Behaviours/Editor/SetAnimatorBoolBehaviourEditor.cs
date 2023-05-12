@@ -22,16 +22,38 @@ namespace NeoFPSEditor.CharacterMotion.Behaviours
             switch (whenProp.enumValueIndex)
             {
                 case 0:
-                    EditorGUILayout.PropertyField(serializedObject.FindProperty("m_OnEnterValue"));
+                    InspectEnterProperties();
                     break;
                 case 1:
-                    EditorGUILayout.PropertyField(serializedObject.FindProperty("m_OnExitValue"));
+                    InspectExitProperties();
                     break;
                 case 2:
-                    EditorGUILayout.PropertyField(serializedObject.FindProperty("m_OnEnterValue"));
-                    EditorGUILayout.PropertyField(serializedObject.FindProperty("m_OnExitValue"));
+                    InspectEnterProperties();
+                    InspectExitProperties();
                     break;
             }
+        }
+
+        void InspectEnterProperties()
+        {
+            var type = serializedObject.FindProperty("m_OnEnterType");
+            EditorGUILayout.PropertyField(type);
+
+            if (type.enumValueIndex == 0)
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("m_OnEnterValue"));
+            else
+                MotionGraphEditorGUI.ParameterDropdownField<SwitchParameter>(owner.container, serializedObject.FindProperty("m_OnEnterParameter"));
+        }
+
+        void InspectExitProperties()
+        {
+            var type = serializedObject.FindProperty("m_OnExitType");
+            EditorGUILayout.PropertyField(type);
+
+            if (type.enumValueIndex == 0)
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("m_OnExitValue"));
+            else
+                MotionGraphEditorGUI.ParameterDropdownField<SwitchParameter>(owner.container, serializedObject.FindProperty("m_OnExitParameter"));
         }
     }
 }

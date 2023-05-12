@@ -81,6 +81,16 @@ namespace NeoFPSEditor
             Move(arrayProp, index, index + offset);
         }
 
+        public static void Duplicate(SerializedProperty arrayProp, int index)
+        {
+            if (arrayProp == null)
+                return;
+            if (index < 0 || index >= arrayProp.arraySize)
+                return;
+
+            arrayProp.InsertArrayElementAtIndex(index);
+        }
+
         public static T GetItemAtIndex<T>(SerializedProperty arrayProp, int index) where T : Object
         {
             if (arrayProp == null)

@@ -246,48 +246,44 @@ namespace NeoFPSEditor.Hub
         {
             m_Toc.Clear();
 
+            int pageIndex = 0;
+
             // Add main pages
             frontPage = new FrontPage();
-            AddPage("Front Page", "front_page", frontPage, 0);
-            AddPage("Unity Settings", "unity_settings", new UnitySettingsPage(), 1);
+            AddPage("Front Page", "front_page", frontPage, pageIndex++);
+            AddPage("Unity Settings", "unity_settings", new UnitySettingsPage(), pageIndex++);
 
-            InitialiseUpgradeNotes();
-            InitialiseQuickStarts();
-            InitialiseDemoScenes();
-            InitialiseGameSettings();
-            InitialiseManagers();
-            InitialiseWizards();
-            InitialiseIntegrations();
-            InitialiseStandaloneTools();
+            pageIndex = InitialiseUpgradeNotes(pageIndex);
+            pageIndex = InitialiseQuickStarts(pageIndex);
+            pageIndex = InitialiseDemoScenes(pageIndex);
+            pageIndex = InitialiseGameSettings(pageIndex);
+            pageIndex = InitialiseManagers(pageIndex);
+            pageIndex = InitialiseWizards(pageIndex);
+            pageIndex = InitialiseIntegrations(pageIndex);
+            pageIndex = InitialiseStandaloneTools(pageIndex);
 
             // Call awake on entries
             for (int i = 0; i < m_Toc.Count; ++i)
                 m_Toc[i].Awake();
         }
 
-        void InitialiseUpgradeNotes()
+        int InitialiseUpgradeNotes(int pageIndex)
         {
             var upgradeNotes = LoadAsset<UpgradeNotesReadme>();
             if (upgradeNotes != null)
-                AddPage("Upgrade Notes", "upgrade_notes", new UpgradeNotesPage(upgradeNotes), 2);
+                AddPage("Upgrade Notes", "upgrade_notes", new UpgradeNotesPage(upgradeNotes), pageIndex++);
+
+            return pageIndex;
         }
 
-        void InitialiseDemoScenes()
-        {
-            AddPage("Demo Scenes", "demo_scenes", new DemoScenesPage(), 4);
-
-            // Add quick starts
-            AddPage("Demo Scenes/Scene Info", "demo_info", new DemoSceneInfoPage(), 0);
-        }
-
-        void InitialiseQuickStarts()
+        int InitialiseQuickStarts(int pageIndex)
         {
             // Add section readme page
             var readme = LoadAsset<HubSectionReadme>("QuickStartReadme");
             if (readme != null)
-                AddPage("Quick Start", "quickstart_index", new ReadmePage(readme), 3);
+                AddPage("Quick Start", "quickstart_index", new ReadmePage(readme), pageIndex++);
             else
-                AddPageGroup("Quick Start", 3);
+                AddPageGroup("Quick Start", pageIndex++);
 
             // Find quickstart assets
             var guids = AssetDatabase.FindAssets("t:NeoFPS.Hub.ReadmeAsset Quickstart*");
@@ -302,16 +298,28 @@ namespace NeoFPSEditor.Hub
                     AddPage(string.Format("Quick Start/{0}/{1}", qs.subFolder, qs.header.title), qs.pageName, new ReadmePage(qs), i);
                 }
             }
+
+            return pageIndex;
         }
 
-        void InitialiseGameSettings ()
+        int InitialiseDemoScenes(int pageIndex)
+        {
+            AddPage("Demo Scenes", "demo_scenes", new DemoScenesPage(), pageIndex++);
+
+            // Add quick starts
+            AddPage("Demo Scenes/Scene Info", "demo_info", new DemoSceneInfoPage(), 0);
+
+            return pageIndex;
+        }
+
+        int InitialiseGameSettings (int pageIndex)
         {
             // Add section readme page
             var readme = LoadAsset<HubSectionReadme>("GameSettingsReadme");
             if (readme != null)
-                AddPage("Game Settings", "game_settings_index", new ReadmePage(readme), 5);
+                AddPage("Game Settings", "game_settings_index", new ReadmePage(readme), pageIndex++);
             else
-                AddPageGroup("Game Settings", 5);
+                AddPageGroup("Game Settings", pageIndex++);
 
             var guids = AssetDatabase.FindAssets("t:NeoFPS.SettingsContextBase");
             for (int i = 0; i < guids.Length; ++i)
@@ -320,88 +328,98 @@ namespace NeoFPSEditor.Hub
                 if (settingsAsset != null)
                     AddPage("Game Settings/" + settingsAsset.tocName, settingsAsset.tocID, new SettingsPage(settingsAsset), i);
             }
+
+            return pageIndex;
         }
 
-        void InitialiseManagers()
+        int InitialiseManagers(int pageIndex)
         {
             // Add section readme page
             var readme = LoadAsset<HubSectionReadme>("ManagersReadme");
             if (readme != null)
-                AddPage("Managers", "managers_index", new ReadmePage(readme), 6);
+                AddPage("Managers", "managers_index", new ReadmePage(readme), pageIndex++);
             else
-                AddPageGroup("Managers", 6);
+                AddPageGroup("Managers", 7);
 
-            int index = 0;
+            int subPageIndex = 0;
 
             var audioManager = LoadAsset<NeoFpsAudioManager>();
             if (audioManager != null)
-                AddPage("Managers/Audio", "manager_audio", new ManagerPage_Audio(audioManager), index++);
+                AddPage("Managers/Audio", "manager_audio", new ManagerPage_Audio(audioManager), subPageIndex++);
 
             var generatedConstants = LoadAsset<ConstantsSettings>("NeoFPSConstants");
             if (generatedConstants != null)
-                AddPage("Managers/Generated Constants", "manager_generatedconstants", new ManagerPage_GeneratedConstants(generatedConstants), index++);
+                AddPage("Managers/Generated Constants", "manager_generatedconstants", new ManagerPage_GeneratedConstants(generatedConstants), subPageIndex++);
 
             var inputManager = LoadAsset<NeoFpsInputManagerBase>();
             if (inputManager != null)
-                AddPage("Managers/Input", "manager_input", new ManagerPage_Input(inputManager), index++);
+                AddPage("Managers/Input", "manager_input", new ManagerPage_Input(inputManager), subPageIndex++);
 
             var inventoryDatabase = LoadAsset<NeoFpsInventoryDatabase>();
             if (inventoryDatabase != null)
-                AddPage("Managers/Inventory Database", "manager_inventory", new ManagerPage_Inventory(inventoryDatabase), index++);
+                AddPage("Managers/Inventory Database", "manager_inventory", new ManagerPage_Inventory(inventoryDatabase), subPageIndex++);
 
             var poolManager = LoadAsset<PoolManager>();
             if (poolManager != null)
-                AddPage("Managers/Pooling", "manager_pooling", new ManagerPage_Pooling(poolManager), index++);
+                AddPage("Managers/Pooling", "manager_pooling", new ManagerPage_Pooling(poolManager), subPageIndex++);
 
             var saveManager = LoadAsset<SaveGameManager>();
             if (saveManager != null)
-                AddPage("Managers/Save System", "manager_savegames", new ManagerPage_SaveSystem(saveManager), index++);
+                AddPage("Managers/Save System", "manager_savegames", new ManagerPage_SaveSystem(saveManager), subPageIndex++);
 
             var sceneManager = LoadAsset<NeoSceneManager>();
             if (sceneManager != null)
-                AddPage("Managers/Scene Manager", "manager_scenes", new ManagerPage_SceneManager(sceneManager), index++);
+                AddPage("Managers/Scene Manager", "manager_scenes", new ManagerPage_SceneManager(sceneManager), subPageIndex++);
 
             var surfaceManager = LoadAsset<SurfaceManager>();
             if (surfaceManager != null)
-                AddPage("Managers/Surfaces", "manager_surfaces", new ManagerPage_SurfaceManager(surfaceManager), index++);
+                AddPage("Managers/Surfaces", "manager_surfaces", new ManagerPage_SurfaceManager(surfaceManager), subPageIndex++);
+
+            return pageIndex;
         }
 
-        void InitialiseWizards()
+        int InitialiseWizards(int pageIndex)
         {
             // Add section readme page
             var readme = LoadAsset<HubSectionReadme>("WizardsReadme");
             if (readme != null)
-                AddPage("Wizards", "wizards_index", new ReadmePage(readme), 7);
+                AddPage("Wizards", "wizards_index", new ReadmePage(readme), pageIndex++);
             else
-                AddPageGroup("Wizards", 7);
+                AddPageGroup("Wizards", pageIndex++);
 
-            int index = 0;
+            int subPageIndex = 0;
 
-            AddPage("Wizards/Player Character", "wizard_player_character", new NeoFpsWizardPage<PlayerCharacterWizard>("Player Character Wizard", "Create a new player character", WizardTemplateDescriptions.playerCharacterTemplates), index++);
-            AddPage("Wizards/Modular Firearm", "wizard_firearm", new NeoFpsWizardPage<ModularFirearmWizard>("Modular Firearm Wizard", "Create a new firearm", WizardTemplateDescriptions.firearmTemplates), index++);
+            AddPage("Wizards/Player Character", "wizard_player_character", new NeoFpsWizardPage<PlayerCharacterWizard>("Player Character Wizard", "Create a new player character", WizardTemplateDescriptions.playerCharacterTemplates), subPageIndex++);
+            AddPage("Wizards/Modular Firearm", "wizard_firearm", new NeoFpsWizardPage<ModularFirearmWizard>("Modular Firearm Wizard", "Create a new firearm", WizardTemplateDescriptions.firearmTemplates), subPageIndex++);
             //AddPage("Wizards/Firearm Animator", "wizard_firearmanim", new NeoFpsWizardPage<FirearmAnimatorWizard>("Firearm Animator Wizard", "Set up a firearm animator controller", WizardTemplateDescriptions.firearmTemplates), index++);
-            AddPage("Wizards/Melee Weapon", "wizard_melee", new NeoFpsWizardPage<MeleeWeaponWizard>("Melee Weapon Wizard", "Create a new melee weapon", WizardTemplateDescriptions.meleeTemplates), index++);
-            AddPage("Wizards/Thrown Weapon", "wizard_thrown", new NeoFpsWizardPage<ThrownWeaponWizard>("Thrown Weapon Wizard", "Create a new thrown weapon", WizardTemplateDescriptions.thrownTemplates), index++);
-            AddPage("Wizards/Pickup", "wizard_pickup", new NeoFpsWizardPage<PickupWizard>("Pickup Wizard", "Create a new pickup", WizardTemplateDescriptions.pickupTemplates), index++);
-            AddPage("Wizards/Interactive Object", "wizard_interactive", new NeoFpsWizardPage<InteractiveObjectWizard>("Interactive Object Wizard", "Create a new interactive object", WizardTemplateDescriptions.interactiveTemplates), index++);
+            AddPage("Wizards/Melee Weapon", "wizard_melee", new NeoFpsWizardPage<MeleeWeaponWizard>("Melee Weapon Wizard", "Create a new melee weapon", WizardTemplateDescriptions.meleeTemplates), subPageIndex++);
+            AddPage("Wizards/Thrown Weapon", "wizard_thrown", new NeoFpsWizardPage<ThrownWeaponWizard>("Thrown Weapon Wizard", "Create a new thrown weapon", WizardTemplateDescriptions.thrownTemplates), subPageIndex++);
+            AddPage("Wizards/Pickup", "wizard_pickup", new NeoFpsWizardPage<PickupWizard>("Pickup Wizard", "Create a new pickup", WizardTemplateDescriptions.pickupTemplates), subPageIndex++);
+            AddPage("Wizards/Interactive Object", "wizard_interactive", new NeoFpsWizardPage<InteractiveObjectWizard>("Interactive Object Wizard", "Create a new interactive object", WizardTemplateDescriptions.interactiveTemplates), subPageIndex++);
 
             var scriptGenerator = LoadAsset<NeoFpsScriptCreationWizard>();
             if (scriptGenerator != null)
-                AddPage("Wizards/Custom Scripts", "wizard_customscripts", new NeoFpsScriptCreationWizardPage(scriptGenerator), index++);
+                AddPage("Wizards/Custom Scripts", "wizard_customscripts", new NeoFpsScriptCreationWizardPage(scriptGenerator), subPageIndex++);
+
+            return pageIndex;
         }
 
-        void InitialiseIntegrations()
+        int InitialiseIntegrations(int pageIndex)
         {
             var readme = LoadAsset<ReadmeAsset>("IntegrationsReadme");
             if (readme != null)
-                AddPage("Integrations", "integrations", new ReadmePage(readme), 8);
+                AddPage("Integrations", "integrations", new ReadmePage(readme), pageIndex++);
+
+            return pageIndex;
         }
 
-        void InitialiseStandaloneTools()
+        int InitialiseStandaloneTools(int pageIndex)
         {
             var readme = LoadAsset<ReadmeAsset>("StandaloneToolsReadme");
             if (readme != null)
-                AddPage("Standalone Tools", "standalone_tools", new ReadmePage(readme), 9);
+                AddPage("Standalone Tools", "standalone_tools", new ReadmePage(readme), pageIndex++);
+
+            return pageIndex;
         }
 
         public static T LoadAsset<T>() where T : UnityEngine.Object

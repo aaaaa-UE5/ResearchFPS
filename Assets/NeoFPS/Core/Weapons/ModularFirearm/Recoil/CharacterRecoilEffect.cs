@@ -98,7 +98,6 @@ namespace NeoFPS.ModularFirearms
             // Sort timing
             m_InverseDuration = 1f / Mathf.Max(duration, 0.001f);
             m_Lerp = 0f;
-           
         }
     }
 }

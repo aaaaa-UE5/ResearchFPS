@@ -17,6 +17,8 @@ namespace NeoSaveGames
         private static readonly NeoSerializationKey k_MainSceneKey = new NeoSerializationKey("mainScene");
         private static readonly NeoSerializationKey k_SubScenesKey = new NeoSerializationKey("subScenes");
 
+        private static RuntimeBehaviour s_RuntimeBehaviour = null;
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void LoadSaveGameManager()
         {
@@ -25,7 +27,7 @@ namespace NeoSaveGames
 
         protected override void Initialise()
         {
-            GetBehaviourProxy<RuntimeBehaviour>();
+            s_RuntimeBehaviour = GetBehaviourProxy<RuntimeBehaviour>();
 
             // Check folder exists
             CheckSaveFolder();
@@ -845,7 +847,6 @@ namespace NeoSaveGames
 #endif
             capture.ReadPixels(new Rect(0, 0, size.x, size.y), 0, 0);
 
-
             // Hacky workaround for issue with CaptureScreenshotAsTexture returning texture
             // in wrong colour space when using linear rendering
             if (m_UsingLinearRendering)
@@ -853,9 +854,7 @@ namespace NeoSaveGames
                 var pixels = capture.GetPixels();
                 for (int i = 0; i < pixels.Length; ++i)
                 {
-//#if UNITY_EDITOR
                     pixels[i] = pixels[i].linear;
-//#endif
                     pixels[i].a = 1f;
                 }
                 capture.SetPixels(pixels);
@@ -1214,6 +1213,8 @@ namespace NeoSaveGames
 
         public static event Action<SaveGameType> onSaveInProgess;
         public static event Action<SaveGameType> onSaveFailed;
+        public static event Action<SaveGameType> onSaveCompleted;
+        // TODO: Tie in onSaveCompleted
 
         bool SaveGameInternal(SaveGameType type, string title, Action onComplete)
         {
@@ -1267,6 +1268,7 @@ namespace NeoSaveGames
                 WaitOnMainThreadTask(manager.RefreshAvailableSaves());
                 // Signal completed
                 completed = true;
+                onSaveCompleted?.Invoke(m_SaveType);
             }
 
             IEnumerator SaveGameCoroutine(SaveGameType type, string title)
@@ -1309,8 +1311,11 @@ namespace NeoSaveGames
                 if (mainScene != null)
                 {
                     //Debug.Log("Writing main scene path");
-                    serializer.WriteValue(k_MainSceneKey, mainScene.scene.path);
-                    m_FilteredScenes.Add(mainScene);
+                    string mainScenePath = mainScene.scene.path;
+                    serializer.WriteValue(k_MainSceneKey, mainScenePath);
+                    serializer.PushContext(SerializationContext.Scene, NeoSerializationUtilities.StringToHash(mainScenePath));
+                    mainScene.WriteData(serializer);
+                    serializer.PopContext(SerializationContext.Scene);
                 }
                 else
                 {
@@ -1328,13 +1333,16 @@ namespace NeoSaveGames
                 }
 
                 // Write sub-scenes
-                serializer.WriteValues(k_SubScenesKey, m_FilteredPaths);
-                for (int i = 0; i < m_FilteredScenes.Count; ++i)
+                if (m_FilteredPaths.Count > 0)
                 {
-                    //Debug.Log("Writing scene: " + m_FilteredScenes[i].scene.path + ", hash: " + NeoSerializationUtilities.StringToHash(m_FilteredScenes[i].scene.path));
-                    serializer.PushContext(SerializationContext.Scene, NeoSerializationUtilities.StringToHash(m_FilteredScenes[i].scene.path));
-                    m_FilteredScenes[i].WriteData(serializer);
-                    serializer.PopContext(SerializationContext.Scene);
+                    serializer.WriteValues(k_SubScenesKey, m_FilteredPaths);
+                    for (int i = 0; i < m_FilteredScenes.Count; ++i)
+                    {
+                        //Debug.Log("Writing scene: " + m_FilteredScenes[i].scene.path + ", hash: " + NeoSerializationUtilities.StringToHash(m_FilteredScenes[i].scene.path));
+                        serializer.PushContext(SerializationContext.Scene, NeoSerializationUtilities.StringToHash(m_FilteredPaths[i]));
+                        m_FilteredScenes[i].WriteData(serializer);
+                        serializer.PopContext(SerializationContext.Scene);
+                    }
                 }
 
                 serializer.EndSerialization();
@@ -1352,7 +1360,9 @@ namespace NeoSaveGames
 
         #region LOADING
 
-        private string m_LoadingScenePath = null;
+        public static event Action onLoadCompleted;
+
+        private List<string> m_SubScenesToLoad = new List<string>();
 
         public static bool LoadGame(FileInfo saveFile)
         {
@@ -1372,15 +1382,14 @@ namespace NeoSaveGames
             string mainScene;
             if (reader.TryReadValue(k_MainSceneKey, out mainScene, null))
             {
-                // Add multi-scene loading later
-                //string[] subScenes;
-                //reader.TryReadValues(k_SubScenesKey, out subScenes, null);
-
-                // Record scene name
-                instance.m_LoadingScenePath = mainScene;
-
+                // Signal busy (prevents saving)
                 instance.m_MainThreadBusy = true;
-                NeoSceneManager.LoadScene(mainScene, OnCompleteLoad);
+
+                // Get sub-scene list
+                reader.TryReadValues(k_SubScenesKey, instance.m_SubScenesToLoad);
+
+                // Load main scene (on complete method will handle sub-scenes)
+                NeoSceneManager.LoadScene(mainScene, OnCompleteMainSceneLoad);
             }
             else
             {
@@ -1398,43 +1407,73 @@ namespace NeoSaveGames
             // This method should be called by the NeoSerializedScene itself on Awake(),
             // And the NeoSerializedScene is set to execute Awake() before all other classes.
             var s = scene.scene;
-            if (instance.m_LoadingScenePath == s.path)
+
+            var reader = instance.deserializer;
+            if (reader.isDeserializing && reader.PushContext(SerializationContext.Scene, NeoSerializationUtilities.StringToHash(s.path)))
             {
-                var reader = instance.deserializer;
-                if (reader.isDeserializing && reader.PushContext(SerializationContext.Scene, NeoSerializationUtilities.StringToHash(s.path)))
+                try
                 {
-                    try
+                    var objects = s.GetRootGameObjects();
+                    foreach (var obj in objects)
                     {
-                        var objects = s.GetRootGameObjects();
-                        foreach (var obj in objects)
+                        var sceneInfo = obj.GetComponent<NeoSerializedScene>();
+                        if (sceneInfo != null)
                         {
-                            var sceneInfo = obj.GetComponent<SceneSaveInfo>();
-                            if (sceneInfo != null)
-                            {
-                                sceneInfo.ReadData(reader);
-                                break;
-                            }
+                            sceneInfo.ReadData(reader);
+                            break;
                         }
                     }
-                    //catch (Exception e)
-                    //{
-                    //    Debug.LogError("Scene activation callback failed. There was an issue loading the scene: " + e.Message);
-                    //}
-                    finally
-                    {
-                        reader.PopContext(SerializationContext.Scene, NeoSerializationUtilities.StringToHash(s.path));
-                    }
                 }
-
-                instance.m_LoadingScenePath = null;
+                //catch (Exception e)
+                //{
+                //    Debug.LogError("Scene activation callback failed. There was an issue loading the scene: " + e.Message);
+                //}
+                finally
+                {
+                    reader.PopContext(SerializationContext.Scene, NeoSerializationUtilities.StringToHash(s.path));
+                }
             }
         }
 
-        static void OnCompleteLoad()
+        static void OnCompleteMainSceneLoad()
         {
+            // Additive load sub-scenes
+            if (instance.m_SubScenesToLoad.Count > 0)
+                s_RuntimeBehaviour.StartCoroutine(LoadSubScenes());
+            else
+            {
+                // End deserialization
+                instance.deserializer.EndDeserialization();
+
+                // Clear busy flag
+                instance.m_MainThreadBusy = false;
+
+                // Signal completed
+                onLoadCompleted?.Invoke();
+            }
+        }
+
+        static IEnumerator LoadSubScenes()
+        {
+            foreach (var subScene in instance.m_SubScenesToLoad)
+                SceneManager.LoadScene(subScene, LoadSceneMode.Additive);
+            instance.m_SubScenesToLoad.Clear();
+
+            yield return null;
+
+#if UNITY_2019_3_OR_NEWER
+            // Rebuild light-probes
+            LightProbes.Tetrahedralize();
+#endif
+
+            // End deserialization
+            instance.deserializer.EndDeserialization();
+
+            // Clear busy flag
             instance.m_MainThreadBusy = false;
 
-            instance.deserializer.EndDeserialization();
+            // Signal completed
+            onLoadCompleted?.Invoke();
         }
 
         #endregion
@@ -1526,6 +1565,77 @@ namespace NeoSaveGames
                 if (instance.m_MainScene == scene)
                     instance.m_MainScene = null;
             }
+        }
+
+        #endregion
+
+
+        #region SUB-SCENES
+
+        public static byte[] SerializeSubsceneData(NeoSerializedScene scene)
+        {
+            // Basic checks (since anyone can call this)
+            if (instance == null || inProgress || scene == null)
+                return null;
+
+            // Begin the serialization process
+            var writer = instance.serializer;
+            writer.BeginSerialization();
+
+            // Write the scene
+            writer.PushContext(SerializationContext.Scene, scene.hashedPath);
+            scene.WriteData(writer);
+            writer.PopContext(SerializationContext.Scene);
+
+            // End the serialization process and write to stream
+            writer.EndSerialization();
+            using (var memoryStream = new MemoryStream(writer.byteLength))
+            {
+                writer.WriteToStream(memoryStream);
+                memoryStream.Position = 0;
+
+                // Return byte array
+                return memoryStream.ToArray();
+            }
+        }
+
+        public static bool DeserializeSubsceneData(NeoSerializedScene scene, byte[] data)
+        {
+            // Basic checks (since anyone can call this)
+            if (instance == null || inProgress || scene == null || data == null)
+                return false;
+
+            // Create memory stream from bytes
+            using (var memoryStream = new MemoryStream(data))
+            {                
+                // Read from stream
+                var reader = instance.deserializer;
+                reader.ReadFromStream(memoryStream);
+
+                // Begin the deserialization process
+                reader.BeginDeserialization();
+
+                if (reader.PushContext(SerializationContext.MetaData, scene.hashedPath))
+                {
+                    try
+                    {
+                        scene.ReadData(reader);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError("Error deserializing scene. Exception: " + e);
+                        reader.PopContext(SerializationContext.Scene, scene.hashedPath);
+                        reader.EndDeserialization();
+                        return false;
+                    }
+                    reader.PopContext(SerializationContext.Scene, scene.hashedPath);
+                }
+
+                // End the deserialization process
+                reader.EndDeserialization();
+            }
+
+            return true;
         }
 
         #endregion

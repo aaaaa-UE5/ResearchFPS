@@ -11,6 +11,7 @@ namespace NeoFPS
 	{
 		private IThrownWeapon m_ThrownWeapon = null;
         private ICharacter m_Character = null;
+        private AnimatedWeaponInspect m_Inspect = null;
         private bool m_IsPlayer = false;
 		private bool m_IsAlive = false;
 
@@ -22,7 +23,8 @@ namespace NeoFPS
         protected override void OnAwake()
         {
             m_ThrownWeapon = GetComponent<IThrownWeapon>();
-		}
+            m_Inspect = GetComponentInChildren<AnimatedWeaponInspect>(true);
+        }
 
         protected override void OnEnable ()
 		{
@@ -73,6 +75,13 @@ namespace NeoFPS
 				PopContext();
 		}
 
+        protected override void OnLoseFocus()
+        {
+            // Inspect
+            if (m_Inspect != null)
+                m_Inspect.inspecting = false;
+        }
+
         protected override void UpdateInput()
         {
 			if (GetButtonDown (FpsInputButton.PrimaryFire))
@@ -80,6 +89,10 @@ namespace NeoFPS
 
 			if (GetButtonDown (FpsInputButton.SecondaryFire))
 				m_ThrownWeapon.ThrowLight ();
+
+			// Inspect
+			if (m_Inspect != null)
+				m_Inspect.inspecting = GetButton(FpsInputButton.Inspect);
 		}
 	}
 }

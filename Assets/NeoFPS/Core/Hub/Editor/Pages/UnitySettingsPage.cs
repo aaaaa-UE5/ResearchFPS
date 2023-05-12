@@ -14,7 +14,7 @@ namespace NeoFPSEditor.Hub.Pages
         private const int k_TargetPhysicsVersion = 6;
         private const int k_TargetInputVersion = 2;
         private const int k_TargetPlayerSettingsVersion = 1;
-        private const int k_TargetBuildSettingsVersion = 5;
+        private const int k_TargetBuildSettingsVersion = 6;
 
         // The custom settings json filenames
         private const string k_JsonLayers = "CustomSettings_Layers";

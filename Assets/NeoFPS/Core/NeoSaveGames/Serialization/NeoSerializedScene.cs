@@ -18,7 +18,7 @@ namespace NeoSaveGames.Serialization
         [SerializeField, Tooltip("Assets available for serialization in this scene.")]
         private ScriptableObject[] m_Assets = new ScriptableObject[0];
 
-        [SerializeField]//, HideInInspector]
+        [SerializeField, HideInInspector]
         private NeoSerializedSceneObjectContainer m_SceneObjects = null;
 
         private static List<NeoSerializedScene> s_ActiveScenes = new List<NeoSerializedScene>();
@@ -267,19 +267,29 @@ namespace NeoSaveGames.Serialization
 
         public T InstantiatePrefab<T>(T prototype) where T : Component
         {
-            return NeoSerializedObjectFactory.Instantiate(prototype, m_SceneObjects);
+            var result = NeoSerializedObjectFactory.Instantiate(prototype, m_SceneObjects);
+            if (result.gameObject.scene != scene)
+                SceneManager.MoveGameObjectToScene(result.gameObject, scene);
+            return result;
         }
 
         public T InstantiatePrefab<T>(T prototype, Vector3 position, Quaternion rotation) where T : Component
         {
-            return NeoSerializedObjectFactory.Instantiate(prototype, m_SceneObjects, position, rotation);
+            var result = NeoSerializedObjectFactory.Instantiate(prototype, m_SceneObjects, position, rotation);
+            if (result.gameObject.scene != scene)
+                SceneManager.MoveGameObjectToScene(result.gameObject, scene);
+            return result;
         }
 
         public T InstantiatePrefab<T>(int prefabID, int serializationKey) where T : Component
         {
             var result = NeoSerializedObjectFactory.Instantiate(prefabID, serializationKey, m_SceneObjects);
             if (result != null)
+            {
+                if (result.gameObject.scene != scene)
+                    SceneManager.MoveGameObjectToScene(result.gameObject, scene);
                 return result.GetComponent<T>();
+            }
             else
                 return null;
         }

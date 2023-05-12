@@ -46,7 +46,7 @@ namespace NeoFPS.ModularFirearms
             m_Triggered = true;
 
 			// Should this use events instead?
-			if (m_TriggerHoldHash != -1)
+			if (m_TriggerHoldHash != -1 && !blocked)
 				firearm.animationHandler.SetBool (m_TriggerHoldHash, true);
 		}
 
@@ -89,6 +89,9 @@ namespace NeoFPS.ModularFirearms
             base.OnSetBlocked(to);
             if (to)
                 m_Wait = 0;
+
+            if (m_Triggered && m_TriggerHoldHash != -1)
+                firearm.animationHandler.SetBool(m_TriggerHoldHash, !to);
         }
 
         private static readonly NeoSerializationKey k_TriggeredKey = new NeoSerializationKey("triggered");

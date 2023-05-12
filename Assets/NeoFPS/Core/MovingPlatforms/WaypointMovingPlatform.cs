@@ -38,6 +38,7 @@ namespace NeoFPS
 
         private static readonly NeoSerializationKey k_MoveIndicesKey = new NeoSerializationKey("moveIndices");
         private static readonly NeoSerializationKey k_MoveDurationsKey = new NeoSerializationKey("moveDurations");
+        private static readonly NeoSerializationKey k_HeadSegmentKey = new NeoSerializationKey("head");
         private static readonly NeoSerializationKey k_SourceIndexKey = new NeoSerializationKey("sourceIndex");
         private static readonly NeoSerializationKey k_ProgressKey = new NeoSerializationKey("progress");
         private static readonly NeoSerializationKey k_TimeoutKey = new NeoSerializationKey("timeout");
@@ -143,19 +144,17 @@ namespace NeoFPS
                 m_OnDestinationReached.Invoke();
         }
 
-        protected override void Awake()
-        {
-            base.Awake();
-            m_MoveSegments = new MoveSegment[m_Waypoints.Length];
-        }
-
         protected override void Start()
         {
             base.Start();
 
             // Loop on start if set
-            if (m_OnStart != StartingBehaviour.Nothing)
-                LoopWaypoints(m_OnStart == StartingBehaviour.LoopForwards);
+            if (!loadedFromSaveData)
+            {
+                m_MoveSegments = new MoveSegment[m_Waypoints.Length];
+                if (m_OnStart != StartingBehaviour.Nothing)
+                    LoopWaypoints(m_OnStart == StartingBehaviour.LoopForwards);
+            }
         }
 
         protected override Vector3 GetStartingPosition()
@@ -415,6 +414,14 @@ namespace NeoFPS
             }
         }
 
+        //private int m_SourceIndex = 0; ============================
+        //private float m_Progress = 0f; ============================
+        //private float m_Timeout = 0f; ============================
+        //private MoveSegment[] m_MoveSegments = null;
+        //private int m_HeadSegment = 0;
+        //private int m_SegmentCount = 0;
+        //private int m_LoopDirection = 0; ============================
+
         public override void WriteProperties(INeoSerializer writer, NeoSerializedGameObject nsgo, SaveMode saveMode)
         {
             base.WriteProperties(writer, nsgo, saveMode);
@@ -442,6 +449,7 @@ namespace NeoFPS
             writer.WriteValue(k_ProgressKey, m_Progress);
             writer.WriteValue(k_TimeoutKey, m_Timeout);
             writer.WriteValue(k_LoopDirKey, m_LoopDirection);
+            writer.WriteValue(k_HeadSegmentKey, m_HeadSegment);
         }
 
         public override void ReadProperties(INeoDeserializer reader, NeoSerializedGameObject nsgo)
@@ -452,6 +460,7 @@ namespace NeoFPS
             reader.TryReadValue(k_ProgressKey, out m_Progress, m_Progress);
             reader.TryReadValue(k_TimeoutKey, out m_Timeout, m_Timeout);
             reader.TryReadValue(k_LoopDirKey, out m_LoopDirection, m_LoopDirection);
+            reader.TryReadValue(k_HeadSegmentKey, out m_HeadSegment, m_HeadSegment);
 
             int[] indices = null;
             reader.TryReadValues(k_MoveIndicesKey, out indices, new int[0]);
@@ -465,7 +474,6 @@ namespace NeoFPS
                 m_MoveSegments[i].index = indices[i];
                 m_MoveSegments[i].duration = durations[i];
             }
-            m_HeadSegment = 0;
             m_SegmentCount = indices.Length;
         }
     }

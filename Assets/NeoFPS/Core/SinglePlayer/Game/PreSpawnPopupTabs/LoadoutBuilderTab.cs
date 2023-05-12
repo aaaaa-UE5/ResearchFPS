@@ -56,6 +56,7 @@ namespace NeoFPS.SinglePlayer
                     // Initialise slot choice
                     slotChoice.onIndexChanged.AddListener((int index) => { slot.currentOption = index; });
                     slotChoice.label = slot.displayName;
+                    slotChoice.index = slot.currentOption;
 
                     m_SlotChoices.Add(slotChoice);
                 }
@@ -66,15 +67,6 @@ namespace NeoFPS.SinglePlayer
             }
             else
                 return false;
-        }
-
-        private void Start()
-        {
-            for (int i = 0; i < loadoutBuilder.numLoadoutBuilderSlots; ++i)
-            {
-                var slot = loadoutBuilder.GetLoadoutBuilderSlotInfo(i);
-                m_SlotChoices[i].index = slot.currentOption;
-            }
         }
     }
 }

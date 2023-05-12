@@ -13,6 +13,8 @@ namespace NeoFPSEditor.ModularFirearms
         {
             serializedObject.UpdateIfRequiredOrScript();
 
+            NeoFpsEditorGUI.ScriptField(serializedObject);
+
             EditorGUILayout.PropertyField(serializedObject.FindProperty("m_StartActive"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("m_ActivationMode"));
 

@@ -1082,6 +1082,10 @@ namespace NeoFPS.ModularFirearms
             if (aimer == null)
                 return true;
 
+            // Check if weapon is blocked
+            if (isBlocked)
+                return true;
+
             // Check if no aim blockers
             if (m_AimBlockers.Count > 0)
                 return true;
@@ -1130,6 +1134,8 @@ namespace NeoFPS.ModularFirearms
         {
             if (reloader != null)
             {
+                if (isBlocked)
+                    return false;
                 if (reloader.isReloading)
 					return false;
                 if (!reloader.canReload)
@@ -1253,6 +1259,51 @@ namespace NeoFPS.ModularFirearms
             // Play directly as fast switching means you don't want it to continue if the weapon is disabled
             if (m_WeaponRaiseSound != null && m_AudioSource != null && m_AudioSource.isActiveAndEnabled)
                 m_AudioSource.PlayOneShot(m_WeaponRaiseSound, m_WeaponVolume);
+        }
+
+        #endregion
+
+        #region BLOCKING
+
+        private List<Object> m_Blockers = new List<Object>();
+
+        public event UnityAction<bool> onBlockedChanged;
+
+        public bool isBlocked
+        {
+            get { return m_Blockers.Count > 0; }
+        }
+
+        public void AddBlocker(Object o)
+        {
+            // Previous state
+            int oldCount = m_Blockers.Count;
+
+            // Add blocker
+            if (o != null && !m_Blockers.Contains(o))
+                m_Blockers.Add(o);
+
+            // Block state changed
+            if (m_Blockers.Count != 0 && oldCount == 0)
+                OnIsBlockedChanged(true);
+        }
+
+        public void RemoveBlocker(Object o)
+        {
+            // Previous state
+            int oldCount = m_Blockers.Count;
+
+            // Remove blocker
+            m_Blockers.Remove(o);
+
+            // Block state changed
+            if (m_Blockers.Count == 0 && oldCount != 0)
+                OnIsBlockedChanged(false);
+        }
+
+        protected virtual void OnIsBlockedChanged(bool blocked)
+        {
+            onBlockedChanged?.Invoke(blocked);
         }
 
         #endregion

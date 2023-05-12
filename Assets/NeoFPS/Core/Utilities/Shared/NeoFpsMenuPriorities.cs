@@ -47,5 +47,6 @@ namespace NeoFPS
         public const int ungrouped_postProcessSettings = 89;
         public const int ungrouped_uiStyle = 90;
         public const int ungrouped_constants = 91;
+        public const int ungrouped_subscenecollection = 92;
     }
 }

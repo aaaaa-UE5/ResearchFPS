@@ -39,7 +39,7 @@ namespace NeoFPSEditor.SinglePlayer
         {
             if (m_SpawnZonesList == null)
             {
-                m_PropertyFixedHeight = EditorGUIUtility.singleLineHeight * 2f + EditorGUIUtility.standardVerticalSpacing * 3f;
+                m_PropertyFixedHeight = EditorGUIUtility.singleLineHeight * 1f + EditorGUIUtility.standardVerticalSpacing * 2f;
                 m_ElementFixedHeight = EditorGUIUtility.singleLineHeight * 2f + EditorGUIUtility.standardVerticalSpacing * 3f;
                 m_SpawnZonesList = new ReorderableList(property.serializedObject, property.FindPropertyRelative("spawnZones"));
                 m_SpawnZonesList.elementHeightCallback = GetSpawnZonesListElementHeight;
@@ -102,14 +102,6 @@ namespace NeoFPSEditor.SinglePlayer
             position.height = m_SpawnZonesList.GetHeight();
 
             m_SpawnZonesList.DoList(position);
-
-            position.y += position.height + EditorGUIUtility.standardVerticalSpacing;
-            position.height = EditorGUIUtility.singleLineHeight;
-
-            if (GUI.Button(position, "Something something"))
-            {
-                Debug.Log("Blah");
-            }
 
             EditorGUI.EndProperty();
         }

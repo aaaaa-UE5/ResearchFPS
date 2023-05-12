@@ -1,4 +1,5 @@
-﻿using UnityEngine.Events;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace NeoFPS
 {
@@ -9,6 +10,12 @@ namespace NeoFPS
         void DeselectInstant();
         Waitable Deselect();
 
+        // isBusy
+        bool isBlocked { get; }
+        void AddBlocker(Object o);
+        void RemoveBlocker(Object o);
+
+        event UnityAction<bool> onBlockedChanged;
         event UnityAction<ICharacter> onWielderChanged;
 
         T GetComponent<T>();

@@ -36,3 +36,6 @@ CHANGES:
   - Set hold parameters to false on InputSystemCharacterMotion losing focus
 - V4
   - Fixed incorrect folder name
+- V5
+  - Added trigger press on enable for firearms
+  - Added inspect weapon functionality to firearms, melee, thrown and tools

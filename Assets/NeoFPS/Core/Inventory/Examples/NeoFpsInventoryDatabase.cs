@@ -5,7 +5,10 @@ namespace NeoFPS
 {
     //[CreateAssetMenu(fileName = "FpsManager_InventoryDatabase", menuName = "NeoFPS/Managers/Inventory Database", order = NeoFpsMenuPriorities.manager_inventory)]
     [HelpURL("https://docs.neofps.com/manual/inputref-so-neofpsinventorydatabase.html")]
-    public class NeoFpsInventoryDatabase : NeoFpsManager<NeoFpsInventoryDatabase>, ISerializationCallbackReceiver
+    public class NeoFpsInventoryDatabase : NeoFpsManager<NeoFpsInventoryDatabase>
+#if UNITY_EDITOR
+        , ISerializationCallbackReceiver
+#endif
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void LoadInventoryDatabase()
@@ -130,8 +133,7 @@ namespace NeoFPS
 
 #else
 
-        public void OnBeforeSerialize() { }
-        public void OnAfterDeserialize()
+        void Awake()
         {
             m_Dictionary = new Dictionary<int, FpsInventoryDatabaseEntry>();
             for (int i = 0; i < m_Tables.Length; ++i)
@@ -193,6 +195,5 @@ namespace NeoFPS
         }
 
 #endif
-
     }
 }

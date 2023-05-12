@@ -9,7 +9,7 @@ namespace NeoFPS.Samples.SinglePlayer
 	[HelpURL("https://docs.neofps.com/manual/samplesref-mb-firingrangereadout.html")]
 	public class FiringRangeReadout : MonoBehaviour
 	{
-		const string k_ReadoutString = "Hits: {0}\nMisses: {1}";
+		const string k_ReadoutString = "Score: {0}";
 
 		private Text m_ReadoutText = null;
         private int m_Hits = 0;
@@ -18,20 +18,19 @@ namespace NeoFPS.Samples.SinglePlayer
         protected void Awake ()
 		{
 			m_ReadoutText = GetComponent<Text> ();
-            m_ReadoutText.text = string.Format(k_ReadoutString, 0, 0);
+            m_ReadoutText.text = string.Format(k_ReadoutString, 0);
         }
 
 		public void OnHitsChanged (int total)
 		{
 			m_Hits = total;
-			m_ReadoutText.text = string.Format (k_ReadoutString, m_Hits, m_Misses);
-
+			m_ReadoutText.text = string.Format (k_ReadoutString, m_Hits);
 		}
 
 		public void OnMissesChanged (int total)
 		{
 			m_Misses = total;
-			m_ReadoutText.text = string.Format (k_ReadoutString, m_Hits, m_Misses);
+			m_ReadoutText.text = string.Format (k_ReadoutString, m_Hits);
 		}
 	}
 }

@@ -13,10 +13,18 @@ namespace NeoFPS.CharacterMotion
         private string m_ParameterName = string.Empty;
         [SerializeField, Tooltip("When should the parameter be modified.")]
         private When m_When = When.OnEnter;
+        [SerializeField, Tooltip("What to change the animator to on entering the state / subgraph.")]
+        private ValueType m_OnEnterType = ValueType.ConstantValue;
         [SerializeField, Tooltip("The value to write to the parameter on entering the state / subgraph.")]
         private bool m_OnEnterValue = true;
+        [SerializeField, Tooltip("The parameter that contains the value to write to the parameter on entering the state / subgraph.")]
+        private SwitchParameter m_OnEnterParameter = null;
+        [SerializeField, Tooltip("What to change the animator to on exiting the state / subgraph.")]
+        private ValueType m_OnExitType = ValueType.ConstantValue;
         [SerializeField, Tooltip("The value to write to the parameter on exiting the state / subgraph.")]
         private bool m_OnExitValue = false;
+        [SerializeField, Tooltip("The parameter that contains the value to write to the parameter on exiting the state / subgraph.")]
+        private SwitchParameter m_OnExitParameter = null;
 
         private int m_ParameterHash = -1;
 
@@ -25,6 +33,12 @@ namespace NeoFPS.CharacterMotion
             OnEnter,
             OnExit,
             Both
+        }
+
+        public enum ValueType
+        {
+            ConstantValue,
+            MotionGraphParameter
         }
 
         public override void Initialise(MotionGraphConnectable o)
@@ -40,13 +54,35 @@ namespace NeoFPS.CharacterMotion
         public override void OnEnter()
         {
             if (m_When != When.OnExit)
-                controller.bodyAnimator.SetBool(m_ParameterHash, m_OnEnterValue);
+            {
+                if (m_OnEnterType == ValueType.ConstantValue)
+                    controller.bodyAnimator.SetBool(m_ParameterHash, m_OnEnterValue);
+                else
+                {
+                    if (m_OnEnterParameter != null)
+                        controller.bodyAnimator.SetBool(m_ParameterHash, m_OnEnterParameter.on);
+                }
+            }
         }
 
         public override void OnExit()
         {
             if (m_When != When.OnEnter)
-                controller.bodyAnimator.SetBool(m_ParameterHash, m_OnExitValue);
+            {
+                if (m_OnExitType == ValueType.ConstantValue)
+                    controller.bodyAnimator.SetBool(m_ParameterHash, m_OnExitValue);
+                else
+                {
+                    if (m_OnExitParameter != null)
+                        controller.bodyAnimator.SetBool(m_ParameterHash, m_OnExitParameter.on);
+                }
+            }
+        }
+
+        public override void CheckReferences(IMotionGraphMap map)
+        {
+            m_OnEnterParameter = map.Swap(m_OnEnterParameter);
+            m_OnExitParameter = map.Swap(m_OnExitParameter);
         }
     }
 }

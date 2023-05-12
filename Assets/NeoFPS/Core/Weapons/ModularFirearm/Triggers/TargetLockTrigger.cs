@@ -256,8 +256,10 @@ namespace NeoFPS.ModularFirearms
             currentTarget = null;
         }
 
-        protected void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
+
             m_Pressed = false;
             m_LockedOn = false;
             currentTarget = null;

@@ -10,11 +10,22 @@ namespace NeoFPS.ModularFirearms
     {
         private static readonly NeoSerializationKey k_BlockedKey = new NeoSerializationKey("blocked");
 
+        private IWieldable m_FirearmWieldable = null;
+
         private bool m_Blocked = false;
 		public bool blocked
 		{
-			get { return m_Blocked; }
-			set { OnSetBlocked (value); }
+			get
+            {
+                if (m_FirearmWieldable == null)
+                    return m_Blocked;
+                else
+                    return m_Blocked || m_FirearmWieldable.isBlocked; }
+			set
+            {
+                m_Blocked = value;
+                CheckForBlockedChange();
+            }
 		}
 
         virtual public bool cancelOnReload
@@ -28,15 +39,42 @@ namespace NeoFPS.ModularFirearms
 				FixedTriggerUpdate ();
 		}
 
-		protected virtual void OnEnable ()
+        protected override void Awake()
+        {
+            base.Awake();
+            m_FirearmWieldable = firearm as IWieldable;
+        }
+
+        protected virtual void OnEnable ()
 		{
 			firearm.SetTrigger (this);
-		}
+
+            if (m_FirearmWieldable != null)
+                m_FirearmWieldable.onBlockedChanged += OnFirearmBlockedChange;
+        }
+
+        protected virtual void OnDisable()
+        {
+            if (m_FirearmWieldable != null)
+                m_FirearmWieldable.onBlockedChanged -= OnFirearmBlockedChange;
+        }
 
 		protected virtual void OnSetBlocked (bool to)
 		{
-			m_Blocked = to;
 		}
+
+        void CheckForBlockedChange()
+        {
+            if (m_FirearmWieldable == null)
+                OnSetBlocked(m_Blocked);
+            else
+                OnSetBlocked(m_Blocked || m_FirearmWieldable.isBlocked);
+        }
+
+        void OnFirearmBlockedChange (bool firearmBlocked)
+        {
+            CheckForBlockedChange();
+        }
 
 		public abstract bool pressed { get; }
 		public virtual void Press ()
