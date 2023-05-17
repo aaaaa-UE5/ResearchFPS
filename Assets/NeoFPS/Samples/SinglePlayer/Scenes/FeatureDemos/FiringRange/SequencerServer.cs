@@ -5,8 +5,9 @@ using System;
 using UnityEngine.Events;
 using NeoSaveGames.Serialization;
 using NeoSaveGames;
+using NeoFPS.ModularFirearms;
 
-namespace NeoFPS.Samples.SinglePlayer
+namespace NeoFPS.Samples.SinglePlayer 
 {
     
     public class SequencerServer: SingletonMonoBehaviour<SequencerServer>
@@ -24,7 +25,13 @@ namespace NeoFPS.Samples.SinglePlayer
         [SerializeField]
         private FiringRangeSequencer m_traingsequencer2 = null;
 
+        //歩いているかの情報取得
+        [SerializeField]
+        private ModularFirearm m_modularfirearm = null;
+
+
         public float duration = 2.0f;
+        public bool walking = false;
 
         public void getduration(float testduration)
         {
@@ -36,5 +43,13 @@ namespace NeoFPS.Samples.SinglePlayer
         {
             m_traingsequencer2.set_duration(duration);
         }
+
+        public void get_is_waking(bool is_waking)
+        {
+            walking = is_waking;
+            Debug.Log(walking);
+        }
+
+
     }
 }

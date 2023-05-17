@@ -1559,7 +1559,7 @@ GameObject:
   - component: {fileID: 1186527727}
   - component: {fileID: 1186527726}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Server
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1585,9 @@ MonoBehaviour:
   T_five_rate: 0
   m_firingRangeSequencer: {fileID: 208976645}
   m_traingsequencer2: {fileID: 34802230}
+  m_modularfirearm: {fileID: 114086510337260924, guid: 5586913d6e0ce934da6bed04cc353246, type: 3}
   duration: 2
+  waking: 0
 --- !u!135 &1186527727
 SphereCollider:
   m_ObjectHideFlags: 0
