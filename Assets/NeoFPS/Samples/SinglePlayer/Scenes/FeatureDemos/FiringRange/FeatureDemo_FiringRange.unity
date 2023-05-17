@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_traingsequencer2: {fileID: 34802230}
   m_modularfirearm: {fileID: 114086510337260924, guid: 5586913d6e0ce934da6bed04cc353246, type: 3}
   duration: 2
-  waking: 0
+  walking: 0
 --- !u!135 &1186527727
 SphereCollider:
   m_ObjectHideFlags: 0

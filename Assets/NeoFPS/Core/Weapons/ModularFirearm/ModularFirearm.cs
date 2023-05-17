@@ -70,10 +70,6 @@ namespace NeoFPS.ModularFirearms
         private bool m_WaitingForExternalTrigger = false;
 
         //新規追加分
-        public bool is_walking = true;
-
-        [SerializeField]
-        public SequencerServer m_squenceSaver = null;
 
 
         public class DeselectionWaitable : Waitable
@@ -165,11 +161,6 @@ namespace NeoFPS.ModularFirearms
             m_PoseHandler.UpdatePose();
         }
 
-        public bool get_is_walking()
-        {
-            return is_walking;
-        }
-
         protected void FixedUpdate ()
 		{
 			// Check movement accuracy
@@ -187,9 +178,8 @@ namespace NeoFPS.ModularFirearms
                 if (moveAccuracy > 0.999f)
                 {
                     moveAccuracy = 1f;
-                    is_walking = false;
-                    m_squenceSaver.get_is_waking(is_walking);
-                    //Debug.Log(is_walking);
+                    SequencerServer.Instance.is_walking = false;
+                    //Debug.Log("stoping");
                 }
 
                 else if (moveAccuracy < 0.001f)
@@ -200,9 +190,8 @@ namespace NeoFPS.ModularFirearms
 
                 else
                 {
-                    is_walking = true;
-                    m_squenceSaver.get_is_waking(is_walking);
-                    //Debug.Log(is_walking);
+                    SequencerServer.Instance.is_walking = true;
+                    //Debug.Log("walking");
                 }
 
                 // Apply
