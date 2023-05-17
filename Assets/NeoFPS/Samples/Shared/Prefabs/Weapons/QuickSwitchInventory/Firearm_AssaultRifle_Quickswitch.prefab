@@ -466,8 +466,8 @@ MonoBehaviour:
   m_Animator: {fileID: 95959919302341184}
   m_FireAnimTrigger: Fire
   m_PoseTransform: {fileID: 4893211592419396}
-  m_ZeroAccuracySpeed: 15
-  m_MoveAccuracyDamping: 0.5
+  m_ZeroAccuracySpeed: 5
+  m_MoveAccuracyDamping: 0
   m_AirAccuracy: 0
   m_RaiseDelayType: 1
   m_RaiseDuration: 0.4
@@ -750,15 +750,15 @@ MonoBehaviour:
   m_OnRecoil:
     m_PersistentCalls:
       m_Calls: []
-  m_HipAccuracyKick: 0.1
-  m_HipAccuracyRecover: 0.85
-  m_SightedAccuracyKick: 0.05
-  m_SightedAccuracyRecover: 0.75
+  m_HipAccuracyKick: 0
+  m_HipAccuracyRecover: 0.75
+  m_SightedAccuracyKick: 0.075
+  m_SightedAccuracyRecover: 0.8
   m_HipFireRecoil:
     expanded: 1
-    recoilAngle: 0.8
-    wander: 0.25
-    horizontalMultiplier: 1
+    recoilAngle: 2
+    wander: 1
+    horizontalMultiplier: 0
     verticalDivergence: 0.1
     horizontalDivergence: 0.5
     pushBack: 0.015
@@ -928,7 +928,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_AimedRecoil:
-    expanded: 1
+    expanded: 0
     recoilAngle: 0.5
     wander: 0.2
     horizontalMultiplier: 1

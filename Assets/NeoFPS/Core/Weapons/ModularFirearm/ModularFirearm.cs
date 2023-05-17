@@ -172,9 +172,21 @@ namespace NeoFPS.ModularFirearms
                 // Get damped (and snapped) accuracy
                 float moveAccuracy = Mathf.Lerp(moveAccuracyModifier, targetMoveAccuracy, Mathf.Lerp(0.75f, 0.05f, m_MoveAccuracyDamping));
                 if (moveAccuracy > 0.999f)
+                {
                     moveAccuracy = 1f;
-                if (moveAccuracy < 0.001f)
+                    Debug.Log("stoping");
+                }
+
+                else if (moveAccuracy < 0.001f)
+                {
                     moveAccuracy = 0f;
+
+                }
+
+                else
+                {
+                    Debug.Log("walking");
+                }
 
                 // Apply
                 moveAccuracyModifier = moveAccuracy;
