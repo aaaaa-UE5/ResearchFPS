@@ -3,6 +3,7 @@ using System;
 using UnityEngine.Events;
 using NeoSaveGames.Serialization;
 using NeoSaveGames;
+using NeoFPS.Samples.SinglePlayer;
 
 namespace NeoFPS.ModularFirearms
 {
@@ -76,9 +77,11 @@ namespace NeoFPS.ModularFirearms
             CheckForBlockedChange();
         }
 
+        
 		public abstract bool pressed { get; }
 		public virtual void Press ()
         {
+
             if (onStateChanged != null)
                 onStateChanged(true);
         }
@@ -103,7 +106,15 @@ namespace NeoFPS.ModularFirearms
 
         protected void Shoot ()
 		{
-			if (onShoot != null)
+            if (NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.targethit == false)
+            {
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount += 1;
+            }   
+            if (NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.is_walking == true)
+            {
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.notStopingShoot += 1;
+            }
+            if (onShoot != null)
 				onShoot ();
         }
 

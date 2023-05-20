@@ -23,14 +23,16 @@ namespace NeoFPS.Samples.SinglePlayer
 
 		public void OnHitsChanged (int total)
 		{
-			m_Hits = total;
-			m_ReadoutText.text = string.Format (k_ReadoutString, m_Hits);
+			//Debug.Log("hit=" + SequencerServer.Instance.score);
+			m_Hits = SequencerServer.Instance.score;
+			m_ReadoutText.text = string.Format (k_ReadoutString, SequencerServer.Instance.score);
 		}
 
 		public void OnMissesChanged (int total)
 		{
+			//Debug.Log("miss=" + SequencerServer.Instance.score);
 			m_Misses = total;
-			m_ReadoutText.text = string.Format (k_ReadoutString, m_Hits);
+			m_ReadoutText.text = string.Format (k_ReadoutString, SequencerServer.Instance.score);
 		}
 	}
 }

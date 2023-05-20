@@ -42,7 +42,7 @@ namespace NeoFPS.ModularFirearms
 		public override void Press ()
         {
             base.Press();
-
+       
             m_Triggered = true;
 
 			// Should this use events instead?

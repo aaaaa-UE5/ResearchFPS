@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NeoSaveGames;
 using NeoSaveGames.Serialization;
 using UnityEngine;
+using NeoFPS.Samples.SinglePlayer;
 
 namespace NeoFPS.ModularFirearms
 {
@@ -103,6 +104,18 @@ namespace NeoFPS.ModularFirearms
             // Subscribe to firearm wielder
             firearm.onWielderChanged += OnWielderChanged;
             OnWielderChanged(firearm.wielder);
+        }
+
+        protected void FixedUpdate()
+        {
+            if (SequencerServer.Instance.is_walking == true)
+            {
+                m_HipFireRecoil.horizontalMultiplier = 5;
+            }
+            else
+            {
+                m_HipFireRecoil.horizontalMultiplier = 0;
+            }
         }
 
         private void OnWielderChanged(ICharacter wielder)

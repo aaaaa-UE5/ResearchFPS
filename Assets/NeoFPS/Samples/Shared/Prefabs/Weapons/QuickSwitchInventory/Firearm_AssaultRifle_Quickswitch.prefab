@@ -474,8 +474,6 @@ MonoBehaviour:
   m_RaiseAnimTrigger: Draw
   m_LowerAnimTrigger: 
   m_DeselectDuration: 0
-  is_walking: 1
-  m_squenceSaver: {fileID: 0}
   m_DryFireSound: {fileID: 8300000, guid: d61f766aa0aae3f4f98ab37292a9fd17, type: 3}
   m_WeaponRaiseSound: {fileID: 8300000, guid: 226fd8e8d744e134d95fa2cb3e79658c, type: 3}
   m_WeaponVolume: 1

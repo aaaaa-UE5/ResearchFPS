@@ -175,7 +175,7 @@ namespace NeoFPS.ModularFirearms
 
                 // Get damped (and snapped) accuracy
                 float moveAccuracy = Mathf.Lerp(moveAccuracyModifier, targetMoveAccuracy, Mathf.Lerp(0.75f, 0.05f, m_MoveAccuracyDamping));
-                if (moveAccuracy > 0.999f)
+                if (moveAccuracy > 0.800f)
                 {
                     moveAccuracy = 1f;
                     SequencerServer.Instance.is_walking = false;

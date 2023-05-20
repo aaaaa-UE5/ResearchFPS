@@ -244,7 +244,13 @@ namespace NeoFPS.Samples.SinglePlayer
             scorerate =  1/ m_Targets[0].duration;
             int i = (int)Math.Ceiling(25*scorerate);
 
-            hits = i + hits;
+            if(SequencerServer.Instance.shootCount == 1)
+            {
+                SequencerServer.Instance.firstShootRate += 1;
+            }
+
+            SequencerServer.Instance.targethit = true;
+            SequencerServer.Instance.score +=  i;
             m_AudioSource.PlayOneShot(m_AudioHit);
             increaseDuration();
         }
@@ -275,6 +281,11 @@ namespace NeoFPS.Samples.SinglePlayer
                     m_Wave = 0;
                     hits = 0;
                     misses = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = true;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootedAmmo = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.notStopingShoot = 0;
+
                     set_duration(2.0f);
                     m_SequenceCoroutine = StartCoroutine(WaveStart(m_TimeBetweenWaves));
                     m_AudioSource.PlayOneShot(m_AudioStart, 0.25f);
@@ -433,29 +444,28 @@ namespace NeoFPS.Samples.SinglePlayer
             {
                 ///テスト内容が終わった後、durationをサーバーに送る
                 float sentduration = get_duration();
-                
+                m_squenceSaver.getduration(sentduration);
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
 
-                try
-                {
-                    m_squenceSaver.getduration(sentduration);
-                }
-                catch
-                {
-                }
                 m_Wave = 0;
                 m_State = SequenceState.Stopped;
                 m_SequenceCoroutine = null;
                 //それぞれの的の命中率
-                if (T_one != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate = T_hit_one - T_one;
-                if (T_two != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate = T_hit_two - T_two;
-                if (T_three != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate = T_hit_three - T_three;
-                if (T_four != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate = T_hit_four - T_four;
-                if (T_five != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate = T_hit_five - T_five;
+                if (T_one != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate =  (T_hit_one - T_one);
+                if (T_two != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate =  (T_hit_two - T_two);
+                if (T_three != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate =  (T_hit_three - T_three);
+                if (T_four != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate =  (T_hit_four - T_four);
+                if (T_five != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate =  (T_hit_five - T_five);
             }
             else
             {
                 ++m_Wave;
                 m_SequenceCoroutine = StartCoroutine(WaveStart(m_TimeBetweenWaves));
+                
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.targethit = false;
+                Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount);
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootedAmmo += NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount;
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount = 0;                
             }
         }
 
