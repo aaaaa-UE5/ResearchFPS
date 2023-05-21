@@ -274,6 +274,10 @@ namespace NeoFPS.Samples.SinglePlayer
                         m_SequenceCoroutine = StartCoroutine(ResetTargets());
                         m_AudioSource.PlayOneShot(m_AudioCancel, 0.25f);
                     }
+                    ///テスト内容＆処理が終わった後、durationをサーバーに送る
+                    float sentduration = get_duration();
+                    m_squenceSaver.getduration(sentduration);
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
                 }
                 else
                 {

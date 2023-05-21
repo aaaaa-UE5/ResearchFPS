@@ -76,7 +76,19 @@ namespace NeoFPS.Samples.SinglePlayer
                 "each target accuracy= " + "\n" + T_one_rate +"% "+ T_two_rate + "% " + T_three_rate + "% " + T_four_rate + "% " + T_five_rate + "% " + "\n\n" +
                 "閉じるにはEnterを押しやす" + "\n" + "(you can close to push Enter Key)"
 
-                ) ; 
+                ) ;
+            score = 0;
+            walkingScore = 0;
+            notStopingShoot = 0;
+            firstShootRate = 0;
+            shootCount = 0;
+            shootedAmmo = 0;
+            T_one_rate = 0;
+            T_two_rate = 0;
+            T_three_rate = 0;
+            T_four_rate = 0;
+            T_five_rate = 0;
+
 
         }
 

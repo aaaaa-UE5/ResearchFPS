@@ -63,11 +63,23 @@ namespace NeoFPS.Samples.SinglePlayer
             //　メッセージが終わっているか、メッセージがない場合はこれ以降何もしない
             if (isEndMessage || allMessage == null)
             {
+                Debug.Log("1");
+                if (Input.GetKey(KeyCode.Return))
+                {
+                    isEndMessage = true;
+                    transform.GetChild(0).gameObject.SetActive(false);
+                }
                 return;
             }
 
             if (messageText.text == "")
             {
+                Debug.Log("2");
+                if (Input.GetKey(KeyCode.Return))
+                {
+                    isEndMessage = true;
+                    transform.GetChild(0).gameObject.SetActive(false);
+                }
                 return;
             }
 
@@ -106,6 +118,12 @@ namespace NeoFPS.Samples.SinglePlayer
                     isOneMessage = true;
                 }
                 //　1回に表示するメッセージを表示した
+                //　メッセージが全部表示されていたらゲームオブジェクト自体の削除
+                if (Input.GetKey(KeyCode.Return))
+                {
+                    isEndMessage = true;
+                    transform.GetChild(0).gameObject.SetActive(false);
+                }
             }
             else
             {

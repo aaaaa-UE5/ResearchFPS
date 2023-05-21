@@ -418,7 +418,6 @@ GameObject:
   - component: {fileID: 642644444461888715}
   - component: {fileID: 114625414054067056}
   - component: {fileID: 114971878285612538}
-  - component: {fileID: 114540888611795762}
   - component: {fileID: 114215865042357804}
   - component: {fileID: 2292107750758482168}
   - component: {fileID: 114918541887471148}
@@ -427,6 +426,7 @@ GameObject:
   - component: {fileID: 114918840439978162}
   - component: {fileID: 114096902194249426}
   - component: {fileID: 7862033070207495258}
+  - component: {fileID: 4919301088358141629}
   m_Layer: 0
   m_Name: Firearm_AssaultRifle_Quickswitch
   m_TagString: Untagged
@@ -559,8 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartActive: 1
   m_ActivationMode: 0
-  m_MagazineSize: 30
-  m_StartingMagazine: 30
+  m_MagazineSize: 400
+  m_StartingMagazine: 400
   m_ReloadDelayType: 1
   m_ReloadDuration: 2.5
   m_ReloadAnimTrigger: Reload
@@ -701,22 +701,6 @@ MonoBehaviour:
   m_AngularVelocityA: {x: -5, y: -2, z: -2}
   m_AngularVelocityB: {x: 8, y: 2, z: 2}
   m_ShellScale: 1
---- !u!114 &114540888611795762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152804995060304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1683233fbb68ec94782025dff0e9115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartActive: 1
-  m_ActivationMode: 0
-  m_Effect: {fileID: 114215865042357804}
-  m_AmmoType: {fileID: 11400000, guid: 6bb76e133096f6a4e8a2c63fb876b6eb, type: 2}
 --- !u!114 &114215865042357804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,6 +1305,23 @@ MonoBehaviour:
   m_FalloffSettingUpper: 200
   m_BulletSize: 1
   m_ImpactForce: 15
+--- !u!114 &4919301088358141629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152804995060304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0b08c766ab040428918f2b696173b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActive: 1
+  m_ActivationMode: 0
+  m_PrintableName: 
+  m_FixedSize: 999
+  m_Effect: {fileID: 114215865042357804}
 --- !u!1 &1153722077842952
 GameObject:
   m_ObjectHideFlags: 0
