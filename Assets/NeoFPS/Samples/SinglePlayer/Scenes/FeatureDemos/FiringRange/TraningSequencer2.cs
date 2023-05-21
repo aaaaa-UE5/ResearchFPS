@@ -10,11 +10,11 @@ namespace NeoFPS.Samples.SinglePlayer
 {
     public class TraningSequencer2 : FiringRangeSequencer
     {
-        int one_rate = 5;
-        int two_rate = 5;
-        int three_rate = 5;
-        int four_rate = 5;
-        int five_rate = 5;
+        double one_rate = 5;
+        double two_rate = 5;
+        double three_rate = 5;
+        double four_rate = 5;
+        double five_rate = 5;
         public override void set_duration(float aaa)
         {
             foreach (var a in m_Targets)
@@ -59,11 +59,11 @@ namespace NeoFPS.Samples.SinglePlayer
                     misses = 0;
                     m_SequenceCoroutine = StartCoroutine(WaveStart(m_TimeBetweenWaves));
                     m_AudioSource.PlayOneShot(m_AudioStart, 0.25f);
-                    one_rate = 5 + (-5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate);
-                    two_rate = 5 + (-5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate);
-                    three_rate = 5 + (-5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate);
-                    four_rate = 5 + (-5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate);
-                    five_rate = 5 + (-5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate);
+                    one_rate = 5 + (5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate);
+                    two_rate = 5 + (5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate);
+                    three_rate = 5 + (5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate);
+                    four_rate = 5 + (5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate);
+                    five_rate = 5 + (5 * NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate);
                     Debug.Log("one= "+one_rate);
                     Debug.Log("two= " + two_rate);
                     Debug.Log("three= " + three_rate);
@@ -97,15 +97,14 @@ namespace NeoFPS.Samples.SinglePlayer
                 while (m_Spawned < m_TargetCount)
                 {
                     //テストのそれぞれの的の命中率から偏った的の出現を行う為の計算
-                    int range = UnityEngine.Random.Range(0, one_rate+two_rate+three_rate+four_rate+five_rate);
+                    int rangeamount = (int)(one_rate + two_rate + three_rate + four_rate + five_rate);
+                    int range = UnityEngine.Random.Range(0, (rangeamount));
                     int i;
                     if (range <= one_rate)  i = 0;
                     else if(range <= one_rate + two_rate)  i = 1;
                     else if (range <= one_rate + two_rate + three_rate) i = 2;
                     else if (range <= one_rate + two_rate + three_rate + four_rate) i = 3;
                     else i = 4;
-                    Debug.Log(range);
-                    Debug.Log(i);
 
                     if (group.targets[i].hidden)
                     {

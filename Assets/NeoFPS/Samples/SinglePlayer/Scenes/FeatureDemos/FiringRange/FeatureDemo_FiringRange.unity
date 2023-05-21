@@ -1674,19 +1674,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[0].total
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[1].total
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[2].total
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[3].total
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[4].total
@@ -1738,19 +1738,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[0].perStep
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[1].perStep
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[2].perStep
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[3].perStep
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114926463401334872, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Targets.Array.data[4].perStep

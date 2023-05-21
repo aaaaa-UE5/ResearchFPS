@@ -442,20 +442,44 @@ namespace NeoFPS.Samples.SinglePlayer
             // Reset the sequence if completed or start next wave　終わりなら終わり、まだウェーブあるなら次のウェーブにいく部分
             if (completed)
             {
-                ///テスト内容が終わった後、durationをサーバーに送る
-                float sentduration = get_duration();
-                m_squenceSaver.getduration(sentduration);
-                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
 
                 m_Wave = 0;
                 m_State = SequenceState.Stopped;
                 m_SequenceCoroutine = null;
                 //それぞれの的の命中率
-                if (T_one != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate =  (T_hit_one - T_one);
-                if (T_two != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate =  (T_hit_two - T_two);
-                if (T_three != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate =  (T_hit_three - T_three);
-                if (T_four != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate =  (T_hit_four - T_four);
-                if (T_five != 0) NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate =  (T_hit_five - T_five);
+                //Debug.Log(T_hit_one);
+                //Debug.Log(T_one);
+                //Debug.Log(T_hit_two);
+                //Debug.Log(T_two);
+                //Debug.Log(T_five);
+
+                if (T_one != 0){
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate = (double)T_hit_one / (double)T_one *100d;
+                    //Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate);
+                }
+                if (T_two != 0) {
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate = (double)T_hit_two / (double)T_two *100d;
+                    //Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate);
+                }
+                if (T_three != 0) {
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate = (double)T_hit_three / (double)T_three * 100d;
+                    //Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate);
+                }
+                if (T_four != 0)
+                {
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate = (((double)T_hit_four / (double)T_four) * 100d);
+                    //Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate);
+                }
+                if (T_five != 0) {
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate = (((double)T_hit_five / (double)T_five) * 100d);
+                    //Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate);
+                }
+
+                ///テスト内容＆処理が終わった後、durationをサーバーに送る
+                float sentduration = get_duration();
+                m_squenceSaver.getduration(sentduration);
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
+
             }
             else
             {

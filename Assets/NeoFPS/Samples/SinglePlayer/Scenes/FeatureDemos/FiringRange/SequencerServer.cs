@@ -13,11 +13,11 @@ namespace NeoFPS.Samples.SinglePlayer
     public class SequencerServer: SingletonMonoBehaviour<SequencerServer>
     {
         public string objectname = null;
-        public int T_one_rate;
-        public int T_two_rate;
-        public int T_three_rate;
-        public int T_four_rate;
-        public int T_five_rate;
+        public double T_one_rate;
+        public double T_two_rate;
+        public double T_three_rate;
+        public double T_four_rate;
+        public double T_five_rate;
         private int walkingScore = 0;
         public int shootCount = 0;
         public int notStopingShoot = 0;
@@ -48,17 +48,35 @@ namespace NeoFPS.Samples.SinglePlayer
             duration = testduration;
             //Debug.Log("score= " + score);
             //Debug.Log("duration= " + duration);
+
             //Debug.Log(T_one_rate);
-            // Debug.Log(T_two_rate);
-            // Debug.Log(T_three_rate);
+            //Debug.Log(T_two_rate);
+            //Debug.Log(T_three_rate);
             //Debug.Log(T_four_rate);
             //Debug.Log(T_five_rate);
-            m_showScore.SetMessagePanel(
-                "score= " + score + "\n" + "duration= " + duration + "\n" +
-                "WakingScore= " + walkingScore + "\n" + "notStopingShoot= " + notStopingShoot + "\n" +
-                "FirstShooRate= " + firstShootRate + "\n" + "ShootedAmmo= " + shootedAmmo + "\n\n" + "閉じるにはEnterを押しやす" + "\n" + "(you can close to push Enter Key)"
 
-                ); 
+            T_one_rate = Math.Floor((double)T_one_rate * 10d) / 10d;
+            T_two_rate = Math.Floor((double)T_two_rate * 10d) / 10d;
+            T_three_rate = Math.Floor((double)T_three_rate * 10d) / 10d;
+            T_four_rate = Math.Floor((double)T_four_rate * 10d) / 10d;
+            T_five_rate = Math.Floor((double)T_five_rate * 10d) / 10d;
+
+            Debug.Log(T_one_rate);
+            Debug.Log(T_two_rate);
+            Debug.Log(T_three_rate);
+            Debug.Log(T_four_rate);
+            Debug.Log(T_five_rate);
+
+            score -= notStopingShoot*5;
+            score += firstShootRate * 10;
+            m_showScore.SetMessagePanel(
+                "score= " + score + "\n" + "duration= " + (double)Math.Floor(duration*100)/100 + "\n" +
+                "WakingScore= " + walkingScore + "\n" + "notStopingShoot= " + notStopingShoot + "\n" +
+                "FirstShootRate= " + firstShootRate + "\n" + "ShootedAmmo= " + shootedAmmo + "\n" +
+                "each target accuracy= " + "\n" + T_one_rate +"% "+ T_two_rate + "% " + T_three_rate + "% " + T_four_rate + "% " + T_five_rate + "% " + "\n\n" +
+                "閉じるにはEnterを押しやす" + "\n" + "(you can close to push Enter Key)"
+
+                ) ; 
 
         }
 
@@ -74,7 +92,7 @@ namespace NeoFPS.Samples.SinglePlayer
                 count += 1;
                 if(count >= 10){
                     score += 1;
-                    walkingScore += 1;
+                    walkingScore += 2;
                     count = 0;
                 }
             }
