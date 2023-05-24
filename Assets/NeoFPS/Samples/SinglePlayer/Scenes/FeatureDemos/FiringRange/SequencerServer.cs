@@ -19,7 +19,8 @@ namespace NeoFPS.Samples.SinglePlayer
         public double T_four_rate;
         public double T_five_rate;
         private int walkingScore = 0;
-        public int shootCount = 0;
+        public int shootCount = 0; // 的を打つのに使った弾(1wave)
+        public bool targethit = false; // shootcountを正しく(的に当てる前の弾を)数えるための変数
         public int notStopingShoot = 0;
         public int firstShootRate = 0;
         public int shootedAmmo = 0;
@@ -42,12 +43,17 @@ namespace NeoFPS.Samples.SinglePlayer
         public float duration = 2.0f;
         public bool is_walking = false;
         public bool testStart = false;
-        public bool is_traning = false;
-        public bool targethit = false;
-        int count = 0;
+        public bool is_traning = false; 
+        public bool aiming = false; // トレーニングで標準が的に合っているか判別
+        int count = 0; //  walkingscoreをカウントするために必要
+        public List<int> popupingTargetnum = new List<int>(); // wava間で上がっているターゲットの番号を取得
 
         public int score = 0;
 
+        public void Check()
+        {
+
+        }
         private string bad_feature (int score) //ここにスコアと特徴の数値を比較して悪い特徴に関するアドバイスを返す。
         {
             string bad_feature = "";

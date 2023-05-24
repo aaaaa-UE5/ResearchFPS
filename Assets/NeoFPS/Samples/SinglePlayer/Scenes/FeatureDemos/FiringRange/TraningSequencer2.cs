@@ -145,6 +145,7 @@ namespace NeoFPS.Samples.SinglePlayer
                             else group.targets[4].Popup(group.duration);
                         }
                         ++m_Spawned;
+                        NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.popupingTargetnum.Add(i);
                     }
                     else
                         yield return null; // Yield to prevent endless loop
@@ -244,8 +245,8 @@ namespace NeoFPS.Samples.SinglePlayer
                 }
 
                 ///テスト内容＆処理が終わった後、durationをサーバーに送る
-                float sentduration = get_duration();
-                m_squenceSaver.getduration(sentduration);
+                //float sentduration = get_duration();
+                //m_squenceSaver.getduration(sentduration);
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.is_traning = false;
 
@@ -259,6 +260,7 @@ namespace NeoFPS.Samples.SinglePlayer
                 //Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount);
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootedAmmo += NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount;
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount = 0;
+                NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.popupingTargetnum.Clear();
             }
         }
 

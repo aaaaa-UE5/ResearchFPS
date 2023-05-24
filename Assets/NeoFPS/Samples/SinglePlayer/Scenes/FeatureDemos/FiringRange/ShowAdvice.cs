@@ -17,18 +17,33 @@ namespace NeoFPS.Samples.SinglePlayer
         [SerializeField]
         private GameObject showAD;
 
-        private string showtext = "";
+        private string showIsWalking = "";
+        private string showIsAiming = "";
 
         protected override void Update()
         {
-            showtext = NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.is_walking.ToString();
-            messageText.text = "isWoking: " + showtext;
+            if(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.is_traning == true)
+            {
+                showIsWalking = NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.is_walking.ToString();
+                showIsAiming = NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.aiming.ToString();
+
+                messageText.text = "isWoking: " + showIsWalking + "\n" + 
+                    "isAniming: " + showIsAiming;
+
+            }
+            else
+            {
+                finish_traing();
+            }
+
         }
 
         public override void SetMessagePanel(string message)
         {
             showAD.SetActive(true);
-            showtext = NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.is_walking.ToString();
+            showIsWalking = NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.is_walking.ToString();
+            showIsAiming = NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.aiming.ToString();
+
         }
 
         public override void finish_traing()
