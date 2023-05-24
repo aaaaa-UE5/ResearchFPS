@@ -34,16 +34,31 @@ namespace NeoFPS.Samples.SinglePlayer
         [SerializeField]
         private  ShowScore m_showScore = null;
 
+        //アドバイス表示
+        [SerializeField]
+        private ShowScore m_showAdvice = null;
+
 
         public float duration = 2.0f;
         public bool is_walking = false;
         public bool testStart = false;
+        public bool is_traning = false;
         public bool targethit = false;
         int count = 0;
 
         public int score = 0;
 
-        public void getduration(float testduration)
+        private string bad_feature (int score) //ここにスコアと特徴の数値を比較して悪い特徴に関するアドバイスを返す。
+        {
+            string bad_feature = "";
+
+            if (score >= 700) bad_feature = "goodscore"; //  ここからとりあえずのサンプル
+            else bad_feature = "not good score";
+
+            return bad_feature; //  アドバイスを返す予定orもっかいアドバイス作成する関数を作成してそっちに投げる
+        }
+
+        public void getduration(float testduration) //  テスト側で最後に起動、テストの値を渡すならここ。初期化もできればここ※値をトレーニングに渡すならトレーニングのボタンプッシュで初期化推奨
         {
             duration = testduration;
             //Debug.Log("score= " + score);
@@ -61,19 +76,17 @@ namespace NeoFPS.Samples.SinglePlayer
             T_four_rate = Math.Floor((double)T_four_rate * 10d) / 10d;
             T_five_rate = Math.Floor((double)T_five_rate * 10d) / 10d;
 
-            Debug.Log(T_one_rate);
-            Debug.Log(T_two_rate);
-            Debug.Log(T_three_rate);
-            Debug.Log(T_four_rate);
-            Debug.Log(T_five_rate);
-
             score -= notStopingShoot*5;
             score += firstShootRate * 10;
+
+            string adword = bad_feature(score);
+
             m_showScore.SetMessagePanel(
-                "score= " + score + "\n" + "duration= " + (double)Math.Floor(duration*100)/100 + "\n" +
+                "score= " + score + "\n" + "duration= " + (double)Math.Floor(duration * 100) / 100 + "\n" +
                 "WakingScore= " + walkingScore + "\n" + "notStopingShoot= " + notStopingShoot + "\n" +
                 "FirstShootRate= " + firstShootRate + "\n" + "ShootedAmmo= " + shootedAmmo + "\n" +
-                "each target accuracy= " + "\n" + T_one_rate +"% "+ T_two_rate + "% " + T_three_rate + "% " + T_four_rate + "% " + T_five_rate + "% " + "\n\n" +
+                "each target accuracy= " + "\n" + T_one_rate + "% " + T_two_rate + "% " + T_three_rate + "% " + T_four_rate + "% " + T_five_rate + "% " + "\n" +
+                "advaice→" + adword + "\n\n" +
                 "閉じるにはEnterを押しやす" + "\n" + "(you can close to push Enter Key)"
 
                 ) ;
@@ -83,18 +96,18 @@ namespace NeoFPS.Samples.SinglePlayer
             firstShootRate = 0;
             shootCount = 0;
             shootedAmmo = 0;
-            T_one_rate = 0;
-            T_two_rate = 0;
-            T_three_rate = 0;
-            T_four_rate = 0;
-            T_five_rate = 0;
-
+            if(is_traning == true)
+            {
+                m_showAdvice.finish_traing();
+            }
+            
 
         }
 
-        public void setduration()
+        public void setduration() //  トレーニング側で起動、トレーニングに値与えるならここ
         {
             m_traingsequencer2.set_duration(duration);
+            m_showAdvice.SetMessagePanel(is_walking.ToString()); //  完成図は悪い特徴のboolを送ること。サンプルとして今はwalking 
         }
         private void FixedUpdate()
         {
@@ -114,33 +127,3 @@ namespace NeoFPS.Samples.SinglePlayer
 
     }
 }
-
-/*
-namespace NeoFPS.ModularFirearms
-{
-
-    public class SequencerServer2 : SingletonMonoBehaviour<SequencerServer2>
-    {
-        public string objectname = null;
-        public int T_one_rate;
-        public int T_two_rate;
-        public int T_three_rate;
-        public int T_four_rate;
-        public int T_five_rate;
-
-        //歩いているかの情報取得
-        [SerializeField]
-        private ModularFirearm m_modularfirearm = null;
-
-        public bool walking = false;
-
-        public void get_is_waking(bool is_waking)
-        {
-            walking = is_waking;
-            Debug.Log(walking);
-        }
-
-
-    }
-}
-*/

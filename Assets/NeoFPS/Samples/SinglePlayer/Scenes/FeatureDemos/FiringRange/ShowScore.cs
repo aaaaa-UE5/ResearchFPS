@@ -17,7 +17,7 @@ namespace NeoFPS.Samples.SinglePlayer
 
         //　メッセージUI
         [SerializeField]
-        private Text messageText;
+        protected Text messageText;
         //　表示するメッセージ
         [SerializeField]
         [TextArea(1, 20)]
@@ -49,21 +49,24 @@ namespace NeoFPS.Samples.SinglePlayer
         //　メッセージをすべて表示したかどうか
         private bool isEndMessage = false;
 
-        void Start()
+        public virtual void finish_traing()
         {
-            clickIcon = transform.Find("Panel/Image").GetComponent<Image>();
-            clickIcon.enabled = false;
-            //messageText = GetComponentInChildren<Text>();
-            messageText.text = "";
-            SetMessage(allMessage);
+
         }
 
-        void Update()
+        void Start()
+        {
+            //clickIcon = transform.Find("Panel/Image").GetComponent<Image>();
+            //clickIcon.enabled = false;
+            //messageText = GetComponentInChildren<Text>();
+            messageText.text = "";
+        }
+
+        protected virtual void Update()
         {
             //　メッセージが終わっているか、メッセージがない場合はこれ以降何もしない
             if (isEndMessage || allMessage == null)
             {
-                Debug.Log("1");
                 if (Input.GetKey(KeyCode.Return))
                 {
                     isEndMessage = true;
@@ -74,7 +77,6 @@ namespace NeoFPS.Samples.SinglePlayer
 
             if (messageText.text == "")
             {
-                Debug.Log("2");
                 if (Input.GetKey(KeyCode.Return))
                 {
                     isEndMessage = true;
@@ -101,24 +103,10 @@ namespace NeoFPS.Samples.SinglePlayer
 
                     nowTextNum++;
                     elapsedTime = 0f;
-
-                    //　メッセージを全部表示、または行数が最大数表示された
-                    if (nowTextNum >= splitMessage[messageNum].Length)
-                    {
-                        isOneMessage = true;
-                    }
                 }
                 elapsedTime += Time.deltaTime;
 
-                //　メッセージ表示中にマウスの左ボタンを押したら一括表示
-                if (Input.GetMouseButtonDown(0))
-                {
-                    //　ここまでに表示しているテキストに残りのメッセージを足す
-                    messageText.text += splitMessage[messageNum].Substring(nowTextNum);
-                    isOneMessage = true;
-                }
-                //　1回に表示するメッセージを表示した
-                //　メッセージが全部表示されていたらゲームオブジェクト自体の削除
+                //　Enterオされていたらゲームオブジェクト自体の削除
                 if (Input.GetKey(KeyCode.Return))
                 {
                     isEndMessage = true;
@@ -151,21 +139,12 @@ namespace NeoFPS.Samples.SinglePlayer
             }
         }
         //　新しいメッセージを設定
-        void SetMessage(string message)
-        {
-            this.allMessage = message;
-            //　分割文字列で一回に表示するメッセージを分割する
-            splitMessage = Regex.Split(allMessage, @"\s*" + splitString + @"\s*", RegexOptions.IgnorePatternWhitespace);
-            nowTextNum = 0;
-            messageNum = 0;
-            messageText.text = "";
-            isOneMessage = false;
-            isEndMessage = false;
-        }
+
         //　他のスクリプトから新しいメッセージを設定しUIをアクティブにする
-        public void SetMessagePanel(string message)
+        public virtual void SetMessagePanel(string message)
         {
             //SetMessage(message);
+            Debug.Log("scoreshow");
             messageText.text = message;
             transform.GetChild(0).gameObject.SetActive(true);
         }

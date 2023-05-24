@@ -289,6 +289,11 @@ namespace NeoFPS.Samples.SinglePlayer
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootedAmmo = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.notStopingShoot = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_one_rate = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_two_rate = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate = 0;
+                    NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate = 0;
 
                     set_duration(2.0f);
                     m_SequenceCoroutine = StartCoroutine(WaveStart(m_TimeBetweenWaves));
@@ -354,7 +359,16 @@ namespace NeoFPS.Samples.SinglePlayer
                     if (group.targets[i] != null && group.targets[i].hidden)
                     {
                         //登場するターゲット分duration時間を増やす
-                        if (group.perStep == 2)
+                        if (group.perStep == 3)
+                        {
+                            group.targets[i].Popup(group.duration * 3);
+                            if (i == 0) T_one += 1;
+                            if (i == 1) T_two += 1;
+                            if (i == 2) T_three += 1;
+                            if (i == 3) T_four += 1;
+                            if (i == 4) T_five += 1;
+                        }
+                        else if (group.perStep == 2)
                         {
                             group.targets[i].Popup(group.duration*2);
                             if (i == 0) T_one += 1;
@@ -417,7 +431,7 @@ namespace NeoFPS.Samples.SinglePlayer
             return WaitForReset(true);
 		}
 
-        protected IEnumerator WaitForReset(bool completed)
+        virtual protected IEnumerator WaitForReset(bool completed)
         {
             if (completed)
                 m_State = SequenceState.Reset;
@@ -481,6 +495,7 @@ namespace NeoFPS.Samples.SinglePlayer
 
                 ///テスト内容＆処理が終わった後、durationをサーバーに送る
                 float sentduration = get_duration();
+                Debug.Log("ok");
                 m_squenceSaver.getduration(sentduration);
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
 
@@ -491,7 +506,7 @@ namespace NeoFPS.Samples.SinglePlayer
                 m_SequenceCoroutine = StartCoroutine(WaveStart(m_TimeBetweenWaves));
                 
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.targethit = false;
-                Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount);
+                //Debug.Log(NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount);
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootedAmmo += NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount;
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.shootCount = 0;                
             }
