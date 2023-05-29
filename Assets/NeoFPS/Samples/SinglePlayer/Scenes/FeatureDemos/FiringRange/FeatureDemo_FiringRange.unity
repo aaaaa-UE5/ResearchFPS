@@ -3831,9 +3831,21 @@ PrefabInstance:
       propertyPath: m_Targets.Array.data[30].targets.Array.data[4]
       value: 
       objectReference: {fileID: 2145992809}
+    - target: {fileID: 5076268060209092347, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076365414483004373, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5076740462148195913, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Name
       value: Prop_FiringRangeBuilding_SliderTarget2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077027793748827815, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5077040354775896205, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Name
@@ -3843,13 +3855,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_FiringRangeBuilding_SliderTarget1
       objectReference: {fileID: 0}
+    - target: {fileID: 5077692767934415099, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5077705087214444289, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Name
       value: Prop_FiringRangeBuilding_SliderTarget4
       objectReference: {fileID: 0}
+    - target: {fileID: 5077723687264200547, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5077764773925714641, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_Name
       value: Prop_FiringRangeBuilding_SliderTarget5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077784540197788313, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5181146158985866945, guid: 2908b3a29cb1f3a449ed4bde170e0a1e, type: 3}
       propertyPath: m_PresetInfoIsWorld
