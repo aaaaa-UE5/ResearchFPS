@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace NeoFPS.Samples.SinglePlayer
 {
-    public class ShowScore : MonoBehaviour
+    public class ShowScore2 : MonoBehaviour
     {
 
         //　メッセージUI
@@ -41,7 +41,7 @@ namespace NeoFPS.Samples.SinglePlayer
         //　メッセージをすべて表示したかどうか
         private bool isEndMessage = false;
 
-        private bool finalWindow = false;
+
 
         public virtual void finish_traing()
         {
@@ -61,28 +61,7 @@ namespace NeoFPS.Samples.SinglePlayer
             //　メッセージが終わっているか、メッセージがない場合はこれ以降何もしない
             if (isEndMessage || allMessage == null)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    if(finalWindow == false)
-                    {
-                        isEndMessage = true;
-                        transform.GetChild(0).gameObject.SetActive(false);
-                        SetMessagePanel(
-                        "WakingScore= " + SequencerServer.Instance.walkingScore + "\n" + "notStopingShoot= " + SequencerServer.Instance.notStopingShoot + "\n" +
-                        "FirstShootRate= " + SequencerServer.Instance.firstShootRate + "\n" + "ShootedAmmo= " + SequencerServer.Instance.shootedAmmo + "\n" +
-                        "each target accuracy= " + "\n" + SequencerServer.Instance.T_one_rate + "% " + SequencerServer.Instance.T_two_rate + "% " + SequencerServer.Instance.T_three_rate + "% " + SequencerServer.Instance.T_four_rate + "% " + SequencerServer.Instance.T_five_rate + "% " + "\n" +
-                        "\n\n" +
-                        "閉じるにはEnterを押しやす" + "\n" + "(you can close to push Enter Key)");
-                        finalWindow = true;
-                    }
-                    else
-                    {
-                        isEndMessage = true;
-                        transform.GetChild(0).gameObject.SetActive(false);
-                        finalWindow = false;
-                    }
 
-                }
                 return;
             }
 
@@ -109,28 +88,11 @@ namespace NeoFPS.Samples.SinglePlayer
                 elapsedTime += Time.deltaTime;
 
                 //　Enterオされていたらゲームオブジェクト自体の削除
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKey(KeyCode.Return))
                 {
-                    if (finalWindow == false)
-                    {
-                        isEndMessage = true;
-                        transform.GetChild(0).gameObject.SetActive(false);
-                        SetMessagePanel(
-                        "WakingScore= " + SequencerServer.Instance.walkingScore + "\n" + "notStopingShoot= " + SequencerServer.Instance.notStopingShoot + "\n" +
-                        "FirstShootRate= " + SequencerServer.Instance.firstShootRate + "\n" + "ShootedAmmo= " + SequencerServer.Instance.shootedAmmo + "\n" +
-                        "each target accuracy= " + "\n" + SequencerServer.Instance.T_one_rate + "% " + SequencerServer.Instance.T_two_rate + "% " + SequencerServer.Instance.T_three_rate + "% " + SequencerServer.Instance.T_four_rate + "% " + SequencerServer.Instance.T_five_rate + "% " + "\n" +
-                        "\n\n" +
-                        "閉じるにはEnterを押しやす" + "\n" + "(you can close to push Enter Key)");
-                        finalWindow = true;
-                    }
-                    else
-                    {
-                        isEndMessage = true;
-                        transform.GetChild(0).gameObject.SetActive(false);
-                        finalWindow = false;
-                        SequencerServer.Instance.Reset();
-                    }
-
+                    isEndMessage = true;
+                    transform.GetChild(0).gameObject.SetActive(false);
+                    Debug.Log("a1");
                 }
             }
             else

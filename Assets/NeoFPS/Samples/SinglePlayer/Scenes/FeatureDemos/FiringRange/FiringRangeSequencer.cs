@@ -241,6 +241,10 @@ namespace NeoFPS.Samples.SinglePlayer
             if (aaa == "003") T_hit_three += 1;
             if (aaa == "004") T_hit_four += 1;
             if (aaa == "005") T_hit_five += 1;
+            if (m_Targets[0].duration < 0.1)
+            {
+                m_Targets[0].duration = (float)0.1;
+            }
             scorerate =  1/ m_Targets[0].duration;
             int i = (int)Math.Ceiling(25*scorerate);
 
@@ -278,6 +282,7 @@ namespace NeoFPS.Samples.SinglePlayer
                     float sentduration = get_duration();
                     m_squenceSaver.getduration(sentduration);
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
+                    SequencerServer.Instance.Reset();
                 }
                 else
                 {
@@ -294,6 +299,7 @@ namespace NeoFPS.Samples.SinglePlayer
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate = 0;
+                    SequencerServer.Instance.Reset();
 
                     set_duration(2.0f);
                     m_SequenceCoroutine = StartCoroutine(WaveStart(m_TimeBetweenWaves));
@@ -495,7 +501,7 @@ namespace NeoFPS.Samples.SinglePlayer
 
                 ///テスト内容＆処理が終わった後、durationをサーバーに送る
                 float sentduration = get_duration();
-                Debug.Log("ok");
+                //Debug.Log("ok");
                 m_squenceSaver.getduration(sentduration);
                 NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.testStart = false;
 

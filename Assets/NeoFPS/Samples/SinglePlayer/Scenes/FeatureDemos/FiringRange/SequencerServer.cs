@@ -1,15 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.Events;
-using NeoSaveGames.Serialization;
-using NeoSaveGames;
-using NeoFPS.ModularFirearms;
 
-namespace NeoFPS.Samples.SinglePlayer 
+namespace NeoFPS.Samples.SinglePlayer
 {
-    
+
     public class SequencerServer: SingletonMonoBehaviour<SequencerServer>
     {
         public string objectname = null;
@@ -18,7 +13,7 @@ namespace NeoFPS.Samples.SinglePlayer
         public double T_three_rate;
         public double T_four_rate;
         public double T_five_rate;
-        private int walkingScore = 0;
+        public int walkingScore = 0;
         public int shootCount = 0; // 的を打つのに使った弾(1wave)
         public bool targethit = false; // shootcountを正しく(的に当てる前の弾を)数えるための変数
         public int notStopingShoot = 0;
@@ -31,13 +26,17 @@ namespace NeoFPS.Samples.SinglePlayer
         [SerializeField]
         private FiringRangeSequencer m_traingsequencer2 = null;
 
-        //スコアボード
+        //スコアボード(scoreのみ)
         [SerializeField]
         private  ShowScore m_showScore = null;
 
-        //アドバイス表示
+        //アドバイス表示(is_walking)
         [SerializeField]
         private ShowScore m_showAdvice = null;
+
+        //アドバイス表示(aiming)
+        [SerializeField]
+        private ShowScore m_showAdvice2 = null;
 
 
         public float duration = 2.0f;
@@ -89,22 +88,15 @@ namespace NeoFPS.Samples.SinglePlayer
 
             m_showScore.SetMessagePanel(
                 "score= " + score + "\n" + "duration= " + (double)Math.Floor(duration * 100) / 100 + "\n" +
-                "WakingScore= " + walkingScore + "\n" + "notStopingShoot= " + notStopingShoot + "\n" +
-                "FirstShootRate= " + firstShootRate + "\n" + "ShootedAmmo= " + shootedAmmo + "\n" +
-                "each target accuracy= " + "\n" + T_one_rate + "% " + T_two_rate + "% " + T_three_rate + "% " + T_four_rate + "% " + T_five_rate + "% " + "\n" +
                 "advaice→" + adword + "\n\n" +
                 "閉じるにはEnterを押しやす" + "\n" + "(you can close to push Enter Key)"
 
                 ) ;
-            score = 0;
-            walkingScore = 0;
-            notStopingShoot = 0;
-            firstShootRate = 0;
-            shootCount = 0;
-            shootedAmmo = 0;
+
             if(is_traning == true)
             {
                 m_showAdvice.finish_traing();
+                m_showAdvice2.finish_traing();
             }
             
 
@@ -113,7 +105,8 @@ namespace NeoFPS.Samples.SinglePlayer
         public void setduration() //  トレーニング側で起動、トレーニングに値与えるならここ
         {
             m_traingsequencer2.set_duration(duration);
-            m_showAdvice.SetMessagePanel(is_walking.ToString()); //  完成図は悪い特徴のboolを送ること。サンプルとして今はwalking 
+            m_showAdvice.SetMessagePanel(is_walking.ToString());
+            m_showAdvice2.SetMessagePanel(is_walking.ToString());//  完成図は悪い特徴のboolを送ること。サンプルとして今はwalking 
         }
         private void FixedUpdate()
         {
@@ -128,6 +121,16 @@ namespace NeoFPS.Samples.SinglePlayer
                 }
             }
             
+        }
+
+        public void Reset()
+        {
+            score = 0;
+            walkingScore = 0;
+            notStopingShoot = 0;
+            firstShootRate = 0;
+            shootCount = 0;
+            shootedAmmo = 0;
         }
 
 

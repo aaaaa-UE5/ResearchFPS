@@ -1,10 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
-using NeoSaveGames.Serialization;
-using NeoSaveGames;
-using UnityEditor;
 
 namespace NeoFPS.Samples.SinglePlayer
 {
@@ -49,6 +44,7 @@ namespace NeoFPS.Samples.SinglePlayer
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate = 0;
+                    SequencerServer.Instance.Reset();
                 }
                 else
                 {
@@ -80,6 +76,7 @@ namespace NeoFPS.Samples.SinglePlayer
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_three_rate = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_four_rate = 0;
                     NeoFPS.Samples.SinglePlayer.SequencerServer.Instance.T_five_rate = 0;
+                    SequencerServer.Instance.Reset();
                 }
 
                 m_ButtonCooldown = 3f;
